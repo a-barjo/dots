@@ -25,11 +25,9 @@ return {
     { "<leader>sw", "<Cmd>FzfLua grep_cword<CR>", desc = "Grep word under cursor" },
     { "<leader>sz", "<Cmd>FzfLua spell_suggest<CR>", desc = "Spell suggest" },
   },
-  config = function()
-    require("fzf-lua").setup({
-      winopts = {
-        preview = { hidden = "hidden" },
-      },
-    })
-  end,
+  opts = {
+    winopts = {
+      preview = { hidden = "hidden" },
+    },
+  },
 }

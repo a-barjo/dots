@@ -3,7 +3,7 @@ return {
   event = "InsertEnter",
   dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-path" },
   opts = function()
-    local cmp = require("cmp")
+    local cmp = package.loaded.cmp
     return {
       mapping = cmp.mapping.preset.insert({
         ["<C-n>"] = cmp.mapping.complete(),
@@ -19,7 +19,7 @@ return {
         { name = "path" },
       },
       window = {
-        completion = { border = border, scrollbar = false },
+        completion = { border = border },
         documentation = { border = border },
       },
     }

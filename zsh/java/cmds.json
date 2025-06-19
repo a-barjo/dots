@@ -1,0 +1,16 @@
+{
+  "Application: Boot Run": "./gradlew bootRun --args='--spring.profiles.active=local --sprint.output.ansi.enabled=always'",
+  "Application: Build": "./gradlew build",
+  "Application: Generate API docs": "./gradlew clean generateOpenApiDocs",
+  "Application: Run": "./gradlew run --args='--spring.output.ansi.enabled=always'",
+  "Debug: Attach": "rlwrap jdb -attach 5005",
+  "Debug: Boot run": "./gradlew bootRun --args='--spring.profiles.active=local --sprint.output.ansi.enabled=always' --debug-jvm",
+  "Debug: Run": "./gradlew run --args='--sprint.output.ansi.enabled=always' --debug-jvm",
+  "Dependencies: Refresh": "rm .classpath; ./gradlew --refresh-dependencies",
+  "Dependencies: Write locks": "./gradlew dependencies --write-locks",
+  "Format: Spotless apply": "./gradlew spotlessApply",
+  "Help: Tasks": "./gradlew tasks",
+  "Test: Contract": "./gradlew contract",
+  "Test: Integration": "./gradlew integration",
+  "Test: Unit": "./gradlew test"
+}

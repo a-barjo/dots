@@ -8,14 +8,14 @@ return {
     on_attach = function()
       local gs = package.loaded.gitsigns
 
-      Map("n", "]c", gs.next_hunk, "Next hunk")
-      Map("n", "[c", gs.prev_hunk, "Prev hunk")
-      Map("n", "<leader>gr", gs.reset_buffer, "Reset buffer")
-      Map("n", "<leader>ghb", gs.blame_line, "Show blame")
-      Map("n", "<leader>ghp", gs.preview_hunk, "Preview hunk")
-      Map("n", "<leader>ghr", gs.reset_hunk, "Reset hunk")
+      key.map("n", "]c", gs.next_hunk, "Next hunk")
+      key.map("n", "[c", gs.prev_hunk, "Prev hunk")
+      key.map("n", "<leader>gr", gs.reset_buffer, "Reset buffer")
+      key.map("n", "<leader>ghb", gs.blame_line, "Show blame")
+      key.map("n", "<leader>ghp", gs.preview_hunk, "Preview hunk")
+      key.map("n", "<leader>ghr", gs.reset_hunk, "Reset hunk")
 
-      Map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Hunk textobject")
+      key.map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Hunk textobject")
     end,
   },
 }

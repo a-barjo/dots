@@ -19,7 +19,7 @@ vim.opt.ignorecase = true
 
 -- List chars
 vim.opt.list = true
-vim.opt.listchars:append({ tab = "  ", nbsp = "•" })
+vim.opt.listchars:append({ nbsp = "•" })
 
 -- Tab width
 vim.opt.tabstop = 2
@@ -43,6 +43,3 @@ vim.opt.wrap = false
 
 -- Winborder
 vim.opt.winborder = border
-
--- Conceal level
-vim.opt.conceallevel = 0

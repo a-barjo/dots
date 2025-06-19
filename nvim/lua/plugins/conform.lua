@@ -6,7 +6,11 @@ return {
       mode = { "n", "v" },
       "<F3>",
       function()
-        OrganizeImports()
+        if lsp.isActiveInBuf("jdtls") then
+          vim.cmd("w | !./gradlew spotlessApply")
+          return
+        end
+        lsp.organizeImports()
         require("conform").format({ lsp_fallback = true })
       end,
       desc = "Format",

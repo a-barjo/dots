@@ -12,5 +12,15 @@ return {
       "<Cmd>DiffviewOpen main..HEAD<CR>",
       desc = "Open Diffview compare to main",
     },
+    {
+      "<leader>gdl",
+      "<Cmd>DiffviewFileHistory .<CR>",
+      desc = "Open Diffview git log",
+    },
+    {
+      "<leader>gd%",
+      "<Cmd>DiffviewFileHistory %<CR>",
+      desc = "Open Diffview file history",
+    },
   },
 }

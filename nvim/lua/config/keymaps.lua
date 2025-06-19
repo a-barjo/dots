@@ -1,62 +1,44 @@
 -- Window navigation
-Map("n", "<C-h>", "<C-w>h", "Navigate to window left")
-Map("n", "<C-j>", "<C-w>j", "Navigate to window down")
-Map("n", "<C-k>", "<C-w>k", "Navigate to window up")
-Map("n", "<C-l>", "<C-w>l", "Navigate to window right")
+key.map("n", "<C-h>", "<C-w>h", "Navigate to window left")
+key.map("n", "<C-j>", "<C-w>j", "Navigate to window down")
+key.map("n", "<C-k>", "<C-w>k", "Navigate to window up")
+key.map("n", "<C-l>", "<C-w>l", "Navigate to window right")
 
 -- <C-l> replacement
-Map("n", "<leader>l", "<Cmd>normal! <C-l><CR>", "Default action of <C-l>")
+key.map("n", "<leader>l", "<Cmd>normal! <C-l><CR>", "Default action of <C-l>")
 
 -- Window resizing
-Map("n", "<M-h>", "<Cmd>vertical resize -2<CR>", "Resize window left")
-Map("n", "<M-j>", "<Cmd>resize +2<CR>", "Resize window down")
-Map("n", "<M-k>", "<Cmd>resize -2<CR>", "Resize window up")
-Map("n", "<M-l>", "<Cmd>vertical resize +2<CR>", "Resize window right")
-
--- Git show
-Map("n", "<leader>gs", GitShow, "Open new tab and run `git show <ref>`")
+key.map("n", "<M-h>", "<Cmd>vertical resize -2<CR>", "Resize window left")
+key.map("n", "<M-j>", "<Cmd>resize +2<CR>", "Resize window down")
+key.map("n", "<M-k>", "<Cmd>resize -2<CR>", "Resize window up")
+key.map("n", "<M-l>", "<Cmd>vertical resize +2<CR>", "Resize window right")
 
 -- Tabs
-Map("n", "<C-t>", "<Cmd>tabe<CR>", "New tab")
-Map("n", "<BS>", "<Cmd>tabc<CR>", "Close tab")
+key.map("n", "<C-t>", "<Cmd>tabe<CR>", "New tab")
+key.map("n", "<leader><BS>", "<Cmd>tabc<CR>", "Close tab")
 
 -- Copy current file path to clipboard
-Map("n", "<leader>%", "<Cmd>let @+=@%<CR>", "Copy current file path to clipboard")
+key.map("n", "<leader>%", "<Cmd>let @+=@%<CR>", "Copy current file path to clipboard")
 
 -- Minify JSON
-Map("n", "<leader>j", "<Cmd>%!jq -c<CR>", "Minify JSON")
+key.map("n", "<leader>j", "<Cmd>%!jq -c<CR>", "Minify JSON")
 
 -- Quickfix navigation
-Map("n", "<C-n>", "<Cmd>cnext | norm zz<CR>", "Next quickfix item")
-Map("n", "<C-p>", "<Cmd>cprev | norm zz<CR>", "Previous quickfix item")
-
--- Toggle relativenumber
-Map("n", "<leader>n", "<Cmd>set relativenumber!<CR>", "Toggle relativenumber")
-
--- Toggle hlsearch
-Map("n", "<leader>h", "<Cmd>set hlsearch!<CR>", "Toggle hlsearch")
-
--- Toggle word wrap
-Map("n", "<leader>w", "<Cmd>set wrap!<CR>", "Toggle word wrap")
-
--- Toggle spell
-Map("n", "<leader>z", "<Cmd>set spell!<CR>", "Toggle spell")
-
--- View messages
-Map("n", "<leader>m", "<Cmd>messages<CR>", "View messages")
+key.map("n", "<C-n>", "<Cmd>cnext | norm zz<CR>", "Next quickfix item")
+key.map("n", "<C-p>", "<Cmd>cprev | norm zz<CR>", "Previous quickfix item")
 
 -- Go to definition
-Map("n", "gd", vim.lsp.buf.definition, "Go to definition")
+key.map("n", "gd", vim.lsp.buf.definition, "Go to definition")
 
 -- Remove unused imports
-Map("n", "<leader>o", RemoveUnusedImports, "Organize imports")
+key.map("n", "<leader>o", lsp.removeUnusedImports, "Organize imports")
 
 -- Add diagnostics to quickfix
-Map("n", "<leader>d", vim.diagnostic.setqflist, "Add diagnostics to quickfix")
+key.map("n", "<leader>d", vim.diagnostic.setqflist, "Add diagnostics to quickfix")
 
 -- Terminal mode
-Map("t", "<Esc>", "<C-\\><C-n>", "Exit terminal-mode")
+key.map("t", "<Esc>", "<C-\\><C-n>", "Exit terminal-mode")
 
 -- Command mode
-Map("c", "<C-j>", "<C-n>", "Next list item")
-Map("c", "<C-k>", "<C-p>", "Previous list item")
+key.map("c", "<C-j>", "<C-n>", "Next list item")
+key.map("c", "<C-k>", "<C-p>", "Previous list item")

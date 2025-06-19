@@ -20,6 +20,7 @@
 - neovim >= 0.10
 - oh-my-zsh
 - ripgrep
+- rlwrap
 - starship
 - tree-sitter
 - zig

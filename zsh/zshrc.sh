@@ -100,3 +100,14 @@ function notes() {
 function create_sessions() {
   sh ~/.config/tmux/create_sessions.sh
 }
+
+# java utils
+function jutil() {
+  cmds=~/.config/zsh/java/cmds.json
+  selection=$(cat "$cmds" | jq -r 'keys | .[]' | fzf)
+
+  if [ ! -z "$selection" ]; then
+    cmd=$(cat "$cmds" | jq -r ".\"${selection}\"")
+    print -z "$cmd"
+  fi
+}
