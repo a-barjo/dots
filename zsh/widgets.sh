@@ -8,7 +8,7 @@ function _find() {
 
 # go to location
 function _goto() {
-  cd "$(cat ~/locations.txt | fzf)"
+  cd "$(cat "$HOME/locations.txt" | fzf)"
   zle reset-prompt
 }
 
@@ -25,7 +25,19 @@ function _open() {
   zle reset-prompt
 }
 
+# bookmarks
+function _bookmarks() {
+  wl-copy <<< $( \
+    echo -en "$( \
+      jq -r 'tostream | select(length == 2) as $s | $s.[1] + "	" + "\\033[36m" + ($s.[0] | join(" | ")) + ": " + "\\033[33m" + $s.[1] + "\\033[0m"' \
+      < "$HOME/bookmarks.json" \
+    )" | fzf --ansi --delimiter="\t" --with-nth=2.. --accept-nth=1
+  )
+  zle reset-prompt
+}
+
 zle -N _find && bindkey "^[f" _find
+zle -N _bookmarks && bindkey "^[j" _bookmarks
 zle -N _goto && bindkey "^[k" _goto
 zle -N _ls && bindkey "^[l" _ls
-zle -N _open && bindkey "^O" _open
+zle -N _open && bindkey "^[o" _open
