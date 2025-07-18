@@ -19,7 +19,7 @@ vim.opt.ignorecase = true
 
 -- List chars
 vim.opt.list = true
-vim.opt.listchars:append({ nbsp = "•" })
+vim.opt.listchars:append({ tab = "  " })
 
 -- Tab width
 vim.opt.tabstop = 2
@@ -40,6 +40,9 @@ vim.opt.clipboard = "unnamedplus"
 
 -- Word wrap
 vim.opt.wrap = false
+
+-- Line break
+vim.opt.linebreak = true
 
 -- Winborder
 vim.opt.winborder = border

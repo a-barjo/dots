@@ -104,10 +104,10 @@ function create_sessions() {
 # java utils
 function jutil() {
   cmds=~/.config/zsh/java/cmds.json
-  selection=$(cat "$cmds" | jq -r 'keys | .[]' | fzf)
+  selection=$(jq -r 'keys | .[]' < "$cmds" | fzf)
 
   if [ ! -z "$selection" ]; then
-    cmd=$(cat "$cmds" | jq -r ".\"${selection}\"")
+    cmd=$(jq -r ".\"${selection}\"" < "$cmds")
     print -z "$cmd"
   fi
 }
