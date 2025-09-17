@@ -5,7 +5,7 @@ return {
   },
   lazy = false,
   keys = {
-    { "<leader>/", "<Cmd>FzfLua live_grep_glob<CR>", desc = "Live grep" },
+    { "<leader>/", "<Cmd>FzfLua live_grep<CR>", desc = "Live grep" },
     { "<leader>:", "<Cmd>FzfLua commands<CR>", desc = "Search commands" },
     { "<leader><Tab>", "<Cmd>FzfLua tabs<CR>", desc = "Search tabs" },
     { "<leader><leader>", "<Cmd>FzfLua files<CR>", desc = "Search find files" },
