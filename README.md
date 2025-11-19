@@ -3,7 +3,6 @@
 - openSUSE Tumbleweed
 - GNOME
 - ghostty
-- zsh
 - tmux
 - neovim
 
@@ -11,17 +10,9 @@
 
 ## Prerequisites
 
-- bat
-- eza
 - fd
 - fzf
-- git-delta
-- jq
-- neovim >= 0.10
-- oh-my-zsh
-- ripgrep
-- rlwrap
+- neovim >= 0.11
 - starship
 - tree-sitter
 - zig
-- zsh-syntax-highlighting

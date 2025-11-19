@@ -1,6 +1,5 @@
 return {
   "sindrets/diffview.nvim",
-  cmd = "DiffviewOpen",
   keys = {
     {
       "<leader>gdd",
@@ -22,5 +21,8 @@ return {
       "<Cmd>DiffviewFileHistory %<CR>",
       desc = "Open Diffview file history",
     },
+  },
+  opts = {
+    use_icons = false,
   },
 }

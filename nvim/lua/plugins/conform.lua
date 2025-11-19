@@ -1,22 +1,7 @@
 return {
   "stevearc/conform.nvim",
-  cmd = "ConformInfo",
-  keys = {
-    {
-      mode = { "n", "v" },
-      "<F3>",
-      function()
-        if lsp.isActiveInBuf("jdtls") then
-          vim.cmd("w | !./gradlew spotlessApply")
-          return
-        end
-        lsp.organizeImports()
-        require("conform").format({ lsp_fallback = true })
-      end,
-      desc = "Format",
-    },
-  },
   opts = {
+    default_format_opts = { lsp_format = "fallback" },
     formatters_by_ft = {
       bash = { "beautysh" },
       css = { "prettierd" },
@@ -35,14 +20,6 @@ return {
       typescriptreact = { "prettierd" },
       yaml = { "prettierd" },
       zsh = { "beautysh" },
-    },
-    formatters = {
-      beautysh = {
-        prepend_args = { "-i", "2", "-s", "fnpar" },
-      },
-      sql_formatter = {
-        prepend_args = { "-c", vim.fn.stdpath("config") .. "/lua/plugins/conform/sql/config.json" },
-      },
     },
   },
 }

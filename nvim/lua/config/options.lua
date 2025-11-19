@@ -1,48 +1,19 @@
--- Undo dir
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
--- Grep
-vim.opt.grepprg = "rg -i --vimgrep"
-
--- Line numbers
-vim.opt.number = true
-
--- Cursor line highlight
-vim.opt.cursorline = true
-vim.opt.cursorlineopt = { "number" }
-
--- Search
-vim.opt.hlsearch = false
-vim.opt.smartcase = true
-vim.opt.ignorecase = true
-
--- List chars
-vim.opt.list = true
-vim.opt.listchars:append({ tab = "  " })
-
--- Tab width
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-
--- Splits
-vim.opt.splitright = true
-
--- Keep the sign column open
-vim.opt.signcolumn = "yes"
-
--- Minimum number of lines always above/below the cursor
-vim.opt.scrolloff = 4
-
--- Share yank/paste with system clipboard
 vim.opt.clipboard = "unnamedplus"
-
--- Word wrap
+vim.opt.expandtab = true
+vim.opt.hlsearch = false
+vim.opt.ignorecase = true
+vim.opt.linebreak = true
+vim.opt.number = true
+vim.opt.shiftwidth = 2
+vim.opt.signcolumn = "yes"
+vim.opt.smartcase = true
+vim.opt.swapfile = false
+vim.opt.tabstop = 2
+vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
+vim.opt.undofile = true
+vim.opt.winborder = "rounded"
 vim.opt.wrap = false
 
--- Line break
-vim.opt.linebreak = true
-
--- Winborder
-vim.opt.winborder = border
+vim.keymap.set("n", "-", "<Cmd>Ex<CR>", { desc = "Open netrw" })
+vim.keymap.set("n", "=", require("conform").format, { desc = "Format" })
+vim.keymap.set("n", "<leader><leader>", "<Cmd>FZF<CR>", { desc = "FZF" })
