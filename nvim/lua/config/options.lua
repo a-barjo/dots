@@ -1,5 +1,8 @@
 vim.opt.clipboard = "unnamedplus"
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = { "number" }
 vim.opt.expandtab = true
+vim.opt.grepprg = "rg --vimgrep"
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.linebreak = true
@@ -16,4 +19,8 @@ vim.opt.wrap = false
 
 vim.keymap.set("n", "-", "<Cmd>Ex<CR>", { desc = "Open netrw" })
 vim.keymap.set("n", "=", require("conform").format, { desc = "Format" })
+vim.keymap.set("n", "<C-n>", "<Cmd>cnext | norm zz<CR>", { desc = "Next quickfix item" })
+vim.keymap.set("n", "<C-p>", "<Cmd>cprev | norm zz<CR>", { desc = "Previous quickfix item" })
+vim.keymap.set("n", "<C-t>", "<Cmd>tabe<CR>", { desc = "New tab" })
+vim.keymap.set("n", "<leader><BS>", "<Cmd>tabc<CR>", { desc = "Close tab" })
 vim.keymap.set("n", "<leader><leader>", "<Cmd>FZF<CR>", { desc = "FZF" })

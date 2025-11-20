@@ -1,8 +1,11 @@
 *
 !ghostty
+!ghostty/**
 !nvim
+!nvim/**
 nvim/spell/**
 !tmux
+!tmux/**
 !.bashrc
 !.gitignore
 !README.md
