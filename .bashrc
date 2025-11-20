@@ -4,6 +4,7 @@ eval "$(starship init bash)"
 alias gc='git checkout $(git branch | fzf)'
 alias gcr='git checkout $(git branch -r | fzf)'
 
+export EDITOR='nvim'
 export JAVA_HOME='/usr/lib64/jvm/java-17-openjdk-17'
 export JRE_HOME='/usr/lib64/jvm/jre-17'
 export TMUX_TMPDIR='/tmp'
