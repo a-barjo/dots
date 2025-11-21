@@ -10,7 +10,6 @@ vim.opt.number = true
 vim.opt.shiftwidth = 2
 vim.opt.signcolumn = "yes"
 vim.opt.smartcase = true
-vim.opt.swapfile = false
 vim.opt.tabstop = 2
 vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
 vim.opt.undofile = true

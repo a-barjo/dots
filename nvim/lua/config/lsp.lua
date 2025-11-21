@@ -13,7 +13,7 @@ vim.lsp.enable({
   "ts_ls",
 })
 
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Open netrw" })
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
 vim.lsp.config["cssls"] = {
   settings = {

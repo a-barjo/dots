@@ -1,7 +1,7 @@
 background = #181a29
 cursor-color = #ffffff
 cursor-text = #000000
-font-size = 20
+font-size = 18
 macos-option-as-alt = true
 mouse-hide-while-typing = true
 theme = Dracula

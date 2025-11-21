@@ -19,6 +19,5 @@ return {
         return vim.api.nvim_buf_line_count(bufnr) > 8000
       end,
     },
-    indent = { enable = true },
   },
 }

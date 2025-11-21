@@ -22,7 +22,5 @@ return {
       desc = "Open Diffview file history",
     },
   },
-  opts = {
-    use_icons = false,
-  },
+  opts = { use_icons = false },
 }

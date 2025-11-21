@@ -41,6 +41,10 @@ return {
       hl.set("CmpItemAbbrMatch", { fg = hl.get("DraculaCyan").fg, bold = true })
       hl.set("CmpItemAbbrMatchFuzzy", { fg = hl.get("DraculaYellow").fg })
       hl.set("CursorLineNr", { fg = hl.get("DraculaYellow").fg, bg = LightBg })
+      hl.set("DiffAdd", { bg = DiffAdd })
+      hl.set("DiffChange", { bg = DiffChange })
+      hl.set("DiffDelete", { fg = DiffChangeLight })
+      hl.set("DiffText", { bg = DiffChangeLight })
       hl.set("DiffviewFilePanelSelected", { fg = hl.get("DraculaYellow").fg, bold = true })
       hl.set("DiffviewFolderSign", { link = "DiffviewFolderName" })
       hl.set("DiffviewNormal", { bg = DarkBg })
@@ -70,10 +74,6 @@ return {
       hl.set("Visual", { bg = hl.get("DraculaBgLight").bg })
       hl.set("WarningMsg", { link = "@markup.heading" })
       hl.set("WinSeparator", { fg = hl.get("DraculaBgLight").bg, bg = LightBg })
-      hl.set("DiffAdd", { bg = DiffAdd })
-      hl.set("DiffChange", { bg = DiffChange })
-      hl.set("DiffDelete", { fg = DiffChangeLight })
-      hl.set("DiffText", { bg = DiffChangeLight })
     end
 
     vim.api.nvim_create_autocmd("ColorScheme", {

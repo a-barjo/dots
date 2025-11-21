@@ -8,6 +8,11 @@ return {
       desc = "Search files",
     },
     {
+      "<leader>/",
+      "<Cmd>RG<CR>",
+      desc = "Search with ripgrep",
+    },
+    {
       "<leader>sp",
       "<Cmd>Buffers<CR>",
       desc = "Search buffers",
@@ -16,6 +21,11 @@ return {
       "<leader>so",
       "<Cmd>History<CR>",
       desc = "Search oldfiles",
+    },
+    {
+      "<leader>sh",
+      "<Cmd>History/<CR>",
+      desc = "Search history",
     },
     {
       "<leader>sf",
