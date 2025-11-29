@@ -2,6 +2,7 @@ vim.lsp.enable({
   "bashls",
   "cssls",
   "emmet_language_server",
+  "eslint",
   "gradle_ls",
   "html",
   "jdtls",
@@ -12,8 +13,6 @@ vim.lsp.enable({
   "terraformls",
   "ts_ls",
 })
-
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
 vim.lsp.config["cssls"] = {
   settings = {
