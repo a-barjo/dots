@@ -1,4 +1,5 @@
 vim.opt.clipboard = "unnamedplus"
+vim.opt.completeopt = "menuone,noinsert,popup"
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = { "number" }
 vim.opt.expandtab = true
