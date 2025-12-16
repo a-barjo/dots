@@ -16,7 +16,7 @@ return {
     vim.g.dracula_strikethrough = true
     vim.g.dracula_undercurl = true
 
-    function DraculaCustomisation()
+    local function draculaCustomisation()
       local DarkBg = "#121424"
       local LightBg = "#1e2033"
       local DiffAdd = "#1b3536"
@@ -54,12 +54,13 @@ return {
       set("Visual", { bg = get("DraculaBgLight").bg })
       set("WarningMsg", { link = "@markup.heading" })
       set("WinSeparator", { fg = get("DraculaBgLight").bg, bg = LightBg })
+      set("netrwMarkFile", { fg = get("DraculaYellow").fg, bg = LightBg, bold = true })
     end
 
     vim.api.nvim_create_autocmd("ColorScheme", {
       callback = function(args)
         if args.match == "dracula" then
-          DraculaCustomisation()
+          draculaCustomisation()
         end
       end,
     })

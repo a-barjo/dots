@@ -3,6 +3,7 @@ vim.lsp.enable({
   "cssls",
   "emmet_language_server",
   "eslint",
+  "gopls",
   "gradle_ls",
   "html",
   "jdtls",

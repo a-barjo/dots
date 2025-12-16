@@ -1,5 +1,5 @@
 vim.opt.clipboard = "unnamedplus"
-vim.opt.completeopt = "menuone,noinsert,popup"
+vim.opt.completeopt = "fuzzy,menuone,noinsert,popup"
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = { "number" }
 vim.opt.expandtab = true
@@ -22,11 +22,11 @@ vim.keymap.set("n", "<C-n>", "<Cmd>cnext | norm zz<CR>", { desc = "Next quickfix
 vim.keymap.set("n", "<C-p>", "<Cmd>cprev | norm zz<CR>", { desc = "Previous quickfix item" })
 vim.keymap.set("n", "<leader><BS>", "<Cmd>tabc<CR>", { desc = "Close tab" })
 vim.keymap.set("n", "<leader><leader>", "<Cmd>FZF<CR>", { desc = "Search files" })
+vim.keymap.set("n", "<leader>gb", require("gitsigns").blame_line, { desc = "Show blame" })
 vim.keymap.set("n", "<leader>gd%", "<Cmd>DiffviewFileHistory %<CR>", { desc = "Open Diffview file history" })
 vim.keymap.set("n", "<leader>gdd", "<Cmd>DiffviewOpen<CR>", { desc = "Open Diffview" })
 vim.keymap.set("n", "<leader>gdl", "<Cmd>DiffviewFileHistory .<CR>", { desc = "Open Diffview git log" })
 vim.keymap.set("n", "<leader>gdm", "<Cmd>DiffviewOpen main..HEAD<CR>", { desc = "Open Diffview compare to main" })
-vim.keymap.set("n", "<leader>ghb", require("gitsigns").blame_line, { desc = "Show blame" })
 vim.keymap.set("n", "<leader>ghr", require("gitsigns").reset_hunk, { desc = "Reset hunk" })
 vim.keymap.set("n", "<leader>gr", require("gitsigns").reset_buffer, { desc = "Reset buffer" })
 vim.keymap.set("n", "=", require("conform").format, { desc = "Format" })

@@ -15,7 +15,7 @@ return {
     },
     highlight = {
       enable = true,
-      disable = function(_, bufnr) -- Disable in files with more than 8K lines
+      disable = function(_, bufnr)
         return vim.api.nvim_buf_line_count(bufnr) > 8000
       end,
     },
