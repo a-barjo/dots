@@ -33,3 +33,5 @@ vim.keymap.set("n", "=", require("conform").format, { desc = "Format" })
 vim.keymap.set("n", "[c", require("gitsigns").prev_hunk, { desc = "Prev hunk" })
 vim.keymap.set("n", "]c", require("gitsigns").next_hunk, { desc = "Next hunk" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+
+vim.filetype.add({ pattern = { ["%.env.*"] = "confini" } })
