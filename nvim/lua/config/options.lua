@@ -17,9 +17,14 @@ vim.opt.undofile = true
 vim.opt.winborder = "rounded"
 vim.opt.wrap = false
 
+function copyPath()
+  vim.cmd.let("@+=@%")
+end
+
 vim.keymap.set("n", "-", "<Cmd>Ex<CR>", { desc = "Open netrw" })
 vim.keymap.set("n", "<C-n>", "<Cmd>cnext | norm zz<CR>", { desc = "Next quickfix item" })
 vim.keymap.set("n", "<C-p>", "<Cmd>cprev | norm zz<CR>", { desc = "Previous quickfix item" })
+vim.keymap.set("n", "<leader>%", copyPath, { desc = "Copy file path to clipboard" })
 vim.keymap.set("n", "<leader><BS>", "<Cmd>tabc<CR>", { desc = "Close tab" })
 vim.keymap.set("n", "<leader><leader>", "<Cmd>FZF<CR>", { desc = "Search files" })
 vim.keymap.set("n", "<leader>gb", require("gitsigns").blame_line, { desc = "Show blame" })
