@@ -1,7 +1,12 @@
 background = #181a29
 cursor-color = #ffffff
 cursor-text = #000000
-font-size = 16
+font-family = Roboto Mono
+font-size = 14
+font-style = Medium
+font-style-bold = Bold
+font-style-bold-italic = Bold Italic
+font-style-italic = Medium Italic
 macos-option-as-alt = true
 mouse-hide-while-typing = true
 theme = Dracula
