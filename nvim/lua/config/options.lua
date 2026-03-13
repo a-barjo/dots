@@ -3,7 +3,7 @@ vim.g.omni_sql_no_default_maps = 1
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = "fuzzy,menuone,noinsert,popup"
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = { "number" }
+vim.opt.cursorlineopt = { "both" }
 vim.opt.expandtab = true
 vim.opt.grepprg = "rg --vimgrep"
 vim.opt.hlsearch = false
@@ -26,7 +26,7 @@ end
 vim.keymap.set("n", "-", "<Cmd>Ex<CR>", { desc = "Open netrw" })
 vim.keymap.set("n", "<C-n>", "<Cmd>cnext | norm zz<CR>", { desc = "Next quickfix item" })
 vim.keymap.set("n", "<C-p>", "<Cmd>cprev | norm zz<CR>", { desc = "Previous quickfix item" })
-vim.keymap.set("n", "<C-t>", "<Cmd>tabe<CR>", { desc = "Edit new tab" })
+vim.keymap.set("n", "<C-t>", "<Cmd>tabe<CR>", { desc = "Create new tab" })
 vim.keymap.set("n", "<leader>%", copyPath, { desc = "Copy file path to clipboard" })
 vim.keymap.set("n", "<leader><BS>", "<Cmd>tabc<CR>", { desc = "Close tab" })
 vim.keymap.set("n", "<leader><leader>", "<Cmd>FZF<CR>", { desc = "Search files" })

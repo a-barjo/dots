@@ -23,7 +23,8 @@ return {
       local DiffChange = "#22263f"
       local DiffChangeLight = "#3f4674"
 
-      set("CursorLineNr", { fg = get("DraculaYellow").fg, bg = LightBg })
+      set("CursorLine", { bg = LightBg })
+      set("CursorLineNr", { fg = get("DraculaYellow").fg, bg = LightBg, bold = true })
       set("DiffAdd", { bg = DiffAdd })
       set("DiffChange", { bg = DiffChange })
       set("DiffDelete", { fg = DiffChangeLight })
