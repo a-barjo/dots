@@ -1,7 +1,9 @@
+vim.g.mapleader = " "
+
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = "fuzzy,menuone,noinsert,popup"
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = { "both" }
+vim.opt.cursorlineopt = { "number" }
 vim.opt.expandtab = true
 vim.opt.grepprg = "rg --vimgrep"
 vim.opt.hlsearch = false
@@ -17,8 +19,6 @@ vim.opt.undofile = true
 vim.opt.winborder = "rounded"
 vim.opt.wrap = false
 
-vim.g.omni_sql_no_default_maps = 1
-
 local function copyPath()
   vim.cmd.let("@+=@%")
 end
@@ -29,19 +29,24 @@ vim.keymap.set("n", "<C-p>", "<Cmd>cprev | norm zz<CR>", { desc = "Previous quic
 vim.keymap.set("n", "<C-t>", "<Cmd>tabe<CR>", { desc = "Create new tab" })
 vim.keymap.set("n", "<leader>%", copyPath, { desc = "Copy file path to clipboard" })
 vim.keymap.set("n", "<leader><BS>", "<Cmd>tabc<CR>", { desc = "Close tab" })
-vim.keymap.set("n", "<leader><leader>", "<Cmd>FZF<CR>", { desc = "Search files" })
-vim.keymap.set("n", "<leader>gb", require("gitsigns").blame_line, { desc = "Show blame" })
 vim.keymap.set("n", "<leader>gd%", "<Cmd>DiffviewFileHistory %<CR>", { desc = "Open Diffview file history" })
 vim.keymap.set("n", "<leader>gdd", "<Cmd>DiffviewOpen<CR>", { desc = "Open Diffview" })
 vim.keymap.set("n", "<leader>gdl", "<Cmd>DiffviewFileHistory .<CR>", { desc = "Open Diffview git log" })
 vim.keymap.set("n", "<leader>gdm", "<Cmd>DiffviewOpen main..HEAD<CR>", { desc = "Open Diffview compare to main" })
-vim.keymap.set("n", "<leader>ghr", require("gitsigns").reset_hunk, { desc = "Reset hunk" })
-vim.keymap.set("n", "<leader>gr", require("gitsigns").reset_buffer, { desc = "Reset buffer" })
-vim.keymap.set("n", "=", require("conform").format, { desc = "Format" })
-vim.keymap.set("n", "[c", require("gitsigns").prev_hunk, { desc = "Prev hunk" })
-vim.keymap.set("n", "]c", require("gitsigns").next_hunk, { desc = "Next hunk" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n><C-w>h", { desc = "Exit terminal mode" })
 
 vim.filetype.add({ pattern = { [".*%.env.*"] = "confini" } })
 vim.filetype.add({ pattern = { [".*%.kbd"] = "config" } })
+
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = "Red" })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { undercurl = true, sp = "Yellow" })
+vim.api.nvim_set_hl(0, "DiffAdd", { bg = "NvimDarkGray3" })
+vim.api.nvim_set_hl(0, "DiffChange", { bg = "NvimDarkGray3" })
+vim.api.nvim_set_hl(0, "DiffDelete", { fg = "NvimDarkGray4" })
+vim.api.nvim_set_hl(0, "DiffText", { bg = "NvimDarkGray4" })
+vim.api.nvim_set_hl(0, "FloatBorder", { fg = "NvimDarkGrey4" })
+vim.api.nvim_set_hl(0, "NormalFloat", {})
+vim.api.nvim_set_hl(0, "netrwMarkFile", { fg = "Yellow", bg = "NvimDarkGray3", bold = true })
+
+vim.g.omni_sql_no_default_maps = 1
