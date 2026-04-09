@@ -1,5 +1,3 @@
-vim.g.omni_sql_no_default_maps = 1
-
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = "fuzzy,menuone,noinsert,popup"
 vim.opt.cursorline = true
@@ -18,6 +16,8 @@ vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
 vim.opt.undofile = true
 vim.opt.winborder = "rounded"
 vim.opt.wrap = false
+
+vim.g.omni_sql_no_default_maps = 1
 
 local function copyPath()
   vim.cmd.let("@+=@%")
@@ -41,5 +41,7 @@ vim.keymap.set("n", "=", require("conform").format, { desc = "Format" })
 vim.keymap.set("n", "[c", require("gitsigns").prev_hunk, { desc = "Prev hunk" })
 vim.keymap.set("n", "]c", require("gitsigns").next_hunk, { desc = "Next hunk" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n><C-w>h", { desc = "Exit terminal mode" })
 
-vim.filetype.add({ pattern = { ["%.env.*"] = "confini" } })
+vim.filetype.add({ pattern = { [".*%.env.*"] = "confini" } })
+vim.filetype.add({ pattern = { [".*%.kbd"] = "config" } })
