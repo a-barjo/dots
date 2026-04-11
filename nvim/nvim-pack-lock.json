@@ -16,13 +16,13 @@
       "rev": "8d82c240f190fc33723d48c308ccc1ed8baad69d",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "jellybeans.vim": {
+      "rev": "ef83bf4dc8b3eacffc97bf5c96ab2581b415c9fa",
+      "src": "https://github.com/nanotech/jellybeans.vim"
+    },
     "mason.nvim": {
       "rev": "b03fb0f20bc1d43daf558cda981a2be22e73ac42",
       "src": "https://github.com/mason-org/mason.nvim"
-    },
-    "mini.hues": {
-      "rev": "943c966c5c165f4401164d72a6a221197fe124a4",
-      "src": "https://github.com/nvim-mini/mini.hues"
     },
     "nvim-lint": {
       "rev": "eab58b48eb11d7745c11c505e0f3057165902461",

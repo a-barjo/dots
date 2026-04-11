@@ -6,16 +6,16 @@ export JAVA_HOME='/usr/lib64/jvm/java-17-openjdk-17'
 export JRE_HOME='/usr/lib64/jvm/jre-17'
 export TMUX_TMPDIR='/tmp'
 
-export PATH="
-  $PATH:/usr/local/go/bin:\
-  $HOME/.npm-global/bin:\
-  $HOME/.cargo/bin:\
-  $HOME/.local/bin:\
-  $HOME/.local/share/nvim/mason/bin:\
-  $JAVA_HOME/bin"
+export PATH="$PATH\
+:/usr/local/go/bin\
+:$HOME/.npm-global/bin\
+:$HOME/.cargo/bin\
+:$HOME/.local/bin\
+:$HOME/.local/share/nvim/mason/bin\
+:$HOME/.opencode/bin\
+:$JAVA_HOME/bin"
 
 . "$HOME/.cargo/env"
 
 eval "$(tv init bash)"
 eval "$(starship init bash)"
-

@@ -1,2 +1,5 @@
 [ui.preview_panel]
 hidden = true
+
+[ui.theme_overrides]
+selection_bg = "#222222"
