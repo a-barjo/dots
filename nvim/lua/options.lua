@@ -38,15 +38,6 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n><C-w>h", { desc = "Exit terminal mode" 
 
 vim.filetype.add({ pattern = { [".*%.env.*"] = "confini" } })
 vim.filetype.add({ pattern = { [".*%.kbd"] = "config" } })
-
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = "Red" })
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { undercurl = true, sp = "Yellow" })
-vim.api.nvim_set_hl(0, "DiffAdd", { bg = "NvimDarkGray3" })
-vim.api.nvim_set_hl(0, "DiffChange", { bg = "NvimDarkGray3" })
-vim.api.nvim_set_hl(0, "DiffDelete", { fg = "NvimDarkGray4" })
-vim.api.nvim_set_hl(0, "DiffText", { bg = "NvimDarkGray4" })
-vim.api.nvim_set_hl(0, "FloatBorder", { fg = "NvimDarkGrey4" })
-vim.api.nvim_set_hl(0, "NormalFloat", {})
-vim.api.nvim_set_hl(0, "netrwMarkFile", { fg = "Yellow", bg = "NvimDarkGray3", bold = true })
+vim.filetype.add({ filetype = { [".zshrc"] = "bash" } })
 
 vim.g.omni_sql_no_default_maps = 1
