@@ -10,9 +10,10 @@
 
 ## Prerequisites
 
+- fd
+- fzf
 - neovim >= 0.11
 - ripgrep
 - starship
 - tree-sitter
-- tv
 - zig

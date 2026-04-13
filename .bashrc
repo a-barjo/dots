@@ -1,7 +1,8 @@
-alias gc='git checkout $(git branch | tv)'
-alias gcr='git checkout $(git branch -r | tv)'
+alias gs='git switch $(git branch | fzf)'
+alias gsr='git switch --detach $(git branch -r | fzf)'
 
 export EDITOR='nvim'
+export FZF_DEFAULT_COMMAND='fd --follow --hidden --strip-cwd-prefix --exclude .git'
 export JAVA_HOME='/usr/lib64/jvm/java-17-openjdk-17'
 export JRE_HOME='/usr/lib64/jvm/jre-17'
 export TMUX_TMPDIR='/tmp'
@@ -17,5 +18,5 @@ export PATH="$PATH\
 
 . "$HOME/.cargo/env"
 
-eval "$(tv init bash)"
+eval "$(fzf --bash)"
 eval "$(starship init bash)"

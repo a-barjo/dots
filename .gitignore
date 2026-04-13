@@ -9,7 +9,5 @@
 !screen.png
 !tmux
 !tmux/**
-!television
-!television/**
 !wall.jpeg
 nvim/spell/**

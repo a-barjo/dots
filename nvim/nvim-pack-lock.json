@@ -12,6 +12,10 @@
       "rev": "889e2e96edef4e144965571d46f7a77bcc4d0ddf",
       "src": "https://github.com/j-hui/fidget.nvim"
     },
+    "fzf": {
+      "rev": "06e70570e2088605d61f18b127356e5680f7f599",
+      "src": "https://github.com/junegunn/fzf"
+    },
     "gitsigns.nvim": {
       "rev": "8d82c240f190fc33723d48c308ccc1ed8baad69d",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
@@ -35,10 +39,6 @@
     "nvim-treesitter": {
       "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
-    },
-    "tv.nvim": {
-      "rev": "c0603ca8f31299c83deaa9a24a63d67116db25cd",
-      "src": "https://github.com/alexpasmantier/tv.nvim"
     }
   }
 }
