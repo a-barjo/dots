@@ -4,8 +4,8 @@ vim.cmd.colorscheme("jellybeans")
 
 local c = {
   "#0c0c12",
-  "#17161f",
-  "#262333",
+  "#201e2b",
+  "#3a364d",
   "#5c587d",
 }
 
