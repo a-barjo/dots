@@ -3,7 +3,7 @@ vim.pack.add({ "https://github.com/nanotech/jellybeans.vim" })
 vim.cmd.colorscheme("jellybeans")
 
 local c = {
-  "#0c0c12",
+  "#12121a",
   "#201e2b",
   "#3a364d",
   "#5c587d",
