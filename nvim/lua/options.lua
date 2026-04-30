@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.netrw_sizestyle = "H"
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = "fuzzy,menuone,noinsert,popup"
