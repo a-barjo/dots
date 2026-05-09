@@ -1,6 +1,6 @@
-background = #12121a
+background = #101019
 cursor-color = #ffffff
-cursor-text = #000000
+cursor-text = #101019
 font-family = Roboto Mono
 font-size = 14
 font-style = Medium
@@ -10,8 +10,23 @@ font-style-italic = Medium Italic
 foreground = #ffffff
 macos-option-as-alt = true
 mouse-hide-while-typing = true
-palette = 0=#000000
-theme = Jellybeans
 window-decoration = false
 window-padding-x = 10
 window-padding-y = 10
+
+palette = 0=#101019
+palette = 1=#ec8a8a
+palette = 2=#c4d89a
+palette = 3=#e8ce6c
+palette = 4=#ec9e68
+palette = 5=#f0b482
+palette = 6=#f4c89b
+palette = 7=#ffffff
+palette = 8=#1e1e2c
+palette = 9=#f0a0a0
+palette = 10=#d0e4b0
+palette = 11=#ecd882
+palette = 12=#f2c090
+palette = 13=#f6d4a8
+palette = 14=#fae0c0
+palette = 15=#ffe8d2
