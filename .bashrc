@@ -8,10 +8,10 @@ export TMUX_TMPDIR='/tmp'
 
 export FZF_DEFAULT_COMMAND='fd --follow --hidden --strip-cwd-prefix --exclude .git'
 export FZF_DEFAULT_OPTS="\
---color=bg+:#262333,spinner:#ffafaf,hl:#ff8700 \
---color=fg:#dddddd,header:#ffaf5f,info:#ff8700,pointer:#ffafaf \
---color=marker:#ff5f87,fg+:#c6b6ee,prompt:#ff8700,hl+:#ff8700 \
---color=border:#151515 \
+--color=bg+:#2e2e40,spinner:#eca8bc,hl:#ec9e68 \
+--color=fg:#d4d4ea,header:#ec9e68,info:#ec9e68,pointer:#ffe8d2 \
+--color=marker:#eca8bc,fg+:#e8c882,prompt:#ec9e68,hl+:#ec9e68 \
+--color=border:#1e1e2c,gutter:#101019 \
 --multi"
 
 export PATH="$PATH:\
