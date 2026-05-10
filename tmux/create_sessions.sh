@@ -6,3 +6,5 @@ for project_dir in ~/Projects/*; do
     tmux new-session -s "$dir_name" -c "$project_dir" -d
   fi
 done
+
+tmux new-session -s 'other' -c "$HOME"
