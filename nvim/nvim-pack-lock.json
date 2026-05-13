@@ -1,9 +1,5 @@
 {
   "plugins": {
-    "conform.nvim": {
-      "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
-      "src": "https://github.com/stevearc/conform.nvim"
-    },
     "diffview.nvim": {
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "https://github.com/sindrets/diffview.nvim"
@@ -20,17 +16,9 @@
       "rev": "6d808f99bd63303646794406e270bd553ad7792e",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
-    "jellybeans.vim": {
-      "rev": "ef83bf4dc8b3eacffc97bf5c96ab2581b415c9fa",
-      "src": "https://github.com/nanotech/jellybeans.vim"
-    },
     "mason.nvim": {
       "rev": "12ddd182d9efbdc848b540f16484a583d52da0fb",
       "src": "https://github.com/mason-org/mason.nvim"
-    },
-    "nvim-lint": {
-      "rev": "eab58b48eb11d7745c11c505e0f3057165902461",
-      "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
       "rev": "e146efacbafed3789ac568abcc5a981c5decaa58",

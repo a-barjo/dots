@@ -24,6 +24,12 @@ vim.lsp.config["cssls"] = {
   },
 }
 
+vim.lsp.config["eslint"] = {
+  settings = {
+    nodePath = os.getenv("HOME") .. "/.npm-global/lib/node_modules",
+  },
+}
+
 vim.lsp.config["lua_ls"] = {
   settings = {
     Lua = {
