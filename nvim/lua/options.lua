@@ -21,19 +21,7 @@ vim.opt.undofile = true
 vim.opt.winborder = "rounded"
 vim.opt.wrap = false
 
-vim.keymap.set("n", "-", "<Cmd>Ex<CR>", { desc = "Open netrw" })
-vim.keymap.set("n", "<C-n>", "<Cmd>cnext | norm zz<CR>", { desc = "Next quickfix item" })
-vim.keymap.set("n", "<C-p>", "<Cmd>cprev | norm zz<CR>", { desc = "Previous quickfix item" })
-vim.keymap.set("n", "<C-t>", "<Cmd>tabe<CR>", { desc = "Create new tab" })
-vim.keymap.set("n", "<leader>%", "<Cmd>@+=@%<CR>", { desc = "Copy file path to clipboard" })
-vim.keymap.set("n", "<leader><BS>", "<Cmd>tabc<CR>", { desc = "Close tab" })
-vim.keymap.set("n", "<leader>gd%", "<Cmd>DiffviewFileHistory %<CR>", { desc = "Open Diffview file history" })
-vim.keymap.set("n", "<leader>gdd", "<Cmd>DiffviewOpen<CR>", { desc = "Open Diffview" })
-vim.keymap.set("n", "<leader>gdl", "<Cmd>DiffviewFileHistory .<CR>", { desc = "Open Diffview git log" })
-vim.keymap.set("n", "<leader>gdm", "<Cmd>DiffviewOpen main..HEAD<CR>", { desc = "Open Diffview compare to main" })
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-
-function _G.format()
+local function format()
   local path = vim.fn.expand("%:p")
   local cmd = ({
     typescript = { "prettierd", "--stdin-filepath", path },
@@ -55,14 +43,40 @@ function _G.format()
     zsh = { "shfmt" },
   })[vim.bo.filetype]
   if cmd then
-    local r = vim.fn.systemlist(cmd, table.concat(vim.fn.getline(1, "$"), "\n"))
-    if vim.v.shell_error == 0 then
-      vim.api.nvim_buf_set_lines(0, 0, -1, false, r)
-    else
+    local r = vim.fn.systemlist(cmd, vim.fn.getline(1, "$"))
+    if vim.v.shell_error ~= 0 then
       vim.notify(table.concat(r, "\n"), vim.log.levels.ERROR)
+      return
     end
+    vim.api.nvim_buf_set_lines(0, 0, -1, false, r)
   end
 end
 
-vim.api.nvim_create_user_command("Format", _G.format, { desc = "Format buffer" })
-vim.api.nvim_create_autocmd("BufWritePre", { callback = _G.format })
+local function fzf()
+  local tmp = vim.fn.tempname()
+  vim.cmd.term("fzf >" .. tmp)
+  vim.cmd("startinsert")
+  vim.api.nvim_create_autocmd("TermClose", {
+    buffer = vim.api.nvim_get_current_buf(),
+    callback = function()
+      vim.schedule(function()
+        vim.cmd("e " .. vim.fn.fnameescape(vim.fn.trim(vim.fn.readfile(tmp)[1] or "")))
+      end)
+    end,
+  })
+end
+
+vim.keymap.set("n", "-", "<Cmd>Ex<CR>", { desc = "Open netrw" })
+vim.keymap.set("n", "<C-n>", "<Cmd>cnext | norm zz<CR>", { desc = "Next quickfix item" })
+vim.keymap.set("n", "<C-p>", "<Cmd>cprev | norm zz<CR>", { desc = "Previous quickfix item" })
+vim.keymap.set("n", "<C-t>", "<Cmd>tabe<CR>", { desc = "Create new tab" })
+vim.keymap.set("n", "<leader>%", "<Cmd>@+=@%<CR>", { desc = "Copy file path to clipboard" })
+vim.keymap.set("n", "<leader><BS>", "<Cmd>tabc<CR>", { desc = "Close tab" })
+vim.keymap.set("n", "<leader>gd%", "<Cmd>DiffviewFileHistory %<CR>", { desc = "Open Diffview file history" })
+vim.keymap.set("n", "<leader>gdd", "<Cmd>DiffviewOpen<CR>", { desc = "Open Diffview" })
+vim.keymap.set("n", "<leader>gdl", "<Cmd>DiffviewFileHistory .<CR>", { desc = "Open Diffview git log" })
+vim.keymap.set("n", "<leader>gdm", "<Cmd>DiffviewOpen main..HEAD<CR>", { desc = "Open Diffview compare to main" })
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+vim.keymap.set("n", "<leader><leader>", fzf, { desc = "Open fzf" })
+
+vim.api.nvim_create_autocmd("BufWritePre", { callback = format })
