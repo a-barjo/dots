@@ -1,37 +1,52 @@
 local function fzf()
-  local buf = vim.api.nvim_create_buf(false, true)
-  local tmp = vim.fn.tempname()
-  local width = math.floor(vim.o.columns * 0.8)
-  local height = math.floor(vim.o.lines * 0.8)
-  local row = math.floor((vim.o.lines - height) / 2)
-  local col = math.floor((vim.o.columns - width) / 2)
+  local cols, lines = vim.o.columns, vim.o.lines
 
-  local win = vim.api.nvim_open_win(buf, true, {
+  local shadow_buf = vim.api.nvim_create_buf(false, true)
+  vim.bo[shadow_buf].bufhidden = "wipe"
+  local shadow_win = vim.api.nvim_open_win(shadow_buf, false, {
     relative = "editor",
-    width = width,
-    height = height,
-    row = row,
-    col = col,
+    width = cols,
+    height = lines,
+    row = 0,
+    col = 0,
     style = "minimal",
-    border = "rounded",
+    border = "none",
+    zindex = 1,
   })
 
-  vim.fn.termopen("fzf > " .. tmp)
+  vim.wo[shadow_win].winblend = 20
+  vim.wo[shadow_win].winhighlight = "Normal:Shadow"
+
+  local t = vim.fn.tempname()
+  local b = vim.api.nvim_create_buf(false, true)
+  local w = vim.api.nvim_open_win(b, true, {
+    relative = "editor",
+    width = math.floor(cols * 0.5),
+    height = math.floor(lines * 0.5),
+    row = math.floor(lines / 4),
+    col = math.floor(cols / 4),
+    style = "minimal",
+    border = "none",
+    zindex = 2,
+  })
+
+  vim.fn.termopen("fzf > " .. t)
   vim.cmd.startinsert()
 
   vim.api.nvim_create_autocmd("TermClose", {
-    buffer = buf,
+    buffer = b,
     callback = function()
       vim.schedule(function()
-        pcall(vim.api.nvim_win_close, win, true)
-        local result = vim.fn.trim(vim.fn.readfile(tmp)[1] or "")
-        if result ~= "" then
-          vim.cmd("e " .. vim.fn.fnameescape(result))
+        pcall(vim.api.nvim_win_close, w, true)
+        vim.api.nvim_win_close(shadow_win, true)
+        local r = vim.fn.trim(vim.fn.readfile(t)[1] or "")
+        if r ~= "" then
+          vim.cmd("e " .. vim.fn.fnameescape(r))
         end
-        pcall(os.remove, tmp)
+        pcall(os.remove, t)
       end)
     end,
   })
 end
-
+vim.cmd("hi Shadow guibg=#0f0a10")
 vim.api.nvim_create_user_command("Fzf", fzf, {})

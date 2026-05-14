@@ -65,7 +65,7 @@ exe 'hi Error guifg=' . g:AlbaRed . ' guibg=' . g:AlbaBlack
 exe 'hi ErrorMsg guifg=' . g:AlbaRed
 exe 'hi Exception guifg=' . g:AlbaOrange
 exe 'hi Float guifg=' . g:AlbaPink
-exe 'hi FloatBorder guifg=' . g:AlbaGrey5 . ' guibg=' . g:AlbaBlack
+exe 'hi FloatBorder guifg=' . g:AlbaGrey3 . ' guibg=' . g:AlbaBlack
 exe 'hi FloatTitle guifg=' . g:AlbaGrey8 . ' guibg=' . g:AlbaBlack
 exe 'hi FoldColumn guifg=' . g:AlbaGrey6 . ' guibg=' . g:AlbaGrey1
 exe 'hi Folded guifg=' . g:AlbaGrey7 . ' guibg=' . g:AlbaGrey3
@@ -86,7 +86,7 @@ exe 'hi MoreMsg guifg=' . g:AlbaPink
 exe 'hi MsgArea guifg=' . g:AlbaGrey8
 exe 'hi NonText guifg=' . g:AlbaGrey5 . ' gui=italic'
 exe 'hi Normal guifg=' . g:AlbaPeach . ' guibg=' . g:AlbaBlack
-exe 'hi NormalFloat guifg=' . g:AlbaWhite . ' guibg=' . g:AlbaBlack
+exe 'hi NormalFloat guifg=' . g:AlbaWhite . ' guibg=' . g:AlbaGrey1
 exe 'hi Number guifg=' . g:AlbaPink
 exe 'hi Operator guifg=' . g:AlbaOrange
 exe 'hi Pmenu guifg=' . g:AlbaGrey6 . ' guibg=' . g:AlbaGrey1
