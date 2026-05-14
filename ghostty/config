@@ -1,6 +1,12 @@
 background = #0f0a10
 cursor-color = #ffffff
 cursor-text = #101019
+font-family = Roboto Mono
+font-size = 14
+font-style = Medium
+font-style-bold = Bold
+font-style-bold-italic = Bold Italic
+font-style-italic = Medium Italic
 foreground = #ffffff
 macos-option-as-alt = true
 mouse-hide-while-typing = true
