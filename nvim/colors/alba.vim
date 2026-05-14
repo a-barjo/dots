@@ -2,17 +2,17 @@ hi clear
 syntax reset
 let g:colors_name = 'alba'
 
-let g:AlbaBlack = '#100b11'
-let g:AlbaGrey1 = '#1e191f'
-let g:AlbaGrey2 = '#2c272d'
-let g:AlbaGrey3 = '#3a353b'
-let g:AlbaGrey4 = '#4a454b'
-let g:AlbaGrey5 = '#5c575d'
-let g:AlbaGrey6 = '#706b71'
-let g:AlbaGrey7 = '#868187'
-let g:AlbaGrey8 = '#c0bbc1'
+let g:AlbaBlack = '#0f0a10'
+let g:AlbaGrey1 = '#1d181e'
+let g:AlbaGrey2 = '#2d282e'
+let g:AlbaGrey3 = '#3f3a40'
+let g:AlbaGrey4 = '#534e54'
+let g:AlbaGrey5 = '#69646a'
+let g:AlbaGrey6 = '#817c82'
+let g:AlbaGrey7 = '#9b969c'
+let g:AlbaGrey8 = '#b9b4ba'
 let g:AlbaOrange = '#ec9e68'
-let g:AlbaPeach = '#ffe8d2'
+let g:AlbaPeach = '#ffecd8'
 let g:AlbaGold = '#e8c882'
 let g:AlbaSky = '#c4c8f0'
 let g:AlbaPink = '#eca8bc'
@@ -24,6 +24,8 @@ let g:AlbaMagenta = '#cc90c0'
 let g:AlbaCyan = '#88c8be'
 let g:AlbaWhite = '#ffffff'
 
+exe 'hi @type guifg=' . g:AlbaPink
+exe 'hi @type.builtin guifg=' . g:AlbaPink
 exe 'hi @lsp.type.class guifg=' . g:AlbaGold
 exe 'hi @lsp.type.member.typescript guifg=' . g:AlbaPeach
 exe 'hi @lsp.type.property.typescript guifg=' . g:AlbaPeach
@@ -45,7 +47,7 @@ exe 'hi CursorLineNr guifg=' . g:AlbaGrey8 . ' guibg=' . g:AlbaGrey2
 exe 'hi CursorLineSign guifg=' . g:AlbaGrey6 . ' guibg=' . g:AlbaGrey1
 exe 'hi Debug guifg=' . g:AlbaOrange
 exe 'hi Define guifg=' . g:AlbaOrange
-exe 'hi Delimiter guifg=' . g:AlbaPeach
+exe 'hi Delimiter guifg=' . g:AlbaGrey4
 exe 'hi DiagnosticError guifg=' . g:AlbaRed
 exe 'hi DiagnosticHint guifg=' . g:AlbaPink
 exe 'hi DiagnosticInfo guifg=' . g:AlbaSky
