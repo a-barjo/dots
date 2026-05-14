@@ -47,7 +47,7 @@ exe 'hi CursorLineNr guifg=' . g:AlbaGrey8 . ' guibg=' . g:AlbaGrey2
 exe 'hi CursorLineSign guifg=' . g:AlbaGrey6 . ' guibg=' . g:AlbaGrey1
 exe 'hi Debug guifg=' . g:AlbaOrange
 exe 'hi Define guifg=' . g:AlbaOrange
-exe 'hi Delimiter guifg=' . g:AlbaGrey4
+exe 'hi Delimiter guifg=' . g:AlbaGrey6
 exe 'hi DiagnosticError guifg=' . g:AlbaRed
 exe 'hi DiagnosticHint guifg=' . g:AlbaPink
 exe 'hi DiagnosticInfo guifg=' . g:AlbaSky
