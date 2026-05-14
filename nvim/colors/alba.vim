@@ -78,7 +78,7 @@ exe 'hi Identifier guifg=' . g:AlbaPeach
 exe 'hi Ignore guifg=' . g:AlbaGrey6
 exe 'hi Include guifg=' . g:AlbaOrange
 exe 'hi Keyword guifg=' . g:AlbaOrange
-exe 'hi Label guifg=' . g:AlbaOrange
+exe 'hi Label guifg=' . g:AlbaPeach
 exe 'hi LineNr guifg=' . g:AlbaGrey6 . ' guibg=' . g:AlbaGrey1
 exe 'hi Macro guifg=' . g:AlbaOrange
 exe 'hi MatchParen guifg=' . g:AlbaGold
