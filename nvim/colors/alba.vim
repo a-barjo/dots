@@ -3,6 +3,15 @@ syntax reset
 let g:colors_name = 'alba'
 
 let g:AlbaBlack = '#0f0a10'
+let g:AlbaRed = '#ec8a8a'
+let g:AlbaGreen = '#c4d89a'
+let g:AlbaYellow = '#e8ce6c'
+let g:AlbaBlue = '#a0c8e8'
+let g:AlbaMagenta = '#cc90c0'
+let g:AlbaCyan = '#88c8be'
+let g:AlbaWhite = '#ffffff'
+
+let g:AlbaGold = '#e8c882'
 let g:AlbaGrey1 = '#1c151d'
 let g:AlbaGrey2 = '#2e272f'
 let g:AlbaGrey3 = '#403941'
@@ -13,17 +22,7 @@ let g:AlbaGrey7 = '#9c959d'
 let g:AlbaGrey8 = '#ccc5cd'
 let g:AlbaOrange = '#ec9e68'
 let g:AlbaPeach = '#ffecd8'
-let g:AlbaGold = '#e8c882'
-let g:AlbaSky = '#c4c8f0'
-
 let g:AlbaPink = '#eca8bc'
-let g:AlbaRed = '#ec8a8a'
-let g:AlbaGreen = '#c4d89a'
-let g:AlbaYellow = '#e8ce6c'
-let g:AlbaBlue = '#a0c8e8'
-let g:AlbaMagenta = '#cc90c0'
-let g:AlbaCyan = '#88c8be'
-let g:AlbaWhite = '#ffffff'
 
 exe 'hi @type guifg=' . g:AlbaPink
 exe 'hi @type.builtin guifg=' . g:AlbaPink
@@ -48,13 +47,12 @@ exe 'hi CursorLineNr guifg=' . g:AlbaGrey8 . ' guibg=' . g:AlbaGrey2
 exe 'hi CursorLineSign guifg=' . g:AlbaGrey6 . ' guibg=' . g:AlbaGrey1
 exe 'hi Debug guifg=' . g:AlbaOrange
 exe 'hi Define guifg=' . g:AlbaOrange
-exe 'hi Delimiter guifg=' . g:AlbaGrey6
 exe 'hi DiagnosticError guifg=' . g:AlbaRed
 exe 'hi DiagnosticHint guifg=' . g:AlbaPink
-exe 'hi DiagnosticInfo guifg=' . g:AlbaSky
+exe 'hi DiagnosticInfo guifg=' . g:AlbaBlue
 exe 'hi DiagnosticUnderlineError gui=undercurl guisp=' . g:AlbaRed
 exe 'hi DiagnosticUnderlineHint gui=undercurl guisp=' . g:AlbaPink
-exe 'hi DiagnosticUnderlineInfo gui=undercurl guisp=' . g:AlbaSky
+exe 'hi DiagnosticUnderlineInfo gui=undercurl guisp=' . g:AlbaBlue
 exe 'hi DiagnosticUnderlineWarn gui=undercurl guisp=' . g:AlbaGold
 exe 'hi DiagnosticWarn guifg=' . g:AlbaGold
 exe 'hi DiffAdd guifg=NONE guibg=' . g:AlbaGrey2
