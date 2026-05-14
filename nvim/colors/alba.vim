@@ -24,12 +24,12 @@ let g:AlbaOrange = '#ec9e68'
 let g:AlbaPeach = '#ffecd8'
 let g:AlbaPink = '#eca8bc'
 
-exe 'hi @type guifg=' . g:AlbaPink
-exe 'hi @type.builtin guifg=' . g:AlbaPink
 exe 'hi @lsp.type.class guifg=' . g:AlbaGold
 exe 'hi @lsp.type.member.typescript guifg=' . g:AlbaPeach
 exe 'hi @lsp.type.property.typescript guifg=' . g:AlbaPeach
 exe 'hi @lsp.type.property.typescriptreact guifg=' . g:AlbaPeach
+exe 'hi @type guifg=' . g:AlbaPink
+exe 'hi @type.builtin guifg=' . g:AlbaPink
 exe 'hi @variable guifg=' . g:AlbaPeach
 exe 'hi Boolean guifg=' . g:AlbaPink
 exe 'hi Character guifg=' . g:AlbaPink
@@ -65,7 +65,7 @@ exe 'hi Error guifg=' . g:AlbaRed . ' guibg=' . g:AlbaBlack
 exe 'hi ErrorMsg guifg=' . g:AlbaRed
 exe 'hi Exception guifg=' . g:AlbaOrange
 exe 'hi Float guifg=' . g:AlbaPink
-exe 'hi FloatBorder guifg=' . g:AlbaGrey3 . ' guibg=' . g:AlbaBlack
+exe 'hi FloatBorder guifg=' . g:AlbaGrey3 . ' guibg=' . g:AlbaGrey1
 exe 'hi FloatTitle guifg=' . g:AlbaGrey8 . ' guibg=' . g:AlbaBlack
 exe 'hi FoldColumn guifg=' . g:AlbaGrey6 . ' guibg=' . g:AlbaGrey1
 exe 'hi Folded guifg=' . g:AlbaGrey7 . ' guibg=' . g:AlbaGrey3

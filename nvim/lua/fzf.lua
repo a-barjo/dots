@@ -19,14 +19,15 @@ local function fzf()
 
   local t = vim.fn.tempname()
   local b = vim.api.nvim_create_buf(false, true)
+  local padding = 1
   local w = vim.api.nvim_open_win(b, true, {
     relative = "editor",
-    width = math.floor(cols * 0.5),
-    height = math.floor(lines * 0.5),
-    row = math.floor(lines / 4),
-    col = math.floor(cols / 4),
+    width = math.floor(cols * 0.5) - padding * 2,
+    height = math.floor(lines * 0.5) - padding * 2,
+    row = math.floor(lines / 4) + padding,
+    col = math.floor(cols / 4) + padding,
     style = "minimal",
-    border = "none",
+    border = "solid",
     zindex = 2,
   })
 
@@ -48,5 +49,6 @@ local function fzf()
     end,
   })
 end
-vim.cmd("hi Shadow guibg=#0f0a10")
+
+vim.cmd("hi Shadow guibg=g:AlbaBlack")
 vim.api.nvim_create_user_command("Fzf", fzf, {})
