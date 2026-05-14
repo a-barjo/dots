@@ -11,7 +11,7 @@ export FZF_DEFAULT_OPTS="\
 --color=bg+:#2e282f,spinner:#eca8bc,hl:#ec9e68 \
 --color=fg:#bab4bb,header:#ec9e68,info:#ec9e68,pointer:#ffecd8 \
 --color=marker:#eca8bc,fg+:#e8c882,prompt:#ec9e68,hl+:#ec9e68 \
---color=border:#1e181f,gutter:#100a11 \
+--color=border:#1e181f,gutter:#0f0a10 \
 --multi"
 
 export PATH="$PATH:\
@@ -29,5 +29,5 @@ eval "$(fzf --bash)"
 eval "$(starship init bash)"
 
 create_sessions() {
-  sh "$HOME/.config/tmux/create_sessions.sh"
+	sh "$HOME/.config/tmux/create_sessions.sh"
 }

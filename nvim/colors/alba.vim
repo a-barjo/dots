@@ -2,7 +2,7 @@ hi clear
 syntax reset
 let g:colors_name = 'alba'
 
-let g:AlbaBlack = '#100a11'
+let g:AlbaBlack = '#0f0a10'
 let g:AlbaGrey1 = '#1e181f'
 let g:AlbaGrey2 = '#2e282f'
 let g:AlbaGrey3 = '#403a41'
