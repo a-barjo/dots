@@ -124,7 +124,7 @@ exe 'hi Type guifg=' . g:AlbaPink
 exe 'hi Typedef guifg=' . g:AlbaOrange
 exe 'hi Underlined guifg=' . g:AlbaGold . ' gui=underline'
 exe 'hi VertSplit guifg=' . g:AlbaGrey5 . ' guibg=' . g:AlbaGrey1
-exe 'hi Visual guibg=' . g:AlbaGrey3
+exe 'hi Visual guibg=' . g:AlbaGrey2
 exe 'hi WarningMsg guifg=' . g:AlbaOrange
 exe 'hi WildMenu guifg=' . g:AlbaBlack . ' guibg=' . g:AlbaGrey8
 exe 'hi WinBar guifg=' . g:AlbaGrey8 . ' guibg=' . g:AlbaGrey1
