@@ -3,18 +3,19 @@ syntax reset
 let g:colors_name = 'alba'
 
 let g:AlbaBlack = '#0f0a10'
-let g:AlbaGrey1 = '#1e181f'
-let g:AlbaGrey2 = '#2e282f'
-let g:AlbaGrey3 = '#403a41'
-let g:AlbaGrey4 = '#544e55'
-let g:AlbaGrey5 = '#6a646b'
-let g:AlbaGrey6 = '#827c83'
-let g:AlbaGrey7 = '#9c969d'
-let g:AlbaGrey8 = '#bab4bb'
+let g:AlbaGrey1 = '#1e171f'
+let g:AlbaGrey2 = '#2e272f'
+let g:AlbaGrey3 = '#403941'
+let g:AlbaGrey4 = '#544d55'
+let g:AlbaGrey5 = '#6a636b'
+let g:AlbaGrey6 = '#827b83'
+let g:AlbaGrey7 = '#9c959d'
+let g:AlbaGrey8 = '#bab3bb'
 let g:AlbaOrange = '#ec9e68'
 let g:AlbaPeach = '#ffecd8'
 let g:AlbaGold = '#e8c882'
 let g:AlbaSky = '#c4c8f0'
+
 let g:AlbaPink = '#eca8bc'
 let g:AlbaRed = '#ec8a8a'
 let g:AlbaGreen = '#c4d89a'
@@ -126,7 +127,7 @@ exe 'hi Type guifg=' . g:AlbaPink
 exe 'hi Typedef guifg=' . g:AlbaOrange
 exe 'hi Underlined guifg=' . g:AlbaGold . ' gui=underline'
 exe 'hi VertSplit guifg=' . g:AlbaGrey5 . ' guibg=' . g:AlbaGrey1
-exe 'hi Visual guibg=' . g:AlbaGrey2
+exe 'hi Visual guibg=' . g:AlbaGrey3
 exe 'hi WarningMsg guifg=' . g:AlbaOrange
 exe 'hi WildMenu guifg=' . g:AlbaBlack . ' guibg=' . g:AlbaGrey8
 exe 'hi WinBar guifg=' . g:AlbaGrey8 . ' guibg=' . g:AlbaGrey1
