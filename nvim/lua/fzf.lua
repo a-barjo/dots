@@ -17,38 +17,39 @@ local function fzf()
   vim.wo[shadow_win].winblend = 20
   vim.wo[shadow_win].winhighlight = "Normal:Shadow"
 
-  local t = vim.fn.tempname()
-  local b = vim.api.nvim_create_buf(false, true)
-  local padding = 1
-  local w = vim.api.nvim_open_win(b, true, {
+  local tmp = vim.fn.tempname()
+  local buf = vim.api.nvim_create_buf(false, true)
+  local win = vim.api.nvim_open_win(buf, true, {
     relative = "editor",
-    width = math.floor(cols * 0.5) - padding * 2,
-    height = math.floor(lines * 0.5) - padding * 2,
-    row = math.floor(lines / 4) + padding,
-    col = math.floor(cols / 4) + padding,
+    width = math.floor(cols * 0.5),
+    height = math.floor(lines * 0.5),
+    row = math.floor(lines / 4),
+    col = math.floor(cols / 4),
     style = "minimal",
     border = "solid",
     zindex = 2,
   })
 
-  vim.fn.termopen("fzf > " .. t)
+  vim.wo[win].winhighlight = "Normal:FzfNormal,FloatBorder:FzfFloatBorder"
+  vim.fn.termopen("fzf > " .. tmp)
   vim.cmd.startinsert()
 
   vim.api.nvim_create_autocmd("TermClose", {
-    buffer = b,
+    buffer = buf,
     callback = function()
       vim.schedule(function()
-        pcall(vim.api.nvim_win_close, w, true)
+        pcall(vim.api.nvim_win_close, win, true)
         vim.api.nvim_win_close(shadow_win, true)
-        local r = vim.fn.trim(vim.fn.readfile(t)[1] or "")
+        local r = vim.fn.trim(vim.fn.readfile(tmp)[1] or "")
         if r ~= "" then
           vim.cmd("e " .. vim.fn.fnameescape(r))
         end
-        pcall(os.remove, t)
+        pcall(os.remove, tmp)
       end)
     end,
   })
 end
 
-vim.cmd("hi Shadow guibg=g:AlbaBlack")
+vim.api.nvim_set_hl(0, "Shadow", { bg = vim.g.AlbaBlack })
+
 vim.api.nvim_create_user_command("Fzf", fzf, {})
