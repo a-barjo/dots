@@ -1,6 +1,4 @@
-local M = {}
-
-function M.tabline()
+function _G.Tabline()
   local tabs = {}
   for i = 1, vim.fn.tabpagenr("$") do
     local hl = i == vim.fn.tabpagenr() and "%#TabLineSel#" or "%#TabLine#"
@@ -30,6 +28,5 @@ vim.api.nvim_create_user_command("TabReset", function()
   vim.t.tabname = nil
 end, {})
 
-vim.opt.tabline = "%!v:lua.require('tabline').tabline()"
-
-return M
+vim.opt.showtabline = 2
+vim.opt.tabline = "%!v:lua.Tabline()"
