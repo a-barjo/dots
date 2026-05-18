@@ -15,6 +15,7 @@ vim.opt.ignorecase = true
 vim.opt.linebreak = true
 vim.opt.number = true
 vim.opt.shiftwidth = 2
+vim.opt.showtabline = 2
 vim.opt.signcolumn = "yes"
 vim.opt.smartcase = true
 vim.opt.tabstop = 2
