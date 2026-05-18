@@ -19,9 +19,10 @@ end
 
 vim.api.nvim_create_user_command("TabName", function(opts)
   if opts.args == "" then
-    print(vim.t.tabname and "Current tab name: " .. vim.t.tabname or "No cutomer name set")
+    print(vim.t.tabname and "Current tab name: " .. vim.t.tabname or "No custom name set")
   else
     vim.t.tabname = opts.args
+    vim.cmd("redrawtabline")
   end
 end, { nargs = "?" })
 
