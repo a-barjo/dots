@@ -33,3 +33,4 @@ local function format()
 end
 
 vim.api.nvim_create_autocmd("BufWritePre", { callback = format })
+vim.api.nvim_create_user_command("Format", format, { desc = "Formats file" })

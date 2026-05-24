@@ -16,7 +16,7 @@ local function open_win(enter, scale, border, winblend, highlight)
 end
 
 local function fzf()
-  local shadow_buf, shadow_win = open_win(false, 1, "none", 20)
+  local shadow_buf, shadow_win = open_win(false, 1, "none", 10)
   local buf, win = open_win(true, 0.5, "solid", 0, "Normal:FzfNormal,FloatBorder:FzfFloatBorder")
   local tmp = vim.fn.tempname()
 
@@ -40,4 +40,4 @@ local function fzf()
   })
 end
 
-vim.api.nvim_create_user_command("Fzf", fzf, {})
+vim.api.nvim_create_user_command("Fzf", fzf, { desc = "Search files" })
