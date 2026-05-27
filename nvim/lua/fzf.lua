@@ -1,4 +1,4 @@
-local function open_win(enter, scale, border, winblend, highlight)
+local function open_win(enter, scale, border, winblend)
   local buf = vim.api.nvim_create_buf(false, true)
   local cols, lines = vim.o.columns, vim.o.lines
   local win = vim.api.nvim_open_win(buf, enter, {
@@ -11,13 +11,12 @@ local function open_win(enter, scale, border, winblend, highlight)
     border = border,
   })
   vim.wo[win].winblend = winblend
-  vim.wo[win].winhighlight = highlight
   return buf, win
 end
 
 local function fzf()
   local shadow_buf, shadow_win = open_win(false, 1, "none", 10)
-  local buf, win = open_win(true, 0.5, "solid", 0, "Normal:FzfNormal,FloatBorder:FzfFloatBorder")
+  local buf, win = open_win(true, 0.5, "rounded", 0)
   local tmp = vim.fn.tempname()
 
   vim.fn.termopen("fzf > " .. tmp)

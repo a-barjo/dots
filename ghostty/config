@@ -11,14 +11,14 @@ foreground = #ffffff
 macos-option-as-alt = true
 mouse-hide-while-typing = true
 window-decoration = false
-window-padding-x = 10
-window-padding-y = 10
+window-padding-x = 20
+window-padding-y = 20
 
 palette = 0=#2e2e3e
 palette = 1=#ec8a8a
 palette = 2=#c4d89a
 palette = 3=#e8ce6c
-palette = 4=#ec9e68
+palette = 4=#ff8e40
 palette = 5=#f0b482
 palette = 6=#f4c89b
 palette = 7=#ffffff

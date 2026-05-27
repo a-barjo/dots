@@ -8,9 +8,9 @@ export TMUX_TMPDIR='/tmp'
 
 export FZF_DEFAULT_COMMAND='fd --follow --hidden --strip-cwd-prefix --exclude .git'
 export FZF_DEFAULT_OPTS="\
---color=bg+:#2e272f,spinner:#eca8bc,hl:#ec9e68 \
---color=fg:#827b83,header:#ec9e68,info:#ec9e68,pointer:#ffecd8 \
---color=marker:#eca8bc,fg+:#e8c882,prompt:#ec9e68,hl+:#ec9e68 \
+--color=bg+:#2e272f,spinner:#ffb3ba,hl:#ff8e40 \
+--color=fg:#827b83,header:#ff8e40,info:#ff8e40,pointer:#ffecd8 \
+--color=marker:#ffb3ba,fg+:#ffc28a,prompt:#ff8e40,hl+:#ff8e40 \
 --color=border:#403941 \
 --multi"
 
