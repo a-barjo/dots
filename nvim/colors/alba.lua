@@ -88,9 +88,9 @@ vim.api.nvim_set_hl(0, "WinSeparator", { fg = vim.g.AlbaGrey2, bg = vim.g.AlbaGr
 -- Syntax
 
 vim.g.AlbaConstant = vim.g.AlbaPink
+vim.g.AlbaDecorator = vim.g.AlbaYellow
 vim.g.AlbaKeyword = vim.g.AlbaOrange
 vim.g.AlbaString = vim.g.AlbaPeach
-vim.g.AlbaTsxTagName = vim.g.AlbaYellow
 vim.g.AlbaType = vim.g.AlbaPink
 vim.g.AlbaVariable = vim.g.AlbaHaze
 
@@ -113,9 +113,10 @@ vim.api.nvim_set_hl(0, "htmlTagName", { fg = vim.g.AlbaKeyword })
 -- Language specific syntax
 
 vim.api.nvim_set_hl(0, "tsxAttrib", { fg = vim.g.AlbaVariable })
-vim.api.nvim_set_hl(0, "tsxTagName", { fg = vim.g.AlbaTsxTagName })
+vim.api.nvim_set_hl(0, "tsxTagName", { fg = vim.g.AlbaDecorator })
 vim.api.nvim_set_hl(0, "typescriptBOMWindowProp", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptBraces", { fg = vim.g.AlbaVariable })
+vim.api.nvim_set_hl(0, "typescriptDecorator", { fg = vim.g.AlbaDecorator })
 vim.api.nvim_set_hl(0, "typescriptEndColons", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptIdentifier", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptNodeGlobal", { fg = vim.g.AlbaVariable })
