@@ -13,9 +13,6 @@ local function format()
     markdown = "prettierd --stdin-filepath " .. path,
     scss = "prettierd --stdin-filepath " .. path,
     yaml = "prettierd --stdin-filepath " .. path,
-    go = "goimports",
-    java = "google-java-format -",
-    lua = "stylua --stdin-filepath " .. path .. " -",
     sql = "sql_formatter",
     bash = "shfmt",
     sh = "shfmt",
@@ -29,6 +26,8 @@ local function format()
       return
     end
     vim.api.nvim_buf_set_lines(0, 0, -1, false, result)
+  else
+    pcall(vim.lsp.buf.format, { async = false })
   end
 end
 
