@@ -8,17 +8,17 @@ export TMUX_TMPDIR='/tmp'
 
 export FZF_DEFAULT_COMMAND='fd --follow --hidden --strip-cwd-prefix --exclude .git'
 export FZF_DEFAULT_OPTS="\
---color=bg:#0f0a10,bg+:#1c151d \
+--color=bg:#100911,bg+:#1d131e \
 --color=fg:#ffecd8,fg+:#ffca9c \
 --color=hl:#ffa669,hl+:#ffa669 \
---color=info:#827b83 \
+--color=info:#837984 \
 --color=prompt:#ffa669 \
 --color=pointer:#ffca9c \
 --color=marker:#c4d89a \
 --color=spinner:#88c8be \
---color=header:#827b83 \
---color=gutter:#0f0a10 \
---color=border:#403941"
+--color=header:#837984 \
+--color=gutter:#100911 \
+--color=border:#413742"
 
 export PATH="$PATH:\
 /usr/local/go/bin:\

@@ -1,6 +1,6 @@
-background = #0f0a10
-cursor-color = #ffecd8
-cursor-text = #0f0a10
+background = #100911
+cursor-color = #ffffff
+cursor-text = #000000
 font-family = Roboto Mono
 font-size = 14
 font-style = Medium
@@ -14,7 +14,7 @@ window-decoration = false
 window-padding-x = 20
 window-padding-y = 20
 
-palette = 0=#0f0a10
+palette = 0=#100911
 palette = 1=#ec8a8a
 palette = 2=#c4d89a
 palette = 3=#ffe08f
@@ -22,7 +22,7 @@ palette = 4=#ffa669
 palette = 5=#ffc59e
 palette = 6=#ffd7bc
 palette = 7=#ffffff
-palette = 8=#6a636b
+palette = 8=#6b616c
 palette = 9=#f1a7a7
 palette = 10=#d3e2b3
 palette = 11=#ffe8ab

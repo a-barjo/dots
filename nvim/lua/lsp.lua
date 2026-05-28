@@ -1,6 +1,7 @@
 vim.lsp.enable({
   "bashls",
   "cssls",
+  "clangd",
   "emmet_language_server",
   "eslint",
   "gopls",
@@ -49,7 +50,6 @@ end
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-    client.server_capabilities.semanticTokensProvider = nil
     if client:supports_method("textDocument/completion") then
       local chars = {}
       for i = 32, 126 do
