@@ -15,7 +15,7 @@ vim.g.AlbaGrey8 = "#cdc2cf"
 vim.g.AlbaDusk = "#d8c0e4"
 vim.g.AlbaHaze = "#ffeed8"
 vim.g.AlbaLuz = "#ffdb9a"
-vim.g.AlbaOrange = "#ffa568"
+vim.g.AlbaOrange = "#ffad70"
 vim.g.AlbaPeach = "#ffc69c"
 vim.g.AlbaPink = "#ffb0c8"
 vim.g.AlbaRouge = "#ffb2b2"
@@ -144,7 +144,7 @@ vim.api.nvim_set_hl(0, "typescriptFuncTypeArrow", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptIdentifier", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptNodeGlobal", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "typescriptObjectLabel", { fg = vim.g.AlbaProperty })
-vim.api.nvim_set_hl(0, "typescriptOperator", { fg = vim.g.AlbaFunction })
+vim.api.nvim_set_hl(0, "typescriptOperator", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptTemplateSB", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptUnion", { fg = vim.g.AlbaVariable })
 
@@ -356,3 +356,8 @@ vim.api.nvim_set_hl(0, "@lsp.type.namespace.rust", { fg = vim.g.AlbaFunction })
 vim.api.nvim_set_hl(0, "rustAttribute", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "rustDynKeyword", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "rustFuncName", { fg = vim.g.AlbaVariable })
+
+-- Zig
+
+vim.api.nvim_set_hl(0, "zigVarDecl", { fg = vim.g.AlbaKeyword })
+vim.api.nvim_set_hl(0, "zigComparatorWord", { fg = vim.g.AlbaMisc })
