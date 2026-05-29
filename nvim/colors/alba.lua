@@ -18,7 +18,7 @@ vim.g.AlbaLuz = "#ffdb9a"
 vim.g.AlbaOrange = "#ffa568"
 vim.g.AlbaPeach = "#ffc69c"
 vim.g.AlbaPink = "#ffb0c8"
-vim.g.AlbaRouge = "#ffa4a4"
+vim.g.AlbaRouge = "#ffa8a8"
 
 vim.g.AlbaBlack = "#100911"
 vim.g.AlbaRed = vim.g.AlbaRouge
@@ -118,7 +118,7 @@ vim.api.nvim_set_hl(0, "Special", { fg = vim.g.AlbaConstant })
 vim.api.nvim_set_hl(0, "Statement", { fg = vim.g.AlbaKeyword })
 vim.api.nvim_set_hl(0, "String", { fg = vim.g.AlbaString })
 vim.api.nvim_set_hl(0, "Type", { fg = vim.g.AlbaType })
-vim.api.nvim_set_hl(0, "htmlTagName", { fg = vim.g.AlbaFunction })
+vim.api.nvim_set_hl(0, "htmlTagName", { fg = vim.g.AlbaMisc })
 
 -- netrw
 
@@ -128,8 +128,9 @@ vim.api.nvim_set_hl(0, "netrwClassify", { fg = vim.g.AlbaProperty })
 
 vim.api.nvim_set_hl(0, "@lsp.type.member.typescript", { fg = vim.g.AlbaFunction })
 vim.api.nvim_set_hl(0, "tsxAttrib", { fg = vim.g.AlbaProperty })
+vim.api.nvim_set_hl(0, "tsxCloseString", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "tsxTag", { fg = vim.g.AlbaVariable })
-vim.api.nvim_set_hl(0, "tsxTagName", { fg = vim.g.AlbaMisc })
+vim.api.nvim_set_hl(0, "tsxTagName", { fg = vim.g.AlbaFunction })
 vim.api.nvim_set_hl(0, "typescriptArrowFunc", { fg = vim.g.AlbaFunction })
 vim.api.nvim_set_hl(0, "typescriptAsyncFuncKeyword", { fg = vim.g.AlbaKeyword })
 vim.api.nvim_set_hl(0, "typescriptBraces", { fg = vim.g.AlbaVariable })
@@ -146,7 +147,6 @@ vim.api.nvim_set_hl(0, "typescriptObjectLabel", { fg = vim.g.AlbaProperty })
 vim.api.nvim_set_hl(0, "typescriptOperator", { fg = vim.g.AlbaFunction })
 vim.api.nvim_set_hl(0, "typescriptTemplateSB", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptUnion", { fg = vim.g.AlbaVariable })
-
 
 -- TypeScript methods
 
