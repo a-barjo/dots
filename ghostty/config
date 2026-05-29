@@ -7,7 +7,7 @@ font-style = Medium
 font-style-bold = Bold
 font-style-bold-italic = Bold Italic
 font-style-italic = Medium Italic
-foreground = #ffecd8
+foreground = #ffeed8
 macos-option-as-alt = true
 mouse-hide-while-typing = true
 window-decoration = false
@@ -15,18 +15,18 @@ window-padding-x = 20
 window-padding-y = 20
 
 palette = 0=#100911
-palette = 1=#ffbcb8
+palette = 1=#ffa4a4
 palette = 2=#c4d89a
-palette = 3=#ffe1a6
-palette = 4=#ffad75
-palette = 5=#ffceac
-palette = 6=#ffe2cf
+palette = 3=#ffdb9a
+palette = 4=#ffa568
+palette = 5=#ffc398
+palette = 6=#ffe1c8
 palette = 7=#ffffff
 palette = 8=#6b616c
-palette = 9=#ffc9c6
+palette = 9=#ffb1b2
 palette = 10=#d0e0ae
-palette = 11=#ffe7b8
-palette = 12=#ffd5b8
-palette = 13=#ffddc5
-palette = 14=#ffe6d6
-palette = 15=#ffecd8
+palette = 11=#ffe1ac
+palette = 12=#ffcdab
+palette = 13=#ffd9c5
+palette = 14=#ffe8d6
+palette = 15=#ffeed8

@@ -12,13 +12,13 @@ vim.g.AlbaGrey6 = "#837984"
 vim.g.AlbaGrey7 = "#9d939e"
 vim.g.AlbaGrey8 = "#cdc3ce"
 
-vim.g.AlbaDusk = "#e0c8e8"
-vim.g.AlbaHaze = "#ffecd8"
-vim.g.AlbaLuz = "#ffe1a6"
-vim.g.AlbaOrange = "#ffad75"
-vim.g.AlbaPeach = "#ffca9c"
-vim.g.AlbaPink = "#ffcfda"
-vim.g.AlbaRouge = "#ffbcb8"
+vim.g.AlbaDusk = "#d8c0e4"
+vim.g.AlbaHaze = "#ffeed8"
+vim.g.AlbaLuz = "#ffdb9a"
+vim.g.AlbaOrange = "#ffa568"
+vim.g.AlbaPeach = "#ffc69c"
+vim.g.AlbaPink = "#ffb0c8"
+vim.g.AlbaRouge = "#ffa4a4"
 
 vim.g.AlbaBlack = "#100911"
 vim.g.AlbaRed = vim.g.AlbaRouge
@@ -119,6 +119,10 @@ vim.api.nvim_set_hl(0, "Statement", { fg = vim.g.AlbaKeyword })
 vim.api.nvim_set_hl(0, "String", { fg = vim.g.AlbaString })
 vim.api.nvim_set_hl(0, "Type", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "htmlTagName", { fg = vim.g.AlbaMisc })
+
+-- netrw
+
+vim.api.nvim_set_hl(0, "netrwClassify", { fg = vim.g.AlbaProperty })
 
 -- Typescript
 
