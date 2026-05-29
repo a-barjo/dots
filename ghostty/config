@@ -15,7 +15,7 @@ window-padding-x = 20
 window-padding-y = 20
 
 palette = 0=#100911
-palette = 1=#ffa4a4
+palette = 1=#ffa6a6
 palette = 2=#c4d89a
 palette = 3=#ffdb9a
 palette = 4=#ffa568
@@ -23,7 +23,7 @@ palette = 5=#ffc398
 palette = 6=#ffe1c8
 palette = 7=#ffffff
 palette = 8=#6b616c
-palette = 9=#ffb1b2
+palette = 9=#ffb3b4
 palette = 10=#d0e0ae
 palette = 11=#ffe1ac
 palette = 12=#ffcdab
