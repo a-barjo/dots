@@ -1,4 +1,4 @@
-background = #100911
+background = #0f0810
 cursor-color = #ffffff
 cursor-text = #000000
 font-family = Roboto Mono
@@ -14,7 +14,7 @@ window-decoration = false
 window-padding-x = 20
 window-padding-y = 20
 
-palette = 0=#100911
+palette = 0=#0f0810
 palette = 1=#ffacac
 palette = 2=#c4d89a
 palette = 3=#ffdb9a
