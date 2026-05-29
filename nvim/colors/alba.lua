@@ -18,7 +18,7 @@ vim.g.AlbaLuz = "#ffdb9a"
 vim.g.AlbaOrange = "#ffa568"
 vim.g.AlbaPeach = "#ffc69c"
 vim.g.AlbaPink = "#ffb0c8"
-vim.g.AlbaRouge = "#ffaaaa"
+vim.g.AlbaRouge = "#ffacac"
 
 vim.g.AlbaBlack = "#100911"
 vim.g.AlbaRed = vim.g.AlbaRouge
