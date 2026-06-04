@@ -12,13 +12,13 @@ vim.g.AlbaGrey6 = "#837885"
 vim.g.AlbaGrey7 = "#9d929f"
 vim.g.AlbaGrey8 = "#cdc2cf"
 
-vim.g.AlbaDusk = "#d8c0e4"
+vim.g.AlbaDusk = "#c7b5ff"
 vim.g.AlbaHaze = "#ffeed8"
-vim.g.AlbaLuz = "#ffdb9a"
-vim.g.AlbaOrange = "#ffad70"
-vim.g.AlbaPeach = "#ffc69c"
-vim.g.AlbaPink = "#ffb0c8"
-vim.g.AlbaRouge = "#ffb2b2"
+vim.g.AlbaLuz = "#ffe69c"
+vim.g.AlbaOrange = "#ffac6a"
+vim.g.AlbaPeach = "#ffc8a6"
+vim.g.AlbaPink = "#ffbae5"
+vim.g.AlbaRouge = "#ffabab"
 
 vim.g.AlbaBlack = "#0f0810"
 vim.g.AlbaRed = vim.g.AlbaRouge
@@ -267,6 +267,7 @@ vim.api.nvim_set_hl(0, "htmlH5", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "htmlH6", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "htmlTag", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "htmlTitle", { fg = vim.g.AlbaVariable })
+vim.api.nvim_set_hl(0, "htmlArg", { fg = vim.g.AlbaProperty })
 
 -- SQL
 
