@@ -7,18 +7,7 @@ export JRE_HOME='/usr/lib64/jvm/jre-17'
 export TMUX_TMPDIR='/tmp'
 
 export FZF_DEFAULT_COMMAND='fd --follow --hidden --strip-cwd-prefix --exclude .git'
-export FZF_DEFAULT_OPTS="\
---color=bg:#0f0810,bg+:#1d121f \
---color=fg:#ffeed8,fg+:#ffc498 \
---color=hl:#ffac6a,hl+:#ffac6a \
---color=info:#837885 \
---color=prompt:#ffac6a \
---color=pointer:#ffc498 \
---color=marker:#c4d89a \
---color=spinner:#88c8be \
---color=header:#837885 \
---color=gutter:#0f0810 \
---color=border:#413643"
+source "$HOME/.config/fzf-alba.sh"
 
 export PATH="$PATH:\
 /usr/local/go/bin:\

@@ -2,6 +2,7 @@
 !.bashrc
 !.gitignore
 !README.md
+!fzf-alba.sh
 !ghostty
 !ghostty/**
 !nvim
