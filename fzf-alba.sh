@@ -1,9 +1,9 @@
 export FZF_DEFAULT_OPTS="\
 --color=bg:#0e070f,bg+:#160f1a \
 --color=fg:#ffdec2,fg+:#ffc89e \
---color=hl:#ffac70,hl+:#ffac70 \
+--color=hl:#ffb27a,hl+:#ffb27a \
 --color=info:#967c89 \
---color=prompt:#ffac70 \
+--color=prompt:#ffb27a \
 --color=pointer:#ffc89e \
 --color=marker:#c4d89a \
 --color=spinner:#88c8be \
