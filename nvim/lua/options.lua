@@ -39,7 +39,7 @@ vim.keymap.set("n", "<leader>gdm", "<Cmd>DiffviewOpen main..HEAD<CR>", { desc = 
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
 vim.keymap.set("n", "<leader>s", function()
-  vim.fn.system({ "go", "run", os.getenv("HOME") .. "/Projects/alba/src/build/main.go" })
+  vim.fn.system({ "sh", os.getenv("HOME") .. "/Projects/alba/build.sh" })
   vim.notify("Alba theme built and synced")
   vim.cmd.restart()
 end)
