@@ -37,3 +37,9 @@ vim.keymap.set("n", "<leader>gdd", "<Cmd>DiffviewOpen<CR>", { desc = "Open Diffv
 vim.keymap.set("n", "<leader>gdl", "<Cmd>DiffviewFileHistory .<CR>", { desc = "Open Diffview git log" })
 vim.keymap.set("n", "<leader>gdm", "<Cmd>DiffviewOpen main..HEAD<CR>", { desc = "Open Diffview compare to main" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+
+vim.keymap.set("n", "<leader>s", function()
+  vim.fn.system({ "go", "run", os.getenv("HOME") .. "/Projects/alba/src/build/main.go" })
+  vim.notify("Alba theme built and synced")
+  vim.cmd.restart()
+end)
