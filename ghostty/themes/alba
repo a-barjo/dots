@@ -2,18 +2,18 @@ background = #0e0a10
 foreground = #ffdec2
 
 palette = 0=#241826
-palette = 1=#f99880
-palette = 2=#c4d89a
+palette = 1=#f99980
+palette = 2=#c5d89c
 palette = 3=#ffd285
 palette = 4=#ffb27a
 palette = 5=#ffc89e
 palette = 6=#ffdec2
 palette = 7=#ffffff
-palette = 8=#7a5b70
-palette = 9=#fbc1b2
+palette = 8=#7b5b71
+palette = 9=#fbc0b1
 palette = 10=#d0e0ae
-palette = 11=#ffe4b5
-palette = 12=#ffcda9
-palette = 13=#ffdec4
-palette = 14=#ffebda
+palette = 11=#ffe3b3
+palette = 12=#ffcca8
+palette = 13=#ffdcc2
+palette = 14=#ffecdb
 palette = 15=#ffdec2

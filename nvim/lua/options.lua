@@ -5,8 +5,8 @@ vim.g.netrw_sizestyle = "H"
 vim.g.omni_sql_no_default_maps = 1
 
 vim.opt.clipboard = "unnamedplus"
-vim.opt.completeopt = "fuzzy,menuone,noinsert,popup"
 vim.opt.colorcolumn = "+0"
+vim.opt.completeopt = "fuzzy,menuone,noinsert,popup"
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = { "number" }
 vim.opt.expandtab = true
