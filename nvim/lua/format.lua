@@ -16,7 +16,7 @@ local function format()
     sql = "sql_formatter",
     bash = "shfmt",
     sh = "shfmt",
-    xml = "xmlformat" .. path,
+    xml = "xmlformat " .. path,
     zsh = "shfmt",
   })[ft]
 
