@@ -647,6 +647,7 @@ vim.api.nvim_set_hl(0, "typescriptRegexpString", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptStringProperty", { fg = vim.g.AlbaString })
 vim.api.nvim_set_hl(0, "typescriptTemplateSB", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptTypeReference", { fg = vim.g.AlbaType })
+vim.api.nvim_set_hl(0, "typescriptTypeAnnotation", { fg = vim.g.AlbaPunctuation })
 
 -- TypeScript regexp
 
