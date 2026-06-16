@@ -5,102 +5,102 @@ let g:colors_name = "alba"
 
 " Editor
 
-highlight ColorColumn guibg=#0e0a10
-highlight Comment guifg=#997a8a gui=italic
-highlight CursorColumn guibg=#463046
-highlight CursorLine guibg=#160f1a
+highlight ColorColumn guibg=#0d0b0f
+highlight Comment guifg=#67556d gui=italic
+highlight CursorColumn guibg=#2b232f
+highlight CursorLine guibg=#161118
 highlight CursorLineNr guifg=#ffffff gui=bold cterm=bold
-highlight DiagnosticError guifg=#f99980
-highlight DiagnosticHint guifg=#fbb1ce
-highlight DiagnosticInfo guifg=#ffb27a
-highlight DiagnosticWarn guifg=#ffc89e
-highlight DiffAdd guibg=#241826
-highlight DiffChange guibg=#241826
-highlight DiffDelete guifg=#463046
-highlight DiffText guibg=#5f445a
-highlight Directory guifg=#ffb27a
-highlight EndOfBuffer guifg=#5f445a
-highlight Error guifg=#f99980 guibg=#0e0a10
-highlight ErrorMsg guifg=#f99980
-highlight FoldColumn guifg=#997a8a guibg=#0e0a10
-highlight Folded guifg=#b7a4aa guibg=#160f1a
-highlight IncSearch guifg=#0e0a10 guibg=#ffd285
-highlight LineNr guifg=#463046 guibg=#0e0a10
-highlight MatchParen guibg=#5f445a guifg=#ffdec2
-highlight ModeMsg guifg=#ffdec2
-highlight MoreMsg guifg=#fbb1ce
-highlight NonText guifg=#7b5b71 gui=italic
-highlight Normal guifg=#ffdec2 guibg=#0e0a10
-highlight Pmenu guifg=#ffdec2 guibg=#160f1a
-highlight PmenuMatch guifg=#ffffff guibg=#241826
-highlight PmenuSel guifg=#dfd7d9 guibg=#241826
-highlight PmenuSbar guibg=#160f1a
-highlight PmenuThumb guibg=#463046
-highlight Popup guifg=#ffdec2 guibg=#160f1a
-highlight QuickFixLine guibg=#241826
-highlight Search guifg=#ffdec2 guibg=#463046
-highlight SignColumn guibg=#0e0a10
-highlight SpellBad guifg=#f99980 gui=undercurl
-highlight SpellCap guifg=#ffc89e gui=undercurl
-highlight SpellLocal guifg=#fbb1ce gui=undercurl
-highlight SpellRare guifg=#ffdec2 gui=undercurl
-highlight StatusLine guifg=#dfd7d9 guibg=#160f1a gui=NONE cterm=NONE term=NONE
-highlight StatusLineNC guifg=#997a8a guibg=#160f1a gui=NONE cterm=NONE term=NONE
-highlight StatusLineTerm guifg=#dfd7d9 guibg=#241826 gui=NONE cterm=NONE term=NONE
-highlight StatusLineTermNC guifg=#997a8a guibg=#241826 gui=NONE cterm=NONE term=NONE
-highlight TabLine guifg=#7b5b71 guibg=#160f1a
-highlight TabLineFill guifg=#0e0a10 guibg=#160f1a gui=NONE cterm=NONE term=NONE
-highlight TabLineSel guifg=#dfd7d9 guibg=#241826
-highlight Title guifg=#ffb27a
-highlight Underlined guifg=#ffdec2 gui=underline
-highlight VertSplit guifg=#997a8a guibg=#0e0a10
-highlight Visual guifg=NONE guibg=#241826
-highlight WarningMsg guifg=#ffb27a
-highlight WinSeparator guifg=#241826 guibg=#0e0a10
+highlight DiagnosticError guifg=#f9957b
+highlight DiagnosticHint guifg=#f8aac7
+highlight DiagnosticInfo guifg=#f19b65
+highlight DiagnosticWarn guifg=#ffcda3
+highlight DiffAdd guibg=#261e29
+highlight DiffChange guibg=#261e29
+highlight DiffDelete guifg=#2b232f
+highlight DiffText guibg=#392e3d
+highlight Directory guifg=#f19b65
+highlight EndOfBuffer guifg=#392e3d
+highlight Error guifg=#f9957b guibg=#0d0b0f
+highlight ErrorMsg guifg=#f9957b
+highlight FoldColumn guifg=#67556d guibg=#0d0b0f
+highlight Folded guifg=#8a7490 guibg=#161118
+highlight IncSearch guifg=#0d0b0f guibg=#ffcd75
+highlight LineNr guifg=#2b232f guibg=#0d0b0f
+highlight MatchParen guibg=#392e3d guifg=#ffe1cc
+highlight ModeMsg guifg=#ffe1cc
+highlight MoreMsg guifg=#f8aac7
+highlight NonText guifg=#4f4054 gui=italic
+highlight Normal guifg=#ffe1cc guibg=#0d0b0f
+highlight Pmenu guifg=#ffe1cc guibg=#161118
+highlight PmenuMatch guifg=#ffffff guibg=#261e29
+highlight PmenuSel guifg=#b2a5b6 guibg=#261e29
+highlight PmenuSbar guibg=#161118
+highlight PmenuThumb guibg=#2b232f
+highlight Popup guifg=#ffe1cc guibg=#161118
+highlight QuickFixLine guibg=#261e29
+highlight Search guifg=#ffe1cc guibg=#2b232f
+highlight SignColumn guibg=#0d0b0f
+highlight SpellBad guifg=#f9957b gui=undercurl
+highlight SpellCap guifg=#ffcda3 gui=undercurl
+highlight SpellLocal guifg=#f8aac7 gui=undercurl
+highlight SpellRare guifg=#ffe1cc gui=undercurl
+highlight StatusLine guifg=#b2a5b6 guibg=#161118 gui=NONE cterm=NONE term=NONE
+highlight StatusLineNC guifg=#67556d guibg=#161118 gui=NONE cterm=NONE term=NONE
+highlight StatusLineTerm guifg=#b2a5b6 guibg=#261e29 gui=NONE cterm=NONE term=NONE
+highlight StatusLineTermNC guifg=#67556d guibg=#261e29 gui=NONE cterm=NONE term=NONE
+highlight TabLine guifg=#4f4054 guibg=#161118
+highlight TabLineFill guifg=#0d0b0f guibg=#161118 gui=NONE cterm=NONE term=NONE
+highlight TabLineSel guifg=#b2a5b6 guibg=#261e29
+highlight Title guifg=#f19b65
+highlight Underlined guifg=#ffe1cc gui=underline
+highlight VertSplit guifg=#67556d guibg=#0d0b0f
+highlight Visual guifg=NONE guibg=#261e29
+highlight WarningMsg guifg=#f19b65
+highlight WinSeparator guifg=#261e29 guibg=#0d0b0f
 
 " Syntax
 
-highlight Constant guifg=#ffd285
-highlight Delimiter guifg=#ffdec2
-highlight Float guifg=#ffd285
-highlight Function guifg=#f99980
-highlight Identifier guifg=#ffbdb3
-highlight Keyword guifg=#ffb27a
-highlight Operator guifg=#ffdec2
-highlight PreProc guifg=#ffbdb3
-highlight Question guifg=#ffc89e
-highlight Special guifg=#dbbcf0
-highlight SpecialKey guifg=#ffb27a
-highlight Statement guifg=#ffb27a
-highlight String guifg=#ffc89e
-highlight Type guifg=#fbb1ce
-highlight htmlTagName guifg=#dbbcf0
-highlight typescriptBraces guifg=#997a8a
-highlight typescriptParens guifg=#997a8a
-highlight typescriptAssign guifg=#997a8a
-highlight typescriptTypeBrackets guifg=#997a8a
-highlight typescriptTypeBracket guifg=#997a8a
-highlight typescriptCall guifg=#ffdec2
-highlight typescriptRestOrSpread guifg=#997a8a
-highlight typescriptTypeAnnotation guifg=#997a8a
-highlight typescriptMember guifg=#997a8a
-highlight typescriptDotNotation guifg=#997a8a
-highlight typescriptObjectSpread guifg=#997a8a
-highlight typescriptGlobalObjectDot guifg=#997a8a
-highlight typescriptFuncComma guifg=#997a8a
-highlight typescriptProperty guifg=#997a8a
-highlight typescriptOperator guifg=#997a8a
-highlight typescriptGlobalConsoleDot guifg=#997a8a
-highlight typescriptBinaryOp guifg=#ffdec2
-highlight typescriptArrowFunc guifg=#dbbcf0
-highlight tsxTag guifg=#997a8a
-highlight tsxCloseString guifg=#997a8a
-highlight tsxCloseTag guifg=#997a8a
-highlight markdownCode guifg=#ffd285
-highlight markdownCodeDelimiter guifg=#0e0a10
-highlight markdownItalic guifg=#dbbcf0 gui=italic
+highlight Constant guifg=#ffcd75
+highlight Delimiter guifg=#ffe1cc
+highlight Float guifg=#ffcd75
+highlight Function guifg=#f9957b
+highlight Identifier guifg=#ffb6a3
+highlight Keyword guifg=#f19b65
+highlight Operator guifg=#ffe1cc
+highlight PreProc guifg=#ffb6a3
+highlight Question guifg=#ffcda3
+highlight Special guifg=#d6b5ed
+highlight SpecialKey guifg=#f19b65
+highlight Statement guifg=#f19b65
+highlight String guifg=#ffcda3
+highlight Type guifg=#f8aac7
+highlight htmlTagName guifg=#d6b5ed
+highlight typescriptBraces guifg=#67556d
+highlight typescriptParens guifg=#67556d
+highlight typescriptAssign guifg=#67556d
+highlight typescriptTypeBrackets guifg=#67556d
+highlight typescriptTypeBracket guifg=#67556d
+highlight typescriptCall guifg=#ffe1cc
+highlight typescriptRestOrSpread guifg=#67556d
+highlight typescriptTypeAnnotation guifg=#67556d
+highlight typescriptMember guifg=#67556d
+highlight typescriptDotNotation guifg=#67556d
+highlight typescriptObjectSpread guifg=#67556d
+highlight typescriptGlobalObjectDot guifg=#67556d
+highlight typescriptFuncComma guifg=#67556d
+highlight typescriptProperty guifg=#67556d
+highlight typescriptOperator guifg=#67556d
+highlight typescriptGlobalConsoleDot guifg=#67556d
+highlight typescriptBinaryOp guifg=#ffe1cc
+highlight typescriptArrowFunc guifg=#d6b5ed
+highlight tsxTag guifg=#67556d
+highlight tsxCloseString guifg=#67556d
+highlight tsxCloseTag guifg=#67556d
+highlight markdownCode guifg=#ffcd75
+highlight markdownCodeDelimiter guifg=#0d0b0f
+highlight markdownItalic guifg=#d6b5ed gui=italic
 highlight markdownLinkText guifg=#a1c8e8 gui=underline
-highlight markdownLinkTextDelimiter guifg=#5f445a
-highlight markdownLinkDelimiter guifg=#5f445a
-highlight markdownUrl guifg=#5f445a
-highlight markdownUrlDelimiter guifg=#5f445a
+highlight markdownLinkTextDelimiter guifg=#392e3d
+highlight markdownLinkDelimiter guifg=#392e3d
+highlight markdownUrl guifg=#392e3d
+highlight markdownUrlDelimiter guifg=#392e3d

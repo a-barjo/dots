@@ -3,25 +3,25 @@ vim.cmd.highlight("clear")
 
 vim.g.colors_name = "alba"
 
-vim.g.AlbaGrey1 = "#160f1a"
-vim.g.AlbaGrey2 = "#241826"
-vim.g.AlbaGrey3 = "#463046"
-vim.g.AlbaGrey4 = "#5f445a"
-vim.g.AlbaGrey5 = "#7b5b71"
-vim.g.AlbaGrey6 = "#997a8a"
-vim.g.AlbaGrey7 = "#b7a4aa"
-vim.g.AlbaGrey8 = "#dfd7d9"
+vim.g.AlbaGrey1 = "#161118"
+vim.g.AlbaGrey2 = "#261e29"
+vim.g.AlbaGrey3 = "#2b232f"
+vim.g.AlbaGrey4 = "#392e3d"
+vim.g.AlbaGrey5 = "#4f4054"
+vim.g.AlbaGrey6 = "#67556d"
+vim.g.AlbaGrey7 = "#8a7490"
+vim.g.AlbaGrey8 = "#b2a5b6"
 
-vim.g.AlbaCoral = "#ffbdb3"
-vim.g.AlbaDusk = "#dbbcf0"
-vim.g.AlbaHaze = "#ffdec2"
-vim.g.AlbaLuz = "#ffd285"
-vim.g.AlbaOrange = "#ffb27a"
-vim.g.AlbaPeach = "#ffc89e"
-vim.g.AlbaPink = "#fbb1ce"
-vim.g.AlbaRouge = "#f99980"
+vim.g.AlbaCoral = "#ffb6a3"
+vim.g.AlbaDusk = "#d6b5ed"
+vim.g.AlbaHaze = "#ffe1cc"
+vim.g.AlbaLuz = "#ffcd75"
+vim.g.AlbaOrange = "#f19b65"
+vim.g.AlbaPeach = "#ffcda3"
+vim.g.AlbaPink = "#f8aac7"
+vim.g.AlbaRouge = "#f9957b"
 
-vim.g.AlbaBlack = "#0e0a10"
+vim.g.AlbaBlack = "#0d0b0f"
 vim.g.AlbaRed = vim.g.AlbaRouge
 vim.g.AlbaGreen = "#c5d89c"
 vim.g.AlbaYellow = vim.g.AlbaLuz
@@ -65,13 +65,14 @@ vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = vim.g.AlbaGreen, bg = vim.g.AlbaBla
 vim.api.nvim_set_hl(0, "GitSignsChange", { fg = vim.g.AlbaGrey5, bg = vim.g.AlbaBlack })
 vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = vim.g.AlbaRouge, bg = vim.g.AlbaBlack })
 vim.api.nvim_set_hl(0, "IncSearch", { fg = vim.g.AlbaBlack, bg = vim.g.AlbaLuz })
-vim.api.nvim_set_hl(0, "LineNr", { fg = vim.g.AlbaGrey3, bg = vim.g.AlbaBlack })
-vim.api.nvim_set_hl(0, "MatchParen", { bg = vim.g.AlbaGrey4, fg = vim.g.AlbaHaze })
+vim.api.nvim_set_hl(0, "LineNr", { fg = vim.g.AlbaGrey4, bg = vim.g.AlbaBlack })
+vim.api.nvim_set_hl(0, "MatchParen", { bg = vim.g.AlbaGrey4, fg = vim.g.AlbaLuz })
+vim.api.nvim_set_hl(0, "ModeMsg", { bg = vim.g.AlbaWhite })
 vim.api.nvim_set_hl(0, "ModeMsg", { fg = vim.g.AlbaHaze })
 vim.api.nvim_set_hl(0, "MoreMsg", { fg = vim.g.AlbaPeach })
 vim.api.nvim_set_hl(0, "MoreMsg", { fg = vim.g.AlbaPink })
-vim.api.nvim_set_hl(0, "MsgArea", { fg = vim.g.AlbaGrey8 })
-vim.api.nvim_set_hl(0, "NonText", { fg = vim.g.AlbaGrey5, italic = true })
+vim.api.nvim_set_hl(0, "MsgArea", { fg = vim.g.AlbaPeach })
+vim.api.nvim_set_hl(0, "NonText", { fg = vim.g.AlbaGrey4, italic = true })
 vim.api.nvim_set_hl(0, "Normal", { fg = vim.g.AlbaHaze, bg = vim.g.AlbaBlack })
 vim.api.nvim_set_hl(0, "NormalFloat", { fg = vim.g.AlbaHaze, bg = vim.g.AlbaBlack })
 vim.api.nvim_set_hl(0, "Pmenu", { fg = vim.g.AlbaGrey6, bg = vim.g.AlbaGrey1 })
@@ -93,7 +94,7 @@ vim.api.nvim_set_hl(0, "TabLineSel", { fg = vim.g.AlbaGrey8, bg = vim.g.AlbaGrey
 vim.api.nvim_set_hl(0, "Title", { fg = vim.g.AlbaOrange })
 vim.api.nvim_set_hl(0, "Underlined", { fg = vim.g.AlbaHaze, underline = true })
 vim.api.nvim_set_hl(0, "VertSplit", { fg = vim.g.AlbaGrey6, bg = vim.g.AlbaBlack })
-vim.api.nvim_set_hl(0, "Visual", { bg = vim.g.AlbaGrey3 })
+vim.api.nvim_set_hl(0, "Visual", { bg = vim.g.AlbaGrey2 })
 vim.api.nvim_set_hl(0, "WarningMsg", { fg = vim.g.AlbaOrange })
 vim.api.nvim_set_hl(0, "WinBar", { fg = vim.g.AlbaGrey8, bg = vim.g.AlbaGrey1 })
 vim.api.nvim_set_hl(0, "WinBarNC", { fg = vim.g.AlbaGrey6, bg = vim.g.AlbaGrey1 })
@@ -110,8 +111,8 @@ vim.g.AlbaFunction = vim.g.AlbaRouge
 vim.g.AlbaKeyword = vim.g.AlbaOrange
 vim.g.AlbaMisc = vim.g.AlbaDusk
 vim.g.AlbaProperty = vim.g.AlbaCoral
+vim.g.AlbaPunctuation = vim.g.AlbaGrey7
 vim.g.AlbaStorage = vim.g.AlbaGrey7
-vim.g.AlbaPunctuation = vim.g.AlbaGrey6
 vim.g.AlbaString = vim.g.AlbaPeach
 vim.g.AlbaType = vim.g.AlbaPink
 vim.g.AlbaVariable = vim.g.AlbaHaze
@@ -120,7 +121,7 @@ vim.api.nvim_set_hl(0, "@constant", { fg = vim.g.AlbaConstant })
 vim.api.nvim_set_hl(0, "@punctuation", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "@variable", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "Constant", { fg = vim.g.AlbaConstant })
-vim.api.nvim_set_hl(0, "Delimiter", { fg = vim.g.AlbaVariable })
+vim.api.nvim_set_hl(0, "Delimiter", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "Float", { fg = vim.g.AlbaConstant })
 vim.api.nvim_set_hl(0, "Function", { fg = vim.g.AlbaFunction })
 vim.api.nvim_set_hl(0, "Identifier", { fg = vim.g.AlbaProperty })
@@ -357,6 +358,12 @@ vim.api.nvim_set_hl(0, "juliaOperator", { fg = vim.g.AlbaProperty })
 vim.api.nvim_set_hl(0, "juliaStringVarDelim", { fg = vim.g.AlbaMisc })
 
 
+-- JSON
+
+vim.api.nvim_set_hl(0, "jsonNoise", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "jsonKeywordMatch", { fg = vim.g.AlbaPunctuation })
+
+
 -- Kotlin
 
 vim.api.nvim_set_hl(0, "ktArrow", { fg = vim.g.AlbaMisc })
@@ -376,9 +383,9 @@ vim.api.nvim_set_hl(0, "@constructor.lua", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "@function.builtin.lua", { fg = vim.g.AlbaFunction })
 vim.api.nvim_set_hl(0, "@module.builtin.lua", { fg = vim.g.AlbaProperty })
 vim.api.nvim_set_hl(0, "@module.builtin.lua", { fg = vim.g.AlbaVariable })
+vim.api.nvim_set_hl(0, "@operator.lua", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "@punctuation.bracket.lua", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "@variable.member.lua", { fg = vim.g.AlbaProperty })
-vim.api.nvim_set_hl(0, "@operator.lua", { fg = vim.g.AlbaPunctuation })
 
 
 -- Objective-C
@@ -504,6 +511,7 @@ vim.api.nvim_set_hl(0, "rustCommentLineDoc", { fg = vim.g.AlbaStorage })
 vim.api.nvim_set_hl(0, "rustDerive", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "rustDynKeyword", { fg = vim.g.AlbaProperty })
 vim.api.nvim_set_hl(0, "rustEnumVariant", { fg = vim.g.AlbaProperty })
+vim.api.nvim_set_hl(0, "rustFoldBraces", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "rustFuncName", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "rustIdentifier", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "rustMacro", { fg = vim.g.AlbaMisc })
@@ -606,33 +614,33 @@ vim.api.nvim_set_hl(0, "tsxCloseString", { link = "htmlTag" })
 
 -- TypeScript
 
-vim.api.nvim_set_hl(0, "typescriptAliasDeclaration", { fg = vim.g.AlbaVariable })
-vim.api.nvim_set_hl(0, "typescriptBinaryOp", { fg = vim.g.AlbaPunctuation })
-vim.api.nvim_set_hl(0, "typescriptUnaryOp", { fg = vim.g.AlbaPunctuation })
-vim.api.nvim_set_hl(0, "typescriptGlobalConsoleDot", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "@lsp.mod.defaultLibrary", { fg = vim.g.AlbaType })
-vim.api.nvim_set_hl(0, "typescriptArrowFunc", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "@lsp.typemod.member.defaultLibrary", { fg = vim.g.AlbaFunction })
+vim.api.nvim_set_hl(0, "typescriptAliasDeclaration", { fg = vim.g.AlbaVariable })
+vim.api.nvim_set_hl(0, "typescriptArrowFunc", { fg = vim.g.AlbaMisc })
+vim.api.nvim_set_hl(0, "typescriptAssign", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptAsyncFuncKeyword", { fg = vim.g.AlbaMisc })
+vim.api.nvim_set_hl(0, "typescriptBinaryOp", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptBraces", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptCall", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptCastKeyword", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptClassExtends", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptClassName", { fg = vim.g.AlbaVariable })
-vim.api.nvim_set_hl(0, "typescriptParens", { fg = vim.g.AlbaPunctuation })
-vim.api.nvim_set_hl(0, "typescriptAssign", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptConstraint", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptDestructureComma", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptDocNotation", { fg = vim.g.AlbaProperty })
 vim.api.nvim_set_hl(0, "typescriptDocTags", { fg = vim.g.AlbaProperty })
+vim.api.nvim_set_hl(0, "typescriptDotNotation", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptEndColons", { fg = vim.g.AlbaPunctuation })
-vim.api.nvim_set_hl(0, "typescriptTypeBrackets", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptExceptions", { fg = vim.g.AlbaKeyword })
 vim.api.nvim_set_hl(0, "typescriptFuncCallArg", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptFuncName", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptFuncType", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptFuncTypeArrow", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptGlobal", { fg = vim.g.AlbaType })
+vim.api.nvim_set_hl(0, "typescriptGlobalConsoleDot", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "typescriptGlobalConsoleDot", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "typescriptGlobalObjectDot", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptIdentifier", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptIdentifierName", { fg = vim.g.AlbaProperty })
 vim.api.nvim_set_hl(0, "typescriptInterfaceExtends", { fg = vim.g.AlbaMisc })
@@ -640,14 +648,23 @@ vim.api.nvim_set_hl(0, "typescriptInterfaceName", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptKeywordOp", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptMember", { fg = vim.g.AlbaProperty })
 vim.api.nvim_set_hl(0, "typescriptMemberOptionality", { fg = vim.g.AlbaMisc })
+vim.api.nvim_set_hl(0, "typescriptObjectColon", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "typescriptObjectSpread", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptOperator", { fg = vim.g.AlbaMisc })
-vim.api.nvim_set_hl(0, "typescriptProperty", { fg = vim.g.AlbaVariable })
+vim.api.nvim_set_hl(0, "typescriptParens", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "typescriptProperty", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptReadonlyModifier", { fg = vim.g.AlbaStorage })
 vim.api.nvim_set_hl(0, "typescriptRegexpString", { fg = vim.g.AlbaMisc })
+vim.api.nvim_set_hl(0, "typescriptRestOrSpread", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptStringProperty", { fg = vim.g.AlbaString })
 vim.api.nvim_set_hl(0, "typescriptTemplateSB", { fg = vim.g.AlbaMisc })
-vim.api.nvim_set_hl(0, "typescriptTypeReference", { fg = vim.g.AlbaType })
+vim.api.nvim_set_hl(0, "typescriptTernary", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "typescriptTernaryOp", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptTypeAnnotation", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "typescriptTypeBracket", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "typescriptTypeBrackets", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "typescriptTypeReference", { fg = vim.g.AlbaType })
+vim.api.nvim_set_hl(0, "typescriptUnaryOp", { fg = vim.g.AlbaPunctuation })
 
 -- TypeScript regexp
 
