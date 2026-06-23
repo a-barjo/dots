@@ -390,9 +390,9 @@ vim.api.nvim_set_hl(0, "@variable.member.lua", { fg = vim.g.AlbaProperty })
 
 -- Markdown
 
-vim.api.nvim_set_hl(0, "markup.link.markdown_inline", { fg = vim.g.AlbaPunctuation })
-vim.api.nvim_set_hl(0, "markup.link.label.markdown_inline", { fg = vim.g.AlbaHaze })
-vim.api.nvim_set_hl(0, "markup.link.url.markdown_inline", { fg = vim.g.AlbaBlue })
+vim.api.nvim_set_hl(0, "@markup.link.markdown_inline", { fg = vim.g.AlbaPunctuation, underline = false })
+vim.api.nvim_set_hl(0, "@markup.link.label.markdown_inline", { fg = vim.g.AlbaHaze, underline = false })
+vim.api.nvim_set_hl(0, "@markup.link.url.markdown_inline", { fg = vim.g.AlbaBlue, underline = true })
 
 
 -- Objective-C
@@ -560,7 +560,7 @@ vim.api.nvim_set_hl(0, "shDblBrace", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "shDblParen", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "shDeref", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "shDerefOffset", { fg = vim.g.AlbaConstant })
-vim.api.nvim_set_hl(0, "shDerefSimple", { fg = vim.g.AlbaProperty })
+vim.api.nvim_set_hl(0, "shDerefSimple", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "shDerefSpecial", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "shDerefVar", { fg = vim.g.AlbaProperty })
 vim.api.nvim_set_hl(0, "shDerefVarArray", { fg = vim.g.AlbaMisc })
@@ -573,6 +573,7 @@ vim.api.nvim_set_hl(0, "shFunctionTwo", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "shLoop", { fg = vim.g.AlbaKeyword })
 vim.api.nvim_set_hl(0, "shNoQuote", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "shOperator", { fg = vim.g.AlbaVariable })
+vim.api.nvim_set_hl(0, "shOption", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "shQuote", { fg = vim.g.AlbaString })
 vim.api.nvim_set_hl(0, "shRange", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "shRedir", { fg = vim.g.AlbaMisc })
@@ -581,7 +582,9 @@ vim.api.nvim_set_hl(0, "shSnglCase", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "shStatement", { fg = vim.g.AlbaFunction })
 vim.api.nvim_set_hl(0, "shTestOpr", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "shVar", { fg = vim.g.AlbaConstant })
+vim.api.nvim_set_hl(0, "shVarAssign", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "shVariable", { fg = vim.g.AlbaVariable })
+vim.api.nvim_set_hl(0, "shWrapLineOperator", { fg = vim.g.AlbaPunctuation })
 
 
 -- Solidity

@@ -43,3 +43,7 @@ vim.keymap.set("n", "<leader>s", function()
   vim.notify("Alba theme built and synced")
   vim.cmd.restart()
 end)
+
+vim.api.nvim_create_user_command("Todo", function()
+  vim.cmd.grep("TODO $(git diff main --name-only)")
+end, { desc = "List TODOs in branch" })
