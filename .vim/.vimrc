@@ -35,9 +35,10 @@ nnoremap <leader>% :let @"=@%<CR>
 nnoremap <leader>i :echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
 
 let g:markdown_fenced_languages = [
-  \ 'python',
+  \ 'go',
   \ 'js=javascript',
-  \ 'typescript',
+  \ 'python',
   \ 'ts=typescript',
   \ 'tsx=typescriptreact',
+  \ 'typescript',
   \ ]
