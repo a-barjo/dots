@@ -10,7 +10,7 @@ highlight Comment guifg=#605478 gui=italic
 highlight CursorColumn guibg=#272234
 highlight CursorLine guibg=#17141f
 highlight CursorLineNr guifg=#ffffff gui=bold cterm=bold
-highlight DiagnosticError guifg=#e78b7e
+highlight DiagnosticError guifg=#e7897e
 highlight DiagnosticHint guifg=#f39bc5
 highlight DiagnosticInfo guifg=#f39d68
 highlight DiagnosticWarn guifg=#ffd5b3
@@ -20,8 +20,8 @@ highlight DiffDelete guifg=#272234
 highlight DiffText guibg=#362f46
 highlight Directory guifg=#f39d68
 highlight EndOfBuffer guifg=#362f46
-highlight Error guifg=#e78b7e guibg=#0b0a10
-highlight ErrorMsg guifg=#e78b7e
+highlight Error guifg=#e7897e guibg=#0b0a10
+highlight ErrorMsg guifg=#e7897e
 highlight FoldColumn guifg=#605478 guibg=#0b0a10
 highlight Folded guifg=#81739c guibg=#17141f
 highlight IncSearch guifg=#0b0a10 guibg=#ffcd75
@@ -40,7 +40,7 @@ highlight Popup guifg=#ffede0 guibg=#17141f
 highlight QuickFixLine guibg=#1e1a28
 highlight Search guifg=#ffede0 guibg=#272234
 highlight SignColumn guibg=#0b0a10
-highlight SpellBad guifg=#e78b7e gui=undercurl
+highlight SpellBad guifg=#e7897e gui=undercurl
 highlight SpellCap guifg=#ffd5b3 gui=undercurl
 highlight SpellLocal guifg=#f39bc5 gui=undercurl
 highlight SpellRare guifg=#ffede0 gui=undercurl
@@ -63,7 +63,7 @@ highlight WinSeparator guifg=#1e1a28 guibg=#0b0a10
 highlight Constant guifg=#ffcd75
 highlight Delimiter guifg=#ffede0
 highlight Float guifg=#ffcd75
-highlight Function guifg=#e78b7e
+highlight Function guifg=#e7897e
 highlight Identifier guifg=#ffbbad
 highlight Keyword guifg=#f39d68
 highlight Operator guifg=#ffede0

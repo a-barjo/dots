@@ -19,7 +19,7 @@ vim.g.AlbaLuz = "#ffcd75"
 vim.g.AlbaOrange = "#f39d68"
 vim.g.AlbaPeach = "#ffd5b3"
 vim.g.AlbaPink = "#f39bc5"
-vim.g.AlbaRouge = "#e78b7e"
+vim.g.AlbaRouge = "#e7897e"
 
 vim.g.AlbaBlack = "#0b0a10"
 vim.g.AlbaRed = vim.g.AlbaRouge
@@ -676,6 +676,7 @@ vim.api.nvim_set_hl(0, "typescriptTernary", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptTernaryOp", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptTypeAnnotation", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptTypeBracket", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "typescriptTypeBrackets", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptTypeReference", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "typescriptUnaryOp", { fg = vim.g.AlbaPunctuation })
 
