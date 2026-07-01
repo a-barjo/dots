@@ -65,7 +65,7 @@ vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = vim.g.AlbaGreen, bg = vim.g.AlbaBla
 vim.api.nvim_set_hl(0, "GitSignsChange", { fg = vim.g.AlbaGrey5, bg = vim.g.AlbaBlack })
 vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = vim.g.AlbaRouge, bg = vim.g.AlbaBlack })
 vim.api.nvim_set_hl(0, "IncSearch", { fg = vim.g.AlbaBlack, bg = vim.g.AlbaLuz })
-vim.api.nvim_set_hl(0, "LineNr", { fg = vim.g.AlbaGrey5, bg = vim.g.AlbaBlack })
+vim.api.nvim_set_hl(0, "LineNr", { fg = vim.g.AlbaGrey4, bg = vim.g.AlbaBlack })
 vim.api.nvim_set_hl(0, "MatchParen", { bg = vim.g.AlbaGrey4, fg = vim.g.AlbaLuz })
 vim.api.nvim_set_hl(0, "ModeMsg", { bg = vim.g.AlbaWhite })
 vim.api.nvim_set_hl(0, "ModeMsg", { fg = vim.g.AlbaHaze })
