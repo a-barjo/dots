@@ -4,14 +4,14 @@ vim.cmd.highlight("clear")
 vim.g.colors_name = "alba"
 vim.g.AlbaTransparent = vim.g.AlbaTransparent or false
 
-vim.g.AlbaGrey1 = "#161320"
-vim.g.AlbaGrey2 = "#1d1929"
-vim.g.AlbaGrey3 = "#262135"
-vim.g.AlbaGrey4 = "#342e48"
-vim.g.AlbaGrey5 = "#453c5d"
-vim.g.AlbaGrey6 = "#5d527a"
-vim.g.AlbaGrey7 = "#7e709e"
-vim.g.AlbaGrey8 = "#ada5c0"
+vim.g.AlbaGrey1 = "#211d2f"
+vim.g.AlbaGrey2 = "#38324e"
+vim.g.AlbaGrey3 = "#50476c"
+vim.g.AlbaGrey4 = "#685c8a"
+vim.g.AlbaGrey5 = "#8376a2"
+vim.g.AlbaGrey6 = "#9f96b6"
+vim.g.AlbaGrey7 = "#bbb4ca"
+vim.g.AlbaGrey8 = "#d7d3df"
 
 vim.g.AlbaCoral = "#ffbbad"
 vim.g.AlbaDusk = "#b4a1e8"
@@ -22,7 +22,7 @@ vim.g.AlbaPeach = "#ffd5b3"
 vim.g.AlbaPink = "#f39bc5"
 vim.g.AlbaRouge = "#e7897e"
 
-vim.g.AlbaBlack = "#0d0b13"
+vim.g.AlbaBlack = "#121019"
 vim.g.AlbaRed = vim.g.AlbaRouge
 vim.g.AlbaGreen = "#c5d89c"
 vim.g.AlbaYellow = vim.g.AlbaLuz
@@ -55,7 +55,7 @@ vim.api.nvim_set_hl(0, "DiffChange", { bg = vim.g.AlbaGrey2 })
 vim.api.nvim_set_hl(0, "DiffDelete", { fg = vim.g.AlbaGrey3 })
 vim.api.nvim_set_hl(0, "DiffText", { bg = vim.g.AlbaGrey4 })
 vim.api.nvim_set_hl(0, "Directory", { fg = vim.g.AlbaOrange })
-vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = vim.g.AlbaGrey5 })
+vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = vim.g.AlbaGrey3 })
 vim.api.nvim_set_hl(0, "Error", { fg = vim.g.AlbaRouge, bg = vim.g.AlbaBlack })
 vim.api.nvim_set_hl(0, "ErrorMsg", { fg = vim.g.AlbaRouge })
 vim.api.nvim_set_hl(0, "FloatBorder", { fg = vim.g.AlbaGrey2, bg = vim.g.AlbaBlack })
@@ -66,7 +66,7 @@ vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = vim.g.AlbaGreen })
 vim.api.nvim_set_hl(0, "GitSignsChange", { fg = vim.g.AlbaGrey5 })
 vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = vim.g.AlbaRouge })
 vim.api.nvim_set_hl(0, "IncSearch", { fg = vim.g.AlbaBlack, bg = vim.g.AlbaLuz })
-vim.api.nvim_set_hl(0, "LineNr", { fg = vim.g.AlbaGrey4 })
+vim.api.nvim_set_hl(0, "LineNr", { fg = vim.g.AlbaGrey3 })
 vim.api.nvim_set_hl(0, "MatchParen", { bg = vim.g.AlbaGrey4, fg = vim.g.AlbaLuz })
 vim.api.nvim_set_hl(0, "ModeMsg", { bg = vim.g.AlbaWhite })
 vim.api.nvim_set_hl(0, "ModeMsg", { fg = vim.g.AlbaHaze })
