@@ -5,7 +5,7 @@ let g:colors_name = "alba"
 
 " Editor
 
-highlight ColorColumn guibg=#121019
+highlight ColorColumn guibg=#100e16
 highlight Comment guifg=#9f96b6 gui=italic
 highlight CursorColumn guibg=#50476c
 highlight CursorLine guibg=#211d2f
@@ -20,17 +20,17 @@ highlight DiffDelete guifg=#50476c
 highlight DiffText guibg=#685c8a
 highlight Directory guifg=#f39d68
 highlight EndOfBuffer guifg=#685c8a
-highlight Error guifg=#e7897e guibg=#121019
+highlight Error guifg=#e7897e guibg=#100e16
 highlight ErrorMsg guifg=#e7897e
-highlight FoldColumn guifg=#9f96b6 guibg=#121019
+highlight FoldColumn guifg=#9f96b6 guibg=#100e16
 highlight Folded guifg=#bbb4ca guibg=#211d2f
-highlight IncSearch guifg=#121019 guibg=#ffcd75
-highlight LineNr guifg=#50476c guibg=#121019
+highlight IncSearch guifg=#100e16 guibg=#ffcd75
+highlight LineNr guifg=#50476c guibg=#100e16
 highlight MatchParen guibg=#685c8a guifg=#ffede0
 highlight ModeMsg guifg=#ffede0
 highlight MoreMsg guifg=#f39bc5
 highlight NonText guifg=#8376a2 gui=italic
-highlight Normal guifg=#ffede0 guibg=#121019
+highlight Normal guifg=#ffede0 guibg=#100e16
 highlight Pmenu guifg=#ffede0 guibg=#211d2f
 highlight PmenuMatch guifg=#ffffff guibg=#38324e
 highlight PmenuSel guifg=#d7d3df guibg=#38324e
@@ -39,7 +39,7 @@ highlight PmenuThumb guibg=#50476c
 highlight Popup guifg=#ffede0 guibg=#211d2f
 highlight QuickFixLine guibg=#38324e
 highlight Search guifg=#ffede0 guibg=#50476c
-highlight SignColumn guibg=#121019
+highlight SignColumn guibg=#100e16
 highlight SpellBad guifg=#e7897e gui=undercurl
 highlight SpellCap guifg=#ffd5b3 gui=undercurl
 highlight SpellLocal guifg=#f39bc5 gui=undercurl
@@ -49,14 +49,14 @@ highlight StatusLineNC guifg=#9f96b6 guibg=#211d2f gui=NONE cterm=NONE term=NONE
 highlight StatusLineTerm guifg=#d7d3df guibg=#38324e gui=NONE cterm=NONE term=NONE
 highlight StatusLineTermNC guifg=#9f96b6 guibg=#38324e gui=NONE cterm=NONE term=NONE
 highlight TabLine guifg=#8376a2 guibg=#211d2f
-highlight TabLineFill guifg=#121019 guibg=#211d2f gui=NONE cterm=NONE term=NONE
+highlight TabLineFill guifg=#100e16 guibg=#211d2f gui=NONE cterm=NONE term=NONE
 highlight TabLineSel guifg=#d7d3df guibg=#38324e
 highlight Title guifg=#f39d68
 highlight Underlined guifg=#ffede0 gui=underline
-highlight VertSplit guifg=#9f96b6 guibg=#121019
+highlight VertSplit guifg=#9f96b6 guibg=#100e16
 highlight Visual guifg=NONE guibg=#38324e
 highlight WarningMsg guifg=#f39d68
-highlight WinSeparator guifg=#38324e guibg=#121019
+highlight WinSeparator guifg=#38324e guibg=#100e16
 
 " Syntax
 
@@ -97,7 +97,7 @@ highlight tsxTag guifg=#9f96b6
 highlight tsxCloseString guifg=#9f96b6
 highlight tsxCloseTag guifg=#9f96b6
 highlight markdownCode guifg=#ffcd75
-highlight markdownCodeDelimiter guifg=#121019
+highlight markdownCodeDelimiter guifg=#100e16
 highlight markdownItalic guifg=#b4a1e8 gui=italic
 highlight markdownLinkText guifg=#a1c8e8 gui=underline
 highlight markdownLinkTextDelimiter guifg=#685c8a

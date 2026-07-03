@@ -22,7 +22,7 @@ vim.g.AlbaPeach = "#ffd5b3"
 vim.g.AlbaPink = "#f39bc5"
 vim.g.AlbaRouge = "#e7897e"
 
-vim.g.AlbaBlack = "#121019"
+vim.g.AlbaBlack = "#100e16"
 vim.g.AlbaRed = vim.g.AlbaRouge
 vim.g.AlbaGreen = "#c5d89c"
 vim.g.AlbaYellow = vim.g.AlbaLuz

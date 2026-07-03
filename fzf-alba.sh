@@ -1,5 +1,5 @@
 export FZF_DEFAULT_OPTS="\
---color=bg:#121019,bg+:#211d2f \
+--color=bg:#100e16,bg+:#211d2f \
 --color=fg:#ffede0,fg+:#ffd5b3 \
 --color=hl:#f39d68,hl+:#f39d68 \
 --color=info:#9f96b6 \
@@ -8,5 +8,5 @@ export FZF_DEFAULT_OPTS="\
 --color=marker:#c5d89c \
 --color=spinner:#88c8bf \
 --color=header:#9f96b6 \
---color=gutter:#121019 \
+--color=gutter:#100e16 \
 --color=border:#50476c"
