@@ -1,8 +1,7 @@
 *
 !.bashrc
-!.vim
-!.vim/**
-!.vimrc
+!vim
+!vim/**
 !.gitignore
 !README.md
 !fzf
@@ -16,4 +15,4 @@
 !tmux/**
 !wall.jpeg
 nvim/spell/**
-.vim/undodir/**
+vim/undodir/**
