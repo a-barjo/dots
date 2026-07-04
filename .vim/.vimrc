@@ -8,8 +8,6 @@ let g:omni_sql_no_default_maps = 1
 
 set clipboard=unnamedplus
 set completeopt=fuzzy,menuone,noinsert,popup
-set cursorline
-set cursorlineopt=number
 set expandtab
 set grepprg=rg\ --vimgrep\ --smart-case
 set nohlsearch
