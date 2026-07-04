@@ -62,7 +62,7 @@ highlight GitSignsChange guifg=#7a7799
 highlight GitSignsDelete guifg=#e88a7f
 highlight IncSearch guifg=#12111e guibg=#ffcc75
 highlight LineNr guifg=#484566
-highlight MatchParen guibg=#5f5d7f guifg=#ffcc75
+highlight MatchParen guibg=#484566 guifg=#ffcc75
 highlight ModeMsg guibg=#ffffff
 highlight ModeMsg guifg=#ffede0
 highlight MoreMsg guifg=#ffd4b2

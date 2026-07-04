@@ -1,7 +1,5 @@
 *
 !.bashrc
-!vim
-!vim/**
 !.gitignore
 !README.md
 !fzf
@@ -10,9 +8,14 @@
 !ghostty/**
 !nvim
 !nvim/**
+!opencode
+!opencode/themes
+!opencode/themes/**
 !screen.png
 !tmux
 !tmux/**
+!vim
+!vim/**
 !wall.jpeg
 nvim/spell/**
 vim/undodir/**
