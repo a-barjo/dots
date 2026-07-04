@@ -1,7 +1,7 @@
-background = #12111e
+background = #11101e
 foreground = #ffede0
 
-palette = 0=#32304c
+palette = 0=#302d4c
 palette = 1=#e88a7f
 palette = 2=#c5d89c
 palette = 3=#ffcc75
@@ -9,7 +9,7 @@ palette = 4=#f29d68
 palette = 5=#f7bb96
 palette = 6=#f9d9c5
 palette = 7=#ffffff
-palette = 8=#7a7799
+palette = 8=#757299
 palette = 9=#f9bfb1
 palette = 10=#d0e0af
 palette = 11=#ffe2b2
