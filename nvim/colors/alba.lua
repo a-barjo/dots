@@ -4,38 +4,33 @@ vim.cmd.highlight("clear")
 vim.g.colors_name = "alba"
 vim.g.AlbaTransparent = vim.g.AlbaTransparent or false
 
-vim.g.AlbaGrey1 = "#211d2f"
-vim.g.AlbaGrey2 = "#38324e"
-vim.g.AlbaGrey3 = "#50476c"
-vim.g.AlbaGrey4 = "#685c8a"
-vim.g.AlbaGrey5 = "#8376a2"
-vim.g.AlbaGrey6 = "#9f96b6"
-vim.g.AlbaGrey7 = "#bbb4ca"
-vim.g.AlbaGrey8 = "#d7d3df"
+vim.g.AlbaGrey1 = "#1d1b2d"
+vim.g.AlbaGrey2 = "#33314c"
+vim.g.AlbaGrey3 = "#494766"
+vim.g.AlbaGrey4 = "#625f7f"
+vim.g.AlbaGrey5 = "#7c7a99"
+vim.g.AlbaGrey6 = "#9997b2"
+vim.g.AlbaGrey7 = "#b9b7cc"
+vim.g.AlbaGrey8 = "#dadae5"
 
 vim.g.AlbaCoral = "#ffbbad"
-vim.g.AlbaDusk = "#b4a1e8"
+vim.g.AlbaDusk = "#b3a0e8"
 vim.g.AlbaHaze = "#ffede0"
-vim.g.AlbaLuz = "#ffcd75"
-vim.g.AlbaOrange = "#f39d68"
-vim.g.AlbaPeach = "#ffd5b3"
-vim.g.AlbaPink = "#f39bc5"
-vim.g.AlbaRouge = "#e7897e"
+vim.g.AlbaLuz = "#ffcc75"
+vim.g.AlbaOrange = "#f29d68"
+vim.g.AlbaPeach = "#ffd4b2"
+vim.g.AlbaPink = "#f29bc5"
+vim.g.AlbaRouge = "#e88a7f"
 
-vim.g.AlbaBlack = "#100e16"
-vim.g.AlbaRed = vim.g.AlbaRouge
+vim.g.AlbaBlack = "#13121e"
 vim.g.AlbaGreen = "#c5d89c"
-vim.g.AlbaYellow = vim.g.AlbaLuz
-vim.g.AlbaBlue = "#a1c8e8"
-vim.g.AlbaMagenta = vim.g.AlbaDusk
-vim.g.AlbaCyan = "#88c8bf"
+vim.g.AlbaBlue = "#a0c7e8"
 vim.g.AlbaWhite = "#ffffff"
 
 -- Editor
 
-vim.api.nvim_set_hl(0, "Normal", { fg = vim.g.AlbaHaze, bg = vim.g.AlbaTransparent and "NONE" or vim.g.AlbaBlack })
-
 vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = vim.g.AlbaWhite })
+vim.api.nvim_set_hl(0, "ColorColumn", { bg = vim.g.AlbaGrey1 })
 vim.api.nvim_set_hl(0, "Comment", { fg = vim.g.AlbaGrey6, italic = true })
 vim.api.nvim_set_hl(0, "CurSearch", { fg = vim.g.AlbaBlack, bg = vim.g.AlbaLuz })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = vim.g.AlbaGrey1 })
@@ -50,10 +45,10 @@ vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { sp = vim.g.AlbaPink, undercu
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { sp = vim.g.AlbaOrange, undercurl = true })
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { sp = vim.g.AlbaPeach, undercurl = true })
 vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = vim.g.AlbaPeach })
-vim.api.nvim_set_hl(0, "DiffAdd", { bg = vim.g.AlbaGrey2 })
-vim.api.nvim_set_hl(0, "DiffChange", { bg = vim.g.AlbaGrey2 })
-vim.api.nvim_set_hl(0, "DiffDelete", { fg = vim.g.AlbaGrey3 })
-vim.api.nvim_set_hl(0, "DiffText", { bg = vim.g.AlbaGrey4 })
+vim.api.nvim_set_hl(0, "DiffAdd", { bg = vim.g.AlbaGrey1 })
+vim.api.nvim_set_hl(0, "DiffChange", { bg = vim.g.AlbaGrey1 })
+vim.api.nvim_set_hl(0, "DiffDelete", { fg = vim.g.AlbaGrey2 })
+vim.api.nvim_set_hl(0, "DiffText", { bg = vim.g.AlbaGrey3 })
 vim.api.nvim_set_hl(0, "Directory", { fg = vim.g.AlbaOrange })
 vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = vim.g.AlbaGrey3 })
 vim.api.nvim_set_hl(0, "Error", { fg = vim.g.AlbaRouge, bg = vim.g.AlbaBlack })
@@ -74,6 +69,7 @@ vim.api.nvim_set_hl(0, "MoreMsg", { fg = vim.g.AlbaPeach })
 vim.api.nvim_set_hl(0, "MoreMsg", { fg = vim.g.AlbaPink })
 vim.api.nvim_set_hl(0, "MsgArea", { fg = vim.g.AlbaPeach })
 vim.api.nvim_set_hl(0, "NonText", { fg = vim.g.AlbaGrey4, italic = true })
+vim.api.nvim_set_hl(0, "Normal", { fg = vim.g.AlbaHaze, bg = vim.g.AlbaTransparent and "NONE" or vim.g.AlbaBlack })
 vim.api.nvim_set_hl(0, "NormalFloat", { fg = vim.g.AlbaHaze, bg = vim.g.AlbaBlack })
 vim.api.nvim_set_hl(0, "Pmenu", { fg = vim.g.AlbaGrey6, bg = vim.g.AlbaGrey1 })
 vim.api.nvim_set_hl(0, "PmenuMatch", { fg = vim.g.AlbaWhite, bg = vim.g.AlbaGrey2 })
@@ -91,9 +87,10 @@ vim.api.nvim_set_hl(0, "TabLine", { fg = vim.g.AlbaGrey5, bg = vim.g.AlbaGrey1 }
 vim.api.nvim_set_hl(0, "TabLineFill", { bg = vim.g.AlbaGrey1 })
 vim.api.nvim_set_hl(0, "TabLineSel", { fg = vim.g.AlbaGrey8, bg = vim.g.AlbaGrey2 })
 vim.api.nvim_set_hl(0, "Title", { fg = vim.g.AlbaOrange })
+vim.api.nvim_set_hl(0, "Todo", { fg = vim.g.AlbaBlack, bg = vim.g.AlbaGrey6, italic = true })
 vim.api.nvim_set_hl(0, "Underlined", { fg = vim.g.AlbaHaze, underline = true })
 vim.api.nvim_set_hl(0, "VertSplit", { fg = vim.g.AlbaGrey6, bg = vim.g.AlbaBlack })
-vim.api.nvim_set_hl(0, "Visual", { bg = vim.g.AlbaGrey3 })
+vim.api.nvim_set_hl(0, "Visual", { bg = vim.g.AlbaGrey2 })
 vim.api.nvim_set_hl(0, "WarningMsg", { fg = vim.g.AlbaOrange })
 vim.api.nvim_set_hl(0, "WinBar", { fg = vim.g.AlbaGrey8, bg = vim.g.AlbaGrey1 })
 vim.api.nvim_set_hl(0, "WinBarNC", { fg = vim.g.AlbaGrey6, bg = vim.g.AlbaGrey1 })
@@ -637,7 +634,6 @@ vim.api.nvim_set_hl(0, "typescriptCall", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptCastKeyword", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptClassExtends", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptClassName", { fg = vim.g.AlbaVariable })
-vim.api.nvim_set_hl(0, "typescriptCommentTodo", { fg = vim.g.AlbaBlack, bg = vim.g.AlbaGrey6, italic = true })
 vim.api.nvim_set_hl(0, "typescriptConditionalType", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptConstraint", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "typescriptDestructureComma", { fg = vim.g.AlbaPunctuation })
