@@ -5,7 +5,8 @@
 !.vimrc
 !.gitignore
 !README.md
-!fzf-alba.sh
+!fzf
+!fzf/**
 !ghostty
 !ghostty/**
 !nvim

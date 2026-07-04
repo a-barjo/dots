@@ -7,10 +7,10 @@ export JRE_HOME='/usr/lib64/jvm/jre-17'
 export TMUX_TMPDIR='/tmp'
 
 export FZF_DEFAULT_COMMAND='fd --follow --hidden --strip-cwd-prefix --exclude .git'
-source "$HOME/.config/fzf-alba.sh"
+source "$HOME/.config/fzf/fzf-alba.sh"
 
 export PATH="$PATH:\
-/usr/local/go/bin:\
+$HOME/go/bin:\
 $HOME/.npm-global/bin:\
 $HOME/.cargo/bin:\
 $HOME/.local/bin:\
