@@ -6,6 +6,8 @@
 !fzf/**
 !ghostty
 !ghostty/**
+!k9s
+!k9s/**
 !nvim
 !nvim/**
 !opencode

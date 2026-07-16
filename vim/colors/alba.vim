@@ -209,8 +209,7 @@ highlight csOpSymbols guifg=#b3a0e8
 " CSS
 
 highlight cssAtKeyword guifg=#b3a0e8
-highlight cssAtRule guifg=#ffede0
-highlight cssAtRule guifg=#ffede0
+highlight cssAtRule guifg=#e88a7f
 highlight cssAttrComma guifg=#ffede0
 highlight cssAttributeSelector guifg=#f29bc5
 highlight cssBraces guifg=#ffede0

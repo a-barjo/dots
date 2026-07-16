@@ -208,8 +208,7 @@ vim.api.nvim_set_hl(0, "csOpSymbols", { fg = vim.g.AlbaMisc })
 -- CSS
 
 vim.api.nvim_set_hl(0, "cssAtKeyword", { fg = vim.g.AlbaMisc })
-vim.api.nvim_set_hl(0, "cssAtRule", { fg = vim.g.AlbaVariable })
-vim.api.nvim_set_hl(0, "cssAtRule", { fg = vim.g.AlbaVariable })
+vim.api.nvim_set_hl(0, "cssAtRule", { fg = vim.g.AlbaRouge })
 vim.api.nvim_set_hl(0, "cssAttrComma", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "cssAttributeSelector", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "cssBraces", { fg = vim.g.AlbaVariable })
