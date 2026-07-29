@@ -23,10 +23,6 @@ $JAVA_HOME/bin"
 eval "$(fzf --bash)"
 eval "$(starship init bash)"
 
-create_sessions() {
-	sh "$HOME/.config/tmux/create_sessions.sh"
-}
-
 gmm() {
 	git fetch
 	git merge origin main --no-edit

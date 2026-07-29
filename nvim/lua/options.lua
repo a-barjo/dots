@@ -35,7 +35,7 @@ vim.keymap.set("n", "<leader><leader>", "<Cmd>Fzf<CR>", { desc = "Open fzf" })
 vim.keymap.set("n", "<leader>gd%", "<Cmd>DiffviewFileHistory %<CR>", { desc = "Open Diffview file history" })
 vim.keymap.set("n", "<leader>gdd", "<Cmd>DiffviewOpen<CR>", { desc = "Open Diffview" })
 vim.keymap.set("n", "<leader>gdl", "<Cmd>DiffviewFileHistory .<CR>", { desc = "Open Diffview git log" })
-vim.keymap.set("n", "<leader>gdm", "<Cmd>DiffviewOpen main..HEAD<CR>", { desc = "Open Diffview compare to main" })
+vim.keymap.set("n", "<leader>gdm", "<Cmd>DiffviewOpen origin/main..HEAD<CR>", { desc = "Open Diffview compare to main" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
 vim.keymap.set("n", "<leader>s", function()
