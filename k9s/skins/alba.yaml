@@ -4,10 +4,10 @@
 
 # Styles...
 foreground: &foreground "#ffede0"
-background: &background "#11101e"
-current_line: &current_line "#1a192d"
-selection: &selection "#1a192d"
-comment: &comment "#918eb2"
+background: &background "#151526"
+current_line: &current_line "#1c1c33"
+selection: &selection "#1c1c33"
+comment: &comment "#8e8eb2"
 cyan: &cyan "#a0c7e8"
 green: &green "#c5d89c"
 orange: &orange "#f29d68"

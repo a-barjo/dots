@@ -3,14 +3,14 @@ highlight clear
 
 let g:colors_name = "alba"
 
-let g:AlbaGrey1 = "#1a192d"
-let g:AlbaGrey2 = "#302d4c"
-let g:AlbaGrey3 = "#454266"
-let g:AlbaGrey4 = "#5c597f"
-let g:AlbaGrey5 = "#757299"
-let g:AlbaGrey6 = "#918eb2"
-let g:AlbaGrey7 = "#afadcc"
-let g:AlbaGrey8 = "#d0cee5"
+let g:AlbaGrey1 = "#1c1c33"
+let g:AlbaGrey2 = "#2d2d4c"
+let g:AlbaGrey3 = "#424266"
+let g:AlbaGrey4 = "#59597f"
+let g:AlbaGrey5 = "#727299"
+let g:AlbaGrey6 = "#8e8eb2"
+let g:AlbaGrey7 = "#adadcc"
+let g:AlbaGrey8 = "#cecee5"
 
 let g:AlbaCoral = "#ffbbad"
 let g:AlbaDusk = "#b3a0e8"
@@ -21,7 +21,7 @@ let g:AlbaPeach = "#ffd4b2"
 let g:AlbaPink = "#f29bc5"
 let g:AlbaRouge = "#e88a7f"
 
-let g:AlbaBlack = "#11101e"
+let g:AlbaBlack = "#151526"
 let g:AlbaGreen = "#c5d89c"
 let g:AlbaBlue = "#a0c7e8"
 let g:AlbaWhite = "#ffffff"
@@ -29,14 +29,14 @@ let g:AlbaWhite = "#ffffff"
 " Editor
 
 highlight CmpItemAbbrMatch guifg=#ffffff
-highlight ColorColumn guibg=#1a192d
-highlight Comment guifg=#918eb2 gui=italic
-highlight CurSearch guifg=#11101e guibg=#ffcc75
-highlight CursorColumn guibg=#11101e
-highlight CursorLine guibg=#1a192d
-highlight CursorLineFold guifg=#918eb2
+highlight ColorColumn guibg=#1c1c33
+highlight Comment guifg=#8e8eb2 gui=italic
+highlight CurSearch guifg=#151526 guibg=#ffcc75
+highlight CursorColumn guibg=#151526
+highlight CursorLine guibg=#1c1c33
+highlight CursorLineFold guifg=#8e8eb2
 highlight CursorLineNr guifg=#ffffff gui=bold
-highlight CursorLineSign guifg=#918eb2
+highlight CursorLineSign guifg=#8e8eb2
 highlight DiagnosticError guifg=#e88a7f
 highlight DiagnosticHint guifg=#f29bc5
 highlight DiagnosticInfo guifg=#f29d68
@@ -45,71 +45,74 @@ highlight DiagnosticUnderlineHint guisp=#f29bc5 gui=undercurl
 highlight DiagnosticUnderlineInfo guisp=#f29d68 gui=undercurl
 highlight DiagnosticUnderlineWarn guisp=#ffd4b2 gui=undercurl
 highlight DiagnosticWarn guifg=#ffd4b2
-highlight DiffAdd guibg=#302d4c
-highlight DiffChange guibg=#302d4c
-highlight DiffDelete guifg=#302d4c
-highlight DiffText guibg=#5c597f
+highlight DiffAdd guibg=#2d2d4c
+highlight DiffChange guibg=#2d2d4c
+highlight DiffDelete guifg=#2d2d4c
+highlight DiffFile guifg=#ffd4b2
+highlight DiffText guibg=#59597f
 highlight Directory guifg=#f29d68
-highlight EndOfBuffer guifg=#454266
-highlight Error guifg=#e88a7f guibg=#11101e
+highlight EndOfBuffer guifg=#424266
+highlight Error guifg=#e88a7f guibg=#151526
 highlight ErrorMsg guifg=#e88a7f
-highlight FloatBorder guifg=#302d4c guibg=#11101e
-highlight FloatTitle guifg=#d0cee5 guibg=#11101e
-highlight FoldColumn guifg=#918eb2 guibg=#11101e
-highlight Folded guifg=#afadcc guibg=#1a192d
+highlight FloatBorder guifg=#2d2d4c guibg=#151526
+highlight FloatTitle guifg=#cecee5 guibg=#151526
+highlight FoldColumn guifg=#8e8eb2 guibg=#151526
+highlight Folded guifg=#adadcc guibg=#1c1c33
 highlight GitSignsAdd guifg=#c5d89c
-highlight GitSignsChange guifg=#757299
+highlight GitSignsChange guifg=#727299
 highlight GitSignsDelete guifg=#e88a7f
-highlight IncSearch guifg=#11101e guibg=#ffcc75
-highlight LineNr guifg=#454266
-highlight MatchParen guibg=#454266 guifg=#ffcc75
+highlight IncSearch guifg=#151526 guibg=#ffcc75
+highlight LineNr guifg=#424266
+highlight MatchParen guibg=#424266 guifg=#ffcc75
 highlight ModeMsg guibg=#ffffff
 highlight ModeMsg guifg=#ffede0
 highlight MoreMsg guifg=#ffd4b2
 highlight MoreMsg guifg=#f29bc5
 highlight MsgArea guifg=#ffd4b2
-highlight NonText guifg=#5c597f gui=italic
+highlight NonText guifg=#59597f gui=italic
 if exists("g:AlbaTransparent") && g:AlbaTransparent
 	highlight Normal guifg=#ffede0 guibg=none
 else
-	highlight Normal guifg=#ffede0 guibg=#11101e
+	highlight Normal guifg=#ffede0 guibg=#151526
 endif
-highlight NormalFloat guifg=#ffede0 guibg=#11101e
-highlight Pmenu guifg=#918eb2 guibg=#1a192d
-highlight PmenuMatch guifg=#ffffff guibg=#302d4c
-highlight PmenuSbar guibg=#1a192d
-highlight PmenuSel guifg=#d0cee5 guibg=#302d4c
-highlight PmenuThumb guibg=#454266
-highlight Popup guifg=#ffede0 guibg=#1a192d
-highlight QuickFixLine guibg=#302d4c
-highlight Search guifg=#ffede0 guibg=#454266
-highlight SignColumn guibg=#11101e
+highlight NormalFloat guifg=#ffede0 guibg=#151526
+highlight Pmenu guifg=#8e8eb2 guibg=#1c1c33
+highlight PmenuMatch guifg=#ffffff guibg=#2d2d4c
+highlight PmenuSbar guibg=#1c1c33
+highlight PmenuSel guifg=#cecee5 guibg=#2d2d4c
+highlight PmenuThumb guibg=#424266
+highlight Popup guifg=#ffede0 guibg=#1c1c33
+highlight QuickFixLine guibg=#2d2d4c
+highlight Search guifg=#ffede0 guibg=#424266
+highlight SignColumn guibg=#151526
 highlight SpecialKey guifg=#f29d68
 highlight SpellBad guifg=#e88a7f gui=undercurl
 highlight SpellCap guifg=#ffd4b2 gui=undercurl
 highlight SpellLocal guifg=#f29bc5 gui=undercurl
 highlight SpellRare guifg=#ffede0 gui=undercurl
-highlight StatusLine guifg=#d0cee5 guibg=#1a192d
-highlight StatusLineNC guifg=#918eb2 guibg=#1a192d
-highlight StatusLineTerm guifg=#d0cee5 guibg=#302d4c
-highlight StatusLineTermNC guifg=#918eb2 guibg=#302d4c
-highlight Substitute guifg=#11101e guibg=#ffcc75
-highlight TabLine guifg=#757299 guibg=#1a192d
-highlight TabLineFill guibg=#1a192d cterm=none
-highlight TabLineSel guifg=#d0cee5 guibg=#302d4c
+highlight StatusLine guifg=#cecee5 guibg=#1c1c33
+highlight StatusLineNC guifg=#8e8eb2 guibg=#1c1c33
+highlight StatusLineTerm guifg=#cecee5 guibg=#2d2d4c
+highlight StatusLineTermNC guifg=#8e8eb2 guibg=#2d2d4c
+highlight StderrMsg guifg=#f29bc5
+highlight StdoutMsg guifg=#ffede0
+highlight Substitute guifg=#151526 guibg=#ffcc75
+highlight TabLine guifg=#727299 guibg=#1c1c33
+highlight TabLineFill guibg=#1c1c33 cterm=none
+highlight TabLineSel guifg=#cecee5 guibg=#2d2d4c
 highlight Title guifg=#f29d68
-highlight Todo guifg=#11101e guibg=#918eb2 gui=italic
+highlight Todo guifg=#151526 guibg=#8e8eb2 gui=italic
 highlight Underlined guifg=#ffede0 gui=underline
-highlight VertSplit guifg=#918eb2 guibg=#11101e
-highlight Visual guifg=NONE guibg=#302d4c
+highlight VertSplit guifg=#8e8eb2 guibg=#151526
+highlight Visual guifg=NONE guibg=#2d2d4c
 highlight WarningMsg guifg=#f29d68
-highlight WinBar guifg=#d0cee5 guibg=#1a192d
-highlight WinBarNC guifg=#918eb2 guibg=#1a192d
-highlight WinSeparator guifg=#302d4c guibg=#11101e
+highlight WinBar guifg=#cecee5 guibg=#1c1c33
+highlight WinBarNC guifg=#8e8eb2 guibg=#1c1c33
+highlight WinSeparator guifg=#2d2d4c guibg=#151526
 highlight diffAdded guifg=#c5d89c
 highlight diffChanged guifg=#ffd4b2
 highlight diffRemoved guifg=#e88a7f
-highlight qfLineNr guifg=#757299
+highlight qfLineNr guifg=#727299
 
 " Syntax
 
@@ -125,12 +128,12 @@ let g:AlbaType = g:AlbaPink
 let g:AlbaVariable = g:AlbaHaze
 
 highlight Constant guifg=#ffcc75
-highlight Delimiter guifg=#afadcc
+highlight Delimiter guifg=#adadcc
 highlight Float guifg=#ffcc75
 highlight Function guifg=#e88a7f
 highlight Identifier guifg=#ffbbad
 highlight Keyword guifg=#f29d68
-highlight Operator guifg=#afadcc
+highlight Operator guifg=#adadcc
 highlight PreProc guifg=#ffbbad
 highlight Question guifg=#ffd4b2
 highlight Quote guifg=#ffd4b2
@@ -152,7 +155,7 @@ highlight netrwClassify guifg=#ffbbad
 
 " Ada
 
-highlight adaAssignment guifg=#afadcc
+highlight adaAssignment guifg=#adadcc
 highlight adaAttribute guifg=#ffbbad
 highlight adaBegin guifg=#f29d68
 highlight adaInc guifg=#ffbbad
@@ -186,7 +189,7 @@ highlight cTypedef guifg=#b3a0e8
 
 " Clojure
 
-highlight clojureParen guifg=#afadcc
+highlight clojureParen guifg=#adadcc
 highlight clojureDefine guifg=#f29d68
 
 
@@ -300,7 +303,7 @@ highlight goDeclType guifg=#b3a0e8
 " Groovy
 
 highlight groovyClassDecl guifg=#f29d68
-highlight groovyCommentTitle guifg=#afadcc
+highlight groovyCommentTitle guifg=#adadcc
 highlight groovyJDKBuiltin guifg=#f29d68
 
 
@@ -326,7 +329,7 @@ highlight htmlH4 guifg=#ffede0
 highlight htmlH5 guifg=#ffede0
 highlight htmlH6 guifg=#ffede0
 highlight htmlSpecialChar guifg=#e88a7f
-highlight htmlTag guifg=#afadcc
+highlight htmlTag guifg=#adadcc
 highlight htmlTitle guifg=#ffede0
 
 
@@ -363,8 +366,8 @@ highlight juliaStringVarDelim guifg=#b3a0e8
 
 " JSON
 
-highlight jsonNoise guifg=#afadcc
-highlight jsonKeywordMatch guifg=#afadcc
+highlight jsonNoise guifg=#adadcc
+highlight jsonKeywordMatch guifg=#adadcc
 
 
 " Kotlin
@@ -373,7 +376,7 @@ highlight ktArrow guifg=#b3a0e8
 highlight ktComplexInterpolationBrace guifg=#b3a0e8
 highlight ktConditional guifg=#f29d68
 highlight ktModifier guifg=#b3a0e8
-highlight ktOperator guifg=#afadcc
+highlight ktOperator guifg=#adadcc
 highlight ktSimpleInterpolation guifg=#b3a0e8
 highlight ktStructure guifg=#f29d68
 
@@ -389,8 +392,8 @@ highlight ktStructure guifg=#f29d68
 " Objective-C
 
 highlight objcEnumValue guifg=#ffbbad
-highlight objcFastEnumKeyword guifg=#afadcc
-highlight objcHiddenArgument guifg=#afadcc
+highlight objcFastEnumKeyword guifg=#adadcc
+highlight objcHiddenArgument guifg=#adadcc
 highlight objcMethodCall guifg=#ffede0
 highlight objcObjDef guifg=#b3a0e8
 highlight objcProperty guifg=#ffbbad
@@ -399,12 +402,12 @@ highlight objcProtocol guifg=#b3a0e8
 
 " OCaml
 
-highlight ocamlAnyVar guifg=#afadcc
+highlight ocamlAnyVar guifg=#adadcc
 highlight ocamlArrow guifg=#b3a0e8
 highlight ocamlCons guifg=#ffbbad
 highlight ocamlConstructor guifg=#f29bc5
-highlight ocamlEmptyConstructor guifg=#afadcc
-highlight ocamlEncl guifg=#afadcc
+highlight ocamlEmptyConstructor guifg=#adadcc
+highlight ocamlEncl guifg=#adadcc
 highlight ocamlEqual guifg=#ffede0
 highlight ocamlInfixOp guifg=#b3a0e8
 highlight ocamlKeyChar guifg=#ffbbad
@@ -415,7 +418,7 @@ highlight ocamlModPath guifg=#b3a0e8
 " Odin
 
 highlight odinMacro guifg=#b3a0e8
-highlight odinOperator guifg=#afadcc
+highlight odinOperator guifg=#adadcc
 highlight odinProcedure guifg=#ffede0
 
 
@@ -428,10 +431,10 @@ highlight pascalPredefined guifg=#ffbbad
 
 " Perl
 
-highlight perlConditional guifg=#afadcc
+highlight perlConditional guifg=#adadcc
 highlight perlMatchStartEnd guifg=#b3a0e8
 highlight perlOperator guifg=#f29d68
-highlight perlSharpBang guifg=#afadcc
+highlight perlSharpBang guifg=#adadcc
 highlight perlStatementInclude guifg=#ffbbad
 highlight perlStatementList guifg=#e88a7f
 highlight perlStatementRegexp guifg=#e88a7f
@@ -454,11 +457,11 @@ highlight phpLabel guifg=#ffbbad
 highlight phpMemberSelector guifg=#b3a0e8
 highlight phpOperator guifg=#ffede0
 highlight phpParent guifg=#ffede0
-highlight phpRelation guifg=#afadcc
+highlight phpRelation guifg=#adadcc
 highlight phpSpecialFunction guifg=#e88a7f
 highlight phpStorageClass guifg=#ffbbad
 highlight phpStructure guifg=#f29d68
-highlight phpVarSelector guifg=#afadcc
+highlight phpVarSelector guifg=#adadcc
 
 
 " PowerShell
@@ -468,7 +471,7 @@ highlight ps1Cmdlet guifg=#ffede0
 highlight ps1Exception guifg=#e88a7f
 highlight ps1Function guifg=#ffede0
 highlight ps1Label guifg=#ffbbad
-highlight ps1Operator guifg=#afadcc
+highlight ps1Operator guifg=#adadcc
 highlight ps1Variable guifg=#ffbbad
 
 
@@ -481,7 +484,7 @@ highlight pythonClassVar guifg=#b3a0e8
 highlight pythonDecorator guifg=#b3a0e8
 highlight pythonDecoratorName guifg=#b3a0e8
 highlight pythonFunction guifg=#ffede0
-highlight pythonOperator guifg=#afadcc
+highlight pythonOperator guifg=#adadcc
 
 
 " Ruby
@@ -503,19 +506,19 @@ highlight rubySymbol guifg=#ffbbad
 
 " Rust
 
-highlight rustArrowCharacter guifg=#afadcc
+highlight rustArrowCharacter guifg=#adadcc
 highlight rustAttribute guifg=#b3a0e8
-highlight rustCommentLineDoc guifg=#afadcc
+highlight rustCommentLineDoc guifg=#adadcc
 highlight rustDerive guifg=#b3a0e8
 highlight rustDynKeyword guifg=#ffbbad
 highlight rustEnumVariant guifg=#ffbbad
-highlight rustFoldBraces guifg=#afadcc
+highlight rustFoldBraces guifg=#adadcc
 highlight rustFuncName guifg=#ffede0
 highlight rustIdentifier guifg=#ffede0
 highlight rustMacro guifg=#b3a0e8
 highlight rustModPath guifg=#ffd4b2
-highlight rustModPathSep guifg=#afadcc
-highlight rustOperator guifg=#afadcc
+highlight rustModPathSep guifg=#adadcc
+highlight rustOperator guifg=#adadcc
 highlight rustSelf guifg=#ffbbad
 highlight rustSigil guifg=#ffbbad
 highlight rustStorage guifg=#ffbbad
@@ -528,12 +531,12 @@ highlight scalaAnnotation guifg=#b3a0e8
 highlight scalaCapitalWord guifg=#ffbbad
 highlight scalaCaseFollowing guifg=#ffede0
 highlight scalaInstanceDeclaration guifg=#ffede0
-highlight scalaKeywordModifier guifg=#afadcc
+highlight scalaKeywordModifier guifg=#adadcc
 highlight scalaNameDefinition guifg=#ffede0
 highlight scalaOperator guifg=#ffede0
-highlight scalaSpecial guifg=#afadcc
-highlight scalaSquareBracketsBrackets guifg=#afadcc
-highlight scalaTypeOperator guifg=#afadcc
+highlight scalaSpecial guifg=#adadcc
+highlight scalaSquareBracketsBrackets guifg=#adadcc
+highlight scalaTypeOperator guifg=#adadcc
 
 
 " Shell
@@ -573,16 +576,16 @@ highlight shSnglCase guifg=#ffede0
 highlight shStatement guifg=#e88a7f
 highlight shTestOpr guifg=#b3a0e8
 highlight shVar guifg=#ffcc75
-highlight shVarAssign guifg=#afadcc
+highlight shVarAssign guifg=#adadcc
 highlight shVariable guifg=#ffede0
-highlight shWrapLineOperator guifg=#afadcc
+highlight shWrapLineOperator guifg=#adadcc
 
 
 " Solidity
 
 highlight solContract guifg=#f29d68
 highlight solContractName guifg=#ffede0
-highlight solOperator guifg=#afadcc
+highlight solOperator guifg=#adadcc
 
 
 " SQL
@@ -617,54 +620,55 @@ highlight link tsxCloseString htmlTag
 
 highlight typescriptAliasDeclaration guifg=#ffede0
 highlight typescriptArrowFunc guifg=#b3a0e8
-highlight typescriptAssign guifg=#afadcc
+highlight typescriptAssign guifg=#adadcc
 highlight typescriptAsyncFuncKeyword guifg=#b3a0e8
-highlight typescriptBinaryOp guifg=#afadcc
-highlight typescriptBraces guifg=#afadcc
+highlight typescriptBinaryOp guifg=#adadcc
+highlight typescriptBraces guifg=#adadcc
 highlight typescriptCall guifg=#ffede0
 highlight typescriptCastKeyword guifg=#b3a0e8
 highlight typescriptClassExtends guifg=#b3a0e8
 highlight typescriptClassName guifg=#ffede0
 highlight typescriptConditionalType guifg=#b3a0e8
 highlight typescriptConstraint guifg=#b3a0e8
-highlight typescriptDestructureComma guifg=#afadcc
+highlight typescriptDestructureComma guifg=#adadcc
 highlight typescriptDocNotation guifg=#ffbbad
 highlight typescriptDocTags guifg=#ffbbad
-highlight typescriptDotNotation guifg=#afadcc
-highlight typescriptEndColons guifg=#afadcc
+highlight typescriptDotNotation guifg=#adadcc
+highlight typescriptEndColons guifg=#adadcc
 highlight typescriptExceptions guifg=#f29d68
 highlight typescriptFuncCallArg guifg=#ffede0
 highlight typescriptFuncName guifg=#ffede0
 highlight typescriptFuncType guifg=#ffede0
 highlight typescriptFuncTypeArrow guifg=#b3a0e8
 highlight typescriptGlobal guifg=#f29bc5
-highlight typescriptGlobalConsoleDot guifg=#afadcc
-highlight typescriptGlobalConsoleDot guifg=#afadcc
-highlight typescriptGlobalObjectDot guifg=#afadcc
-highlight typescriptIdentifier guifg=#ffede0
+highlight typescriptGlobalConsoleDot guifg=#adadcc
+highlight typescriptGlobalConsoleDot guifg=#adadcc
+highlight typescriptGlobalObjectDot guifg=#adadcc
+highlight typescriptIdentifier guifg=#f29bc5
 highlight typescriptIdentifierName guifg=#ffbbad
 highlight typescriptInterfaceExtends guifg=#b3a0e8
 highlight typescriptInterfaceName guifg=#ffede0
 highlight typescriptKeywordOp guifg=#b3a0e8
 highlight typescriptMember guifg=#ffbbad
 highlight typescriptMemberOptionality guifg=#b3a0e8
-highlight typescriptObjectColon guifg=#afadcc
+highlight typescriptMixinComma guifg=#adadcc
+highlight typescriptObjectColon guifg=#adadcc
 highlight typescriptObjectSpread guifg=#b3a0e8
 highlight typescriptOperator guifg=#b3a0e8
-highlight typescriptParens guifg=#afadcc
-highlight typescriptProperty guifg=#afadcc
-highlight typescriptReadonlyModifier guifg=#afadcc
+highlight typescriptParens guifg=#adadcc
+highlight typescriptProperty guifg=#adadcc
+highlight typescriptReadonlyModifier guifg=#adadcc
 highlight typescriptRegexpString guifg=#b3a0e8
-highlight typescriptRestOrSpread guifg=#afadcc
+highlight typescriptRestOrSpread guifg=#adadcc
 highlight typescriptStringProperty guifg=#ffd4b2
 highlight typescriptTemplateSB guifg=#b3a0e8
 highlight typescriptTernary guifg=#ffede0
 highlight typescriptTernaryOp guifg=#b3a0e8
-highlight typescriptTypeAnnotation guifg=#afadcc
-highlight typescriptTypeBracket guifg=#afadcc
-highlight typescriptTypeBrackets guifg=#afadcc
+highlight typescriptTypeAnnotation guifg=#adadcc
+highlight typescriptTypeBracket guifg=#adadcc
+highlight typescriptTypeBrackets guifg=#adadcc
 highlight typescriptTypeReference guifg=#f29bc5
-highlight typescriptUnaryOp guifg=#afadcc
+highlight typescriptUnaryOp guifg=#adadcc
 
 " TypeScript regexp
 
@@ -790,7 +794,7 @@ highlight typescriptObjectLabel guifg=#ffbbad
 
 " Vim script
 
-highlight vimFunctionBang guifg=#afadcc
+highlight vimFunctionBang guifg=#adadcc
 highlight vimSpecfile guifg=#ffede0
 highlight vimUserFunc guifg=#e88a7f
 highlight vimHLGroup guifg=#b3a0e8
@@ -799,13 +803,13 @@ highlight link vimGroup vimHLGroup
 
 " XML
 
-highlight xmlTag guifg=#afadcc
+highlight xmlTag guifg=#adadcc
 highlight xmlTagName guifg=#b3a0e8
 
 
 " YAML
 
-highlight yamlBlockMappingDelimiter guifg=#afadcc
+highlight yamlBlockMappingDelimiter guifg=#adadcc
 highlight yamlBlockMappingKey guifg=#f29d68
 
 
