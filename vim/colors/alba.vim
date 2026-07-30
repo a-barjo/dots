@@ -22,6 +22,7 @@ let g:AlbaPink = "#f29bc5"
 let g:AlbaRouge = "#e88a7f"
 
 let g:AlbaBlack = "#151526"
+let g:AlbaEditor = "none"
 let g:AlbaGreen = "#c5d89c"
 let g:AlbaBlue = "#a0c7e8"
 let g:AlbaWhite = "#ffffff"
@@ -32,7 +33,7 @@ highlight CmpItemAbbrMatch guifg=#ffffff
 highlight ColorColumn guibg=#1c1c33
 highlight Comment guifg=#8e8eb2 gui=italic
 highlight CurSearch guifg=#151526 guibg=#ffcc75
-highlight CursorColumn guibg=#151526
+highlight CursorColumn guibg=none
 highlight CursorLine guibg=#1c1c33
 highlight CursorLineFold guifg=#8e8eb2
 highlight CursorLineNr guifg=#ffffff gui=bold
@@ -52,11 +53,11 @@ highlight DiffFile guifg=#ffd4b2
 highlight DiffText guibg=#59597f
 highlight Directory guifg=#f29d68
 highlight EndOfBuffer guifg=#424266
-highlight Error guifg=#e88a7f guibg=#151526
+highlight Error guifg=#e88a7f guibg=none
 highlight ErrorMsg guifg=#e88a7f
-highlight FloatBorder guifg=#2d2d4c guibg=#151526
-highlight FloatTitle guifg=#cecee5 guibg=#151526
-highlight FoldColumn guifg=#8e8eb2 guibg=#151526
+highlight FloatBorder guifg=#2d2d4c guibg=none
+highlight FloatTitle guifg=#cecee5 guibg=none
+highlight FoldColumn guifg=#8e8eb2 guibg=none
 highlight Folded guifg=#adadcc guibg=#1c1c33
 highlight GitSignsAdd guifg=#c5d89c
 highlight GitSignsChange guifg=#727299
@@ -75,7 +76,7 @@ if exists("g:AlbaTransparent") && g:AlbaTransparent
 else
 	highlight Normal guifg=#ffede0 guibg=#151526
 endif
-highlight NormalFloat guifg=#ffede0 guibg=#151526
+highlight NormalFloat guifg=#ffede0 guibg=none
 highlight Pmenu guifg=#8e8eb2 guibg=#1c1c33
 highlight PmenuMatch guifg=#ffffff guibg=#2d2d4c
 highlight PmenuSbar guibg=#1c1c33
@@ -84,7 +85,7 @@ highlight PmenuThumb guibg=#424266
 highlight Popup guifg=#ffede0 guibg=#1c1c33
 highlight QuickFixLine guibg=#2d2d4c
 highlight Search guifg=#ffede0 guibg=#424266
-highlight SignColumn guibg=#151526
+highlight SignColumn guibg=none
 highlight SpecialKey guifg=#f29d68
 highlight SpellBad guifg=#e88a7f gui=undercurl
 highlight SpellCap guifg=#ffd4b2 gui=undercurl
@@ -103,12 +104,12 @@ highlight TabLineSel guifg=#cecee5 guibg=#2d2d4c
 highlight Title guifg=#f29d68
 highlight Todo guifg=#151526 guibg=#8e8eb2 gui=italic
 highlight Underlined guifg=#ffede0 gui=underline
-highlight VertSplit guifg=#8e8eb2 guibg=#151526
+highlight VertSplit guifg=#8e8eb2 guibg=none
 highlight Visual guifg=NONE guibg=#2d2d4c
 highlight WarningMsg guifg=#f29d68
 highlight WinBar guifg=#cecee5 guibg=#1c1c33
 highlight WinBarNC guifg=#8e8eb2 guibg=#1c1c33
-highlight WinSeparator guifg=#2d2d4c guibg=#151526
+highlight WinSeparator guifg=#2d2d4c guibg=none
 highlight diffAdded guifg=#c5d89c
 highlight diffChanged guifg=#ffd4b2
 highlight diffRemoved guifg=#e88a7f
@@ -547,7 +548,7 @@ highlight shBracketExprDelim guifg=#ffbbad
 highlight shCaseEsac guifg=#ffbbad
 highlight shCaseLabel guifg=#ffbbad
 highlight shCaseRange guifg=#ffcc75
-highlight shCmdSubRegion guifg=#b3a0e8
+highlight shCmdSubRegion guifg=#f29bc5
 highlight shCommandSub guifg=#ffbbad
 highlight shCurlyIn guifg=#b3a0e8
 highlight shDblBrace guifg=#ffede0
@@ -562,7 +563,7 @@ highlight shDo guifg=#f29d68
 highlight shForPP guifg=#ffede0
 highlight shFunctionExpr guifg=#ffede0
 highlight shFunctionExprRegion guifg=#ffede0
-highlight shFunctionOne guifg=#ffede0
+highlight shFunctionOne guifg=#e88a7f
 highlight shFunctionTwo guifg=#ffede0
 highlight shLoop guifg=#f29d68
 highlight shNoQuote guifg=#b3a0e8
@@ -574,7 +575,7 @@ highlight shRedir guifg=#b3a0e8
 highlight shShellVariables guifg=#f29bc5
 highlight shSnglCase guifg=#ffede0
 highlight shStatement guifg=#e88a7f
-highlight shTestOpr guifg=#b3a0e8
+highlight shTestOpr guifg=#f29bc5
 highlight shVar guifg=#ffcc75
 highlight shVarAssign guifg=#adadcc
 highlight shVariable guifg=#ffede0

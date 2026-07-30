@@ -1,5 +1,6 @@
 cursor-color = #ffffff
 cursor-text = #000000
+custom-shader = shaders/cursor_warp.glsl
 font-family = Roboto Mono
 font-size = 12
 font-style = Medium
