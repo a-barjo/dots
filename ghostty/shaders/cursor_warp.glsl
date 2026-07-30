@@ -1,154 +1,156 @@
 vec3 srgb2lin(vec3 c) {
-  return mix(c / 12.92, pow((c + 0.055) / 1.055, vec3(2.4)), step(vec3(0.04045), c));
+    return mix(c / 12.92, pow((c + 0.055) / 1.055, vec3(2.4)), step(vec3(0.04045), c));
 }
 
 vec4 TRAIL_COLOR = vec4(srgb2lin(iCurrentCursorColor.rgb), iCurrentCursorColor.a);
 
-const float DUR = 0.2;
-const float TSIZE = 0.8;
-const float THRESH = 1.5;
+const float DURATION = 0.2;
+const float TRAIL_SIZE = 0.8;
+const float THRESHOLD = 1.5;
 const float BLUR = 1.0;
-const float TTHICK = 1.0;
-const float TTHICK_X = 0.9;
-const float FADE_ENABLED = 0.0;
-const float FADE_EXP = 5.0;
+const float TRAIL_THICKNESS = 1.0;
+const float TRAIL_THICKNESS_X = 0.9;
 
-float ease(float x) {
-  return sqrt(1.0 - pow(x - 1.0, 2.0));
+float easeInverseCirc(float x) {
+    float d = x - 1.0;
+    return sqrt(1.0 - d * d);
 }
 
-float sdfBox(vec2 p, vec2 c, vec2 h) {
-  vec2 d = abs(p - c) - h;
-  return length(max(d, 0.0)) + min(max(d.x, d.y), 0.0);
+float segDist(vec2 p, vec2 a, vec2 b, inout float s, float d2) {
+    vec2 e = b - a;
+    vec2 w = p - a;
+    vec2 proj = a + e * clamp(dot(w, e) / dot(e, e), 0.0, 1.0);
+    d2 = min(d2, dot(p - proj, p - proj));
+
+    float above = step(0.0, p.y - a.y);
+    float below = 1.0 - step(0.0, p.y - b.y);
+    float side = 1.0 - step(0.0, e.x * w.y - e.y * w.x);
+    float allCond = above * below * side;
+    float noneCond = (1.0 - above) * (1.0 - below) * (1.0 - side);
+    s *= mix(1.0, -1.0, step(0.5, allCond + noneCond));
+    return d2;
 }
 
-float seg(vec2 p, vec2 a, vec2 b, inout float s, float d) {
-  vec2 e = b - a;
-  vec2 w = p - a;
-  float t = clamp(dot(w, e) / dot(e, e), 0.0, 1.0);
-  d = min(d, dot(p - a - e * t, p - a - e * t));
-
-  float c0 = step(0.0, p.y - a.y);
-  float c1 = 1.0 - step(0.0, p.y - b.y);
-  float c2 = 1.0 - step(0.0, e.x * w.y - e.y * w.x);
-  s *= mix(1.0, -1.0, step(0.5, c0 * c1 * c2 + (1.0 - c0) * (1.0 - c1) * (1.0 - c2)));
-  return d;
+float sdfConvexQuad(vec2 p, vec2 v1, vec2 v2, vec2 v3, vec2 v4) {
+    float s = 1.0;
+    float d2 = dot(p - v1, p - v1);
+    d2 = segDist(p, v1, v2, s, d2);
+    d2 = segDist(p, v2, v3, s, d2);
+    d2 = segDist(p, v3, v4, s, d2);
+    d2 = segDist(p, v4, v1, s, d2);
+    return s * sqrt(d2);
 }
 
-float sdfQuad(vec2 p, vec2 a, vec2 b, vec2 c, vec2 d) {
-  float s = 1.0;
-  float dd = dot(p - a, p - a);
-  dd = seg(p, a, b, s, dd);
-  dd = seg(p, b, c, s, dd);
-  dd = seg(p, c, d, s, dd);
-  dd = seg(p, d, a, s, dd);
-  return s * sqrt(dd);
+vec2 norm(vec2 value, float isPosition) {
+    return (value * 2.0 - (iResolution.xy * isPosition)) / iResolution.y;
 }
 
-vec2 norm(vec2 v, float pos) {
-  return (v * 2.0 - iResolution.xy * pos) / iResolution.y;
-}
-
-float aa(float d, float b) {
-  return 1.0 - smoothstep(0.0, norm(vec2(b), 0.0).x, d);
-}
-
-float cornerDur(float d, float lead, float side, float trail) {
-  float isLead = step(0.5, d);
-  return mix(mix(trail, side, step(-0.5, d) * (1.0 - isLead)), lead, isLead);
+float cornerDuration(float dotVal, float lead, float side, float trail) {
+    float isLead = step(0.5, dotVal);
+    float isSide = step(-0.5, dotVal) * (1.0 - isLead);
+    return mix(mix(trail, side, isSide), lead, isLead);
 }
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
-#if !defined(WEB)
-  fragColor = texture(iChannel0, fragCoord.xy / iResolution.xy);
-#endif
+    #if !defined(WEB)
+    fragColor = texture(iChannel0, fragCoord.xy / iResolution.xy);
+    #endif
 
-  vec2 uv = norm(fragCoord, 1.0);
-  vec4 cur = vec4(norm(iCurrentCursor.xy, 1.0), norm(iCurrentCursor.zw, 0.0));
-  vec4 prev = vec4(norm(iPreviousCursor.xy, 1.0), norm(iPreviousCursor.zw, 0.0));
+    vec2 uv = norm(fragCoord, 1.0);
+    vec2 off = vec2(-0.5, 0.5);
 
-  vec2 off = vec2(-0.5, 0.5);
-  vec2 cc = cur.xy - cur.zw * off;
-  vec2 cp = prev.xy - prev.zw * off;
-  vec2 cs = cur.zw * 0.5;
+    vec4 cur = vec4(norm(iCurrentCursor.xy, 1.0), norm(iCurrentCursor.zw, 0.0));
+    vec4 prev = vec4(norm(iPreviousCursor.xy, 1.0), norm(iPreviousCursor.zw, 0.0));
 
-  float t = iTime - iTimeCursorChange;
-  float dist = distance(cc, cp);
-  vec4 col = fragColor;
+    vec2 curCenter = cur.xy - cur.zw * off;
+    vec2 prevCenter = prev.xy - prev.zw * off;
+    vec2 curHalfSize = cur.zw * 0.5;
 
-  if (dist > cur.w * THRESH && t < DUR - 0.001) {
-    float cur_hh = cur.w * 0.5;
-    float cur_nh = cur_hh * TTHICK;
-    float cur_cy = cur.y - cur_hh;
-    float cur_hw = cur.z * 0.5;
-    float cur_nw = cur_hw * TTHICK_X;
-    float cur_cx = cur.x + cur_hw;
+    vec2 delta = curCenter - prevCenter;
+    float dist2 = dot(delta, delta);
+    float minDist2 = cur.w * cur.w * THRESHOLD * THRESHOLD;
+    float elapsed = iTime - iTimeCursorChange;
 
-    vec2 tl = vec2(cur_cx - cur_nw, cur_cy + cur_nh);
-    vec2 tr = vec2(cur_cx + cur_nw, cur_cy + cur_nh);
-    vec2 bl = vec2(cur_cx - cur_nw, cur_cy - cur_nh);
-    vec2 br = vec2(cur_cx + cur_nw, cur_cy - cur_nh);
+    vec4 result = fragColor;
 
-    float prev_hh = prev.w * 0.5;
-    float prev_nh = prev_hh * TTHICK;
-    float prev_cy = prev.y - prev_hh;
-    float prev_hw = prev.z * 0.5;
-    float prev_nw = prev_hw * TTHICK_X;
-    float prev_cx = prev.x + prev_hw;
+    if (dist2 > minDist2 && elapsed < DURATION - 0.001) {
+        float ch = cur.w * 0.5;
+        float nh = ch * TRAIL_THICKNESS;
+        float cy = cur.y - ch;
+        float cw = cur.z * 0.5;
+        float nw = cw * TRAIL_THICKNESS_X;
+        float cx = cur.x + cw;
 
-    vec2 ptl = vec2(prev_cx - prev_nw, prev_cy + prev_nh);
-    vec2 ptr = vec2(prev_cx + prev_nw, prev_cy + prev_nh);
-    vec2 pbl = vec2(prev_cx - prev_nw, prev_cy - prev_nh);
-    vec2 pbr = vec2(prev_cx + prev_nw, prev_cy - prev_nh);
+        vec2 curTL = vec2(cx - nw, cy + nh);
+        vec2 curTR = vec2(cx + nw, cy + nh);
+        vec2 curBL = vec2(cx - nw, cy - nh);
+        vec2 curBR = vec2(cx + nw, cy - nh);
 
-    float lead = DUR * (1.0 - TSIZE);
-    float side = (lead + DUR) / 2.0;
+        float ph = prev.w * 0.5;
+        float pnh = ph * TRAIL_THICKNESS;
+        float py = prev.y - ph;
+        float pw = prev.z * 0.5;
+        float pnw = pw * TRAIL_THICKNESS_X;
+        float px = prev.x + pw;
 
-    vec2 dir = cc - cp;
-    vec2 sgn = sign(dir);
+        vec2 prevTL = vec2(px - pnw, py + pnh);
+        vec2 prevTR = vec2(px + pnw, py + pnh);
+        vec2 prevBL = vec2(px - pnw, py - pnh);
+        vec2 prevBR = vec2(px + pnw, py - pnh);
 
-    float dtl = cornerDur(dot(vec2(-1, 1), sgn), lead, side, DUR);
-    float dtr = cornerDur(dot(vec2(1, 1), sgn), lead, side, DUR);
-    float dbl = cornerDur(dot(vec2(-1, -1), sgn), lead, side, DUR);
-    float dbr = cornerDur(dot(vec2(1, -1), sgn), lead, side, DUR);
+        float durLead = DURATION * (1.0 - TRAIL_SIZE);
+        float durSide = (durLead + DURATION) / 2.0;
 
-    float ld = cornerDur((dtl + dbl) * 0.5, lead, side, DUR);
-    float rd = cornerDur((dtr + dbr) * 0.5, lead, side, DUR);
+        vec2 moveSign = sign(delta);
 
-    float ml = step(0.5, -sgn.x);
-    float mr = step(0.5, sgn.x);
+        float dotTL = dot(vec2(-1.0, 1.0), moveSign);
+        float dotTR = dot(vec2( 1.0, 1.0), moveSign);
+        float dotBL = dot(vec2(-1.0,-1.0), moveSign);
+        float dotBR = dot(vec2( 1.0,-1.0), moveSign);
 
-    float d_tl = mix(dtl, ld, ml);
-    float d_bl = mix(dbl, ld, ml);
-    float d_tr = mix(dtr, rd, mr);
-    float d_br = mix(dbr, rd, mr);
+        float durTL = cornerDuration(dotTL, durLead, durSide, DURATION);
+        float durTR = cornerDuration(dotTR, durLead, durSide, DURATION);
+        float durBL = cornerDuration(dotBL, durLead, durSide, DURATION);
+        float durBR = cornerDuration(dotBR, durLead, durSide, DURATION);
 
-    float p_tl = ease(clamp(t / d_tl, 0.0, 1.0));
-    float p_tr = ease(clamp(t / d_tr, 0.0, 1.0));
-    float p_bl = ease(clamp(t / d_bl, 0.0, 1.0));
-    float p_br = ease(clamp(t / d_br, 0.0, 1.0));
+        float durRightRail = cornerDuration((dotTR + dotBR) * 0.5, durLead, durSide, DURATION);
+        float durLeftRail = cornerDuration((dotTL + dotBL) * 0.5, durLead, durSide, DURATION);
 
-    vec2 vtl = mix(ptl, tl, p_tl);
-    vec2 vtr = mix(ptr, tr, p_tr);
-    vec2 vbl = mix(pbl, bl, p_bl);
-    vec2 vbr = mix(pbr, br, p_br);
+        float isMovingRight = step(0.5, moveSign.x);
+        float isMovingLeft = step(0.5, -moveSign.x);
 
-    float sdfT = sdfQuad(uv, vtl, vtr, vbr, vbl);
+        float finalDurTL = mix(durTL, durLeftRail, isMovingLeft);
+        float finalDurBL = mix(durBL, durLeftRail, isMovingLeft);
+        float finalDurTR = mix(durTR, durRightRail, isMovingRight);
+        float finalDurBR = mix(durBR, durRightRail, isMovingRight);
 
-    float blur = BLUR;
-    if (BLUR < 2.5) {
-      blur = mix(0.0, BLUR, abs(sgn.x) * abs(sgn.y));
+        float progTL = easeInverseCirc(clamp(elapsed / finalDurTL, 0.0, 1.0));
+        float progTR = easeInverseCirc(clamp(elapsed / finalDurTR, 0.0, 1.0));
+        float progBL = easeInverseCirc(clamp(elapsed / finalDurBL, 0.0, 1.0));
+        float progBR = easeInverseCirc(clamp(elapsed / finalDurBR, 0.0, 1.0));
+
+        vec2 vTL = mix(prevTL, curTL, progTL);
+        vec2 vTR = mix(prevTR, curTR, progTR);
+        vec2 vBR = mix(prevBR, curBR, progBR);
+        vec2 vBL = mix(prevBL, curBL, progBL);
+
+        float sdf = sdfConvexQuad(uv, vTL, vTR, vBR, vBL);
+
+        float effectiveBlur = BLUR;
+        if (BLUR < 2.5) {
+            effectiveBlur = mix(0.0, BLUR, abs(moveSign.x) * abs(moveSign.y));
+        }
+
+        float blurNorm = effectiveBlur * 2.0 / iResolution.y;
+        float shapeAlpha = 1.0 - smoothstep(0.0, blurNorm, sdf);
+        float finalAlpha = TRAIL_COLOR.a * shapeAlpha;
+
+        result = mix(result, vec4(TRAIL_COLOR.rgb, result.a), finalAlpha);
+
+        float insideCursor = step(abs(uv.x - curCenter.x), curHalfSize.x)
+                           * step(abs(uv.y - curCenter.y), curHalfSize.y);
+        result = mix(result, fragColor, insideCursor);
     }
 
-    vec4 trail = TRAIL_COLOR;
-    if (FADE_ENABLED > 0.5) {
-      trail.a *= pow(clamp(dot(uv - cp, dir) / (dot(dir, dir) + 1e-6), 0.0, 1.0), FADE_EXP);
-    }
-
-    float fa = trail.a * aa(sdfT, blur);
-    col = mix(col, vec4(trail.rgb, col.a), fa);
-    col = mix(col, fragColor, step(sdfBox(uv, cc, cs), 0.0));
-  }
-
-  fragColor = col;
+    fragColor = result;
 }
