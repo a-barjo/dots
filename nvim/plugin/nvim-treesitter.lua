@@ -7,6 +7,7 @@ require("nvim-treesitter").setup({
     "comment",
     "jsdoc",
     "lua",
+    "luadoc",
     "markdown_inline",
     "query",
     "typescript",

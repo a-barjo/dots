@@ -1,5 +1,3 @@
 require("options")
 require("lsp")
-require("format")
-require("fzf")
-require("tabline")
+require("commands")

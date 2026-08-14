@@ -31,19 +31,29 @@ vim.keymap.set("n", "<C-p>", "<Cmd>cprev | norm zz<CR>", { desc = "Previous quic
 vim.keymap.set("n", "<C-t>", "<Cmd>tabe<CR>", { desc = "Create new tab" })
 vim.keymap.set("n", "<leader>%", "<Cmd>let @+=@%<CR>", { desc = "Copy file path to clipboard" })
 vim.keymap.set("n", "<leader><BS>", "<Cmd>tabc<CR>", { desc = "Close tab" })
-vim.keymap.set("n", "<leader><leader>", "<Cmd>Fzf<CR>", { desc = "Open fzf" })
-vim.keymap.set("n", "<leader>gd%", "<Cmd>DiffviewFileHistory %<CR>", { desc = "Open Diffview file history" })
-vim.keymap.set("n", "<leader>gdd", "<Cmd>DiffviewOpen<CR>", { desc = "Open Diffview" })
-vim.keymap.set("n", "<leader>gdl", "<Cmd>DiffviewFileHistory .<CR>", { desc = "Open Diffview git log" })
-vim.keymap.set("n", "<leader>gdm", "<Cmd>DiffviewOpen origin/main..HEAD<CR>", { desc = "Open Diffview compare to main" })
+vim.keymap.set("n", "<leader><leader>", "<Cmd>Fzf files<CR>", { desc = "Search files" })
+vim.keymap.set("n", "<leader>gd%", "1gt<Cmd>DiffviewFileHistory %<CR>", { desc = "Open file history" })
+vim.keymap.set("n", "<leader>gdd", "1gt<Cmd>DiffviewOpen<CR>", { desc = "Diff workspace" })
+vim.keymap.set("n", "<leader>gdl", "1gt<Cmd>DiffviewFileHistory .<CR>", { desc = "Git log" })
+vim.keymap.set("n", "<leader>gdm", "1gt<Cmd>DiffviewOpen origin/main..HEAD<CR>", { desc = "Diff origin/main" })
+vim.keymap.set("n", "<leader>r", "<Cmd>Run<CR>", { desc = "Run buffer as shell script" })
+vim.keymap.set("n", "<leader>sb", "<Cmd>Fzf branch<CR>", { desc = "Switch branch" })
+vim.keymap.set("n", "<leader>sf", "<Cmd>Fzf filetype<CR>", { desc = "Set filetype" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
-vim.keymap.set("n", "<leader>s", function()
-  vim.fn.system({ "sh", os.getenv("HOME") .. "/Projects/alba/build.sh" })
-  vim.notify("Alba theme built and synced")
-  vim.cmd.restart()
-end)
+vim.api.nvim_create_autocmd("BufWritePre", { command = "Format" })
 
-vim.api.nvim_create_user_command("Todo", function()
-  vim.cmd.grep("TODO $(git diff main --name-only)")
-end, { desc = "List TODOs in branch" })
+function _G.Tabline()
+  local tabs = {}
+  for i, page in ipairs(vim.api.nvim_list_tabpages()) do
+    local win = vim.iter(vim.api.nvim_tabpage_list_wins(page)):find(function(win)
+      return vim.api.nvim_win_get_config(win).relative == ""
+    end) or vim.api.nvim_tabpage_get_win(page)
+    local name = vim.fn.fnamemodify(vim.fn.bufname(vim.api.nvim_win_get_buf(win)), ":t")
+    local highlight = page == vim.api.nvim_get_current_tabpage() and "%#TabLineSel#" or "%#TabLine#"
+    tabs[i] = highlight .. "%" .. i .. "T " .. (name ~= "" and name or "[No Name]") .. " "
+  end
+  return table.concat(tabs) .. "%#TabLineFill#%T"
+end
+
+vim.opt.tabline = "%!v:lua.Tabline()"
