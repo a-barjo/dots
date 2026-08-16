@@ -3,7 +3,7 @@ highlight clear
 
 let g:colors_name = "alba"
 
-let g:AlbaGrey1 = "#1c1c33"
+let g:AlbaGrey1 = "#1d1d35"
 let g:AlbaGrey2 = "#2d2d4c"
 let g:AlbaGrey3 = "#424266"
 let g:AlbaGrey4 = "#59597f"
@@ -21,7 +21,7 @@ let g:AlbaPeach = "#ffd4b2"
 let g:AlbaPink = "#f29bc5"
 let g:AlbaRouge = "#e88a7f"
 
-let g:AlbaBlack = "#151526"
+let g:AlbaBlack = "#161628"
 let g:AlbaEditor = "none"
 let g:AlbaGreen = "#c5d89c"
 let g:AlbaBlue = "#a0c7e8"
@@ -30,11 +30,11 @@ let g:AlbaWhite = "#ffffff"
 " Editor
 
 highlight CmpItemAbbrMatch guifg=#ffffff
-highlight ColorColumn guibg=#1c1c33
+highlight ColorColumn guibg=#1d1d35
 highlight Comment guifg=#8e8eb2 gui=italic
-highlight CurSearch guifg=#151526 guibg=#ffcc75
+highlight CurSearch guifg=#161628 guibg=#ffcc75
 highlight CursorColumn guibg=none
-highlight CursorLine guibg=#1c1c33
+highlight CursorLine guibg=#1d1d35
 highlight CursorLineFold guifg=#8e8eb2
 highlight CursorLineNr guifg=#ffffff gui=bold
 highlight CursorLineSign guifg=#8e8eb2
@@ -58,11 +58,11 @@ highlight ErrorMsg guifg=#e88a7f
 highlight FloatBorder guifg=#2d2d4c guibg=none
 highlight FloatTitle guifg=#cecee5 guibg=none
 highlight FoldColumn guifg=#8e8eb2 guibg=none
-highlight Folded guifg=#adadcc guibg=#1c1c33
+highlight Folded guifg=#adadcc guibg=#1d1d35
 highlight GitSignsAdd guifg=#c5d89c
 highlight GitSignsChange guifg=#727299
 highlight GitSignsDelete guifg=#e88a7f
-highlight IncSearch guifg=#151526 guibg=#ffcc75
+highlight IncSearch guifg=#161628 guibg=#ffcc75
 highlight LineNr guifg=#424266
 highlight MatchParen guibg=#424266 guifg=#ffcc75
 highlight ModeMsg guifg=#ffd4b2
@@ -72,15 +72,15 @@ highlight NonText guifg=#59597f gui=italic
 if exists("g:AlbaTransparent") && g:AlbaTransparent
 	highlight Normal guifg=#ffede0 guibg=none
 else
-	highlight Normal guifg=#ffede0 guibg=#151526
+	highlight Normal guifg=#ffede0 guibg=#161628
 endif
 highlight NormalFloat guifg=#ffede0 guibg=none
-highlight Pmenu guifg=#8e8eb2 guibg=#1c1c33
+highlight Pmenu guifg=#8e8eb2 guibg=#1d1d35
 highlight PmenuMatch guifg=#ffffff guibg=#2d2d4c
-highlight PmenuSbar guibg=#1c1c33
+highlight PmenuSbar guibg=#1d1d35
 highlight PmenuSel guifg=#cecee5 guibg=#2d2d4c
 highlight PmenuThumb guibg=#424266
-highlight Popup guifg=#ffede0 guibg=#1c1c33
+highlight Popup guifg=#ffede0 guibg=#1d1d35
 highlight QuickFixLine guibg=#2d2d4c
 highlight Search guifg=#ffede0 guibg=#424266
 highlight SignColumn guibg=none
@@ -89,24 +89,24 @@ highlight SpellBad guifg=#e88a7f gui=undercurl
 highlight SpellCap guifg=#ffd4b2 gui=undercurl
 highlight SpellLocal guifg=#f29bc5 gui=undercurl
 highlight SpellRare guifg=#ffede0 gui=undercurl
-highlight StatusLine guifg=#cecee5 guibg=#1c1c33
-highlight StatusLineNC guifg=#8e8eb2 guibg=#1c1c33
+highlight StatusLine guifg=#cecee5 guibg=#1d1d35
+highlight StatusLineNC guifg=#8e8eb2 guibg=#1d1d35
 highlight StatusLineTerm guifg=#cecee5 guibg=#2d2d4c
 highlight StatusLineTermNC guifg=#8e8eb2 guibg=#2d2d4c
 highlight StderrMsg guifg=#f29bc5
 highlight StdoutMsg guifg=#ffede0
-highlight Substitute guifg=#151526 guibg=#ffcc75
-highlight TabLine guifg=#727299 guibg=#1c1c33
-highlight TabLineFill guibg=#1c1c33 cterm=none
+highlight Substitute guifg=#161628 guibg=#ffcc75
+highlight TabLine guifg=#727299 guibg=#1d1d35
+highlight TabLineFill guibg=#1d1d35 cterm=none
 highlight TabLineSel guifg=#cecee5 guibg=#2d2d4c
 highlight Title guifg=#f29d68
-highlight Todo guifg=#151526 guibg=#8e8eb2 gui=italic
+highlight Todo guifg=#161628 guibg=#8e8eb2 gui=italic
 highlight Underlined guifg=#ffede0 gui=underline
 highlight VertSplit guifg=#8e8eb2 guibg=none
 highlight Visual guifg=NONE guibg=#2d2d4c
 highlight WarningMsg guifg=#f29d68
-highlight WinBar guifg=#cecee5 guibg=#1c1c33
-highlight WinBarNC guifg=#8e8eb2 guibg=#1c1c33
+highlight WinBar guifg=#cecee5 guibg=#1d1d35
+highlight WinBarNC guifg=#8e8eb2 guibg=#1d1d35
 highlight WinSeparator guifg=#2d2d4c guibg=none
 highlight diffAdded guifg=#c5d89c
 highlight diffChanged guifg=#ffd4b2

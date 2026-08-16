@@ -43,6 +43,12 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
 vim.api.nvim_create_autocmd("BufWritePre", { command = "Format" })
 
+vim.keymap.set("n", "<leader>s", function()
+  vim.fn.system({ "sh", os.getenv("HOME") .. "/Projects/alba/build.sh" })
+  vim.notify("Alba theme built and synced")
+  vim.cmd.restart()
+end)
+
 function _G.Tabline()
   local tabs = {}
   for i, page in ipairs(vim.api.nvim_list_tabpages()) do

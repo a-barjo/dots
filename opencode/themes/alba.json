@@ -1,8 +1,8 @@
 {
   "$schema": "https://opencode.ai/theme.json",
   "defs": {
-    "albaBlack": "#151526",
-    "albaGrey1": "#1c1c33",
+    "albaBlack": "#161628",
+    "albaGrey1": "#1d1d35",
     "albaGrey2": "#2d2d4c",
     "albaGrey3": "#424266",
     "albaGrey4": "#59597f",
