@@ -1,10 +1,29 @@
 local util = require("util")
 
+vim.api.nvim_create_user_command("Diff", function(cmd)
+  local mode = ({
+    file_history = { command = "FileHistory %", name = "File history" },
+    git_log = { command = "FileHistory .", name = "Git log" },
+    main = { command = "Open origin/main..HEAD", name = "Diff main" },
+    workspace = { command = "Open", name = "Diff workspace" }
+  })[cmd.args]
+
+  local tab_n = util.find_tab(mode.name)
+  if tab_n then
+    vim.cmd.tabnext(tab_n)
+    return
+  end
+
+  vim.cmd(("Diffview%s"):format(mode.command))
+  vim.cmd.tabmove(0)
+  vim.cmd.file(mode.name)
+end, { desc = "Diff", nargs = 1 })
+
 vim.api.nvim_create_user_command("Format", function()
   local path = vim.fn.expand("%:p")
   local ft = vim.bo.filetype
 
-  local cmd = ({
+  local command = ({
     typescript = { "prettier", "--stdin-filepath", path },
     javascript = { "prettier", "--stdin-filepath", path },
     typescriptreact = { "prettier", "--stdin-filepath", path },
@@ -15,15 +34,14 @@ vim.api.nvim_create_user_command("Format", function()
     markdown = { "prettier", "--stdin-filepath", path },
     scss = { "prettier", "--stdin-filepath", path },
     yaml = { "prettier", "--stdin-filepath", path },
-    sql = { "sql_formatter" },
     bash = { "shfmt" },
     sh = { "shfmt" },
     xml = { "xmlformat ", path },
     zsh = { "shfmt" },
   })[ft]
 
-  if cmd then
-    local result = vim.fn.systemlist(cmd, vim.fn.getline(1, "$"))
+  if command then
+    local result = vim.fn.systemlist(command, vim.fn.getline(1, "$"))
     if vim.v.shell_error ~= 0 then
       vim.notify(table.concat(result, "\n"), vim.log.levels.ERROR)
       return

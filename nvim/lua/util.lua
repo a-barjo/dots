@@ -31,4 +31,15 @@ function M.popup_backdrop()
   end
 end
 
+function M.find_tab(name)
+  for i = 1, vim.fn.tabpagenr("$") do
+    for _, bufnr in ipairs(vim.fn.tabpagebuflist(i)) do
+      if vim.fn.bufname(bufnr) == name then
+        return i
+      end
+    end
+  end
+  return nil
+end
+
 return M
