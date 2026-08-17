@@ -36,9 +36,13 @@ vim.keymap.set("n", "<leader>gd%", "<Cmd>Diff file_history<CR>", { desc = "Open 
 vim.keymap.set("n", "<leader>gdd", "<Cmd>Diff workspace<CR>", { desc = "Diff workspace" })
 vim.keymap.set("n", "<leader>gdl", "<Cmd>Diff git_log<CR>", { desc = "Git log" })
 vim.keymap.set("n", "<leader>gdm", "<Cmd>Diff main<CR>", { desc = "Diff main" })
+vim.keymap.set("n", "<leader>ghr", "<Cmd>Gitsigns reset_hunk<CR>", { desc = "Reset hunk" })
+vim.keymap.set("n", "<leader>gr", "<Cmd>Gitsigns reset_buffer<CR>", { desc = "Reset buffer" })
 vim.keymap.set("n", "<leader>r", "<Cmd>Run<CR>", { desc = "Run buffer as shell script" })
 vim.keymap.set("n", "<leader>sb", "<Cmd>Fzf branch<CR>", { desc = "Switch branch" })
 vim.keymap.set("n", "<leader>sf", "<Cmd>Fzf filetype<CR>", { desc = "Set filetype" })
+vim.keymap.set("n", "[c", "<Cmd>Gitsigns prev_hunk<CR>", { desc = "Prev hunk" })
+vim.keymap.set("n", "]c", "<Cmd>Gitsigns next_hunk<CR>", { desc = "Next hunk" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
 vim.api.nvim_create_autocmd("BufWritePre", { command = "Format" })
