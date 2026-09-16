@@ -1,29 +1,17 @@
 vim.lsp.enable({
   "bashls",
-  "cssls",
   "clangd",
+  "cssls",
   "emmet_language_server",
-  "eslint",
   "gopls",
-  "gradle_ls",
   "html",
   "jdtls",
   "lua_ls",
   "marksman",
+  "oxlint",
   "rust_analyzer",
-  "tailwindcss",
-  "terraformls",
-  "ts_ls",
+  "tsc",
 })
-
-vim.lsp.config["cssls"] = {
-  settings = {
-    css = {
-      validate = true,
-      lint = { unknownAtRules = "ignore" },
-    },
-  },
-}
 
 vim.lsp.config["lua_ls"] = {
   settings = {
@@ -47,7 +35,6 @@ end
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-    client.server_capabilities.semanticTokensProvider = nil
     if client:supports_method("textDocument/completion") then
       local chars = {}
       for i = 32, 126 do

@@ -24,19 +24,19 @@ vim.api.nvim_create_user_command("Format", function()
   local ft = vim.bo.filetype
 
   local command = ({
-    typescript = { "prettier", "--stdin-filepath", path },
-    javascript = { "prettier", "--stdin-filepath", path },
-    typescriptreact = { "prettier", "--stdin-filepath", path },
-    javascriptreact = { "prettier", "--stdin-filepath", path },
-    css = { "prettier", "--stdin-filepath", path },
-    html = { "prettier", "--stdin-filepath", path },
-    json = { "prettier", "--stdin-filepath", path },
-    markdown = { "prettier", "--stdin-filepath", path },
-    scss = { "prettier", "--stdin-filepath", path },
-    yaml = { "prettier", "--stdin-filepath", path },
+    typescript = { "oxfmt", "--stdin-filepath", path },
+    javascript = { "oxfmt", "--stdin-filepath", path },
+    typescriptreact = { "oxfmt", "--stdin-filepath", path },
+    javascriptreact = { "oxfmt", "--stdin-filepath", path },
+    css = { "oxfmt", "--stdin-filepath", path },
+    html = { "oxfmt", "--stdin-filepath", path },
+    json = { "oxfmt", "--stdin-filepath", path },
+    markdown = { "oxfmt", "--stdin-filepath", path },
+    scss = { "oxfmt", "--stdin-filepath", path },
+    yaml = { "oxfmt", "--stdin-filepath", path },
     bash = { "shfmt" },
     sh = { "shfmt" },
-    xml = { "xmlformat", path },
+    xml = { "xmllint", "--format", path },
     zsh = { "shfmt" },
   })[ft]
 
@@ -88,7 +88,6 @@ vim.api.nvim_create_user_command("Fzf", function(cmd)
   vim.api.nvim_create_autocmd("TermClose", {
     buffer = popup_buf,
     callback = function()
-      vim.cmd.stopinsert()
       popup_del()
       local selected = vim.fn.trim(vim.fn.readfile(tmp_selected)[1] or "")
       os.remove(tmp_selected)

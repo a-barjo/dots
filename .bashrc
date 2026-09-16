@@ -4,6 +4,7 @@ alias gs='git switch $(git branch | fzf)'
 alias gsr='git switch --detach $(git branch -r | fzf)'
 
 export EDITOR='nvim'
+export VISUAL='nvim'
 export TMUX_TMPDIR='/tmp'
 export FZF_DEFAULT_COMMAND='fd --follow --hidden --strip-cwd-prefix --exclude .git'
 
@@ -11,7 +12,6 @@ export PATH="$PATH:\
 $HOME/.bun/bin:\
 $HOME/.cargo/bin:\
 $HOME/.local/bin:\
-$HOME/.local/share/nvim/mason/bin:\
 $HOME/.npm-global/bin:\
 $HOME/.opencode/bin:\
 $HOME/go/bin"
@@ -22,6 +22,7 @@ eval "$(fzf --bash)"
 eval "$(starship init bash)"
 
 source "$HOME/.config/fzf/fzf-alba.sh"
+source "$HOME/.config/pkglist.sh"
 
 create_sessions() {
 	sh "$HOME/.config/tmux/create_sessions.sh"
