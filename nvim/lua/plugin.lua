@@ -100,13 +100,17 @@ vim.api.nvim_create_user_command("Fzf", function(cmd)
   })
 end, { desc = "Search with fzf", nargs = 1 })
 
+vim.api.nvim_create_user_command("Oxlint", function(cmd)
+  local path = cmd.args ~= "" and cmd.fargs[1] or "."
+  vim.fn.setqflist({}, "r", {
+    lines = vim.fn.systemlist(("oxlint %s --format unix"):format(path))
+  })
+  vim.cmd.copen()
+end, { desc = "Oxlint", nargs = "?" })
+
 vim.api.nvim_create_user_command("Run", function()
   local tmp_script = vim.fn.tempname()
   vim.fn.writefile(vim.fn.getline(1, "$"), tmp_script)
   vim.cmd("bo new")
   vim.fn.termopen({ os.getenv("SHELL"), "-i", tmp_script })
 end, { desc = "Run buffer as a shell script" })
-
-vim.api.nvim_create_user_command("Todo", function()
-  vim.cmd.grep("TODO $(git diff origin/main --name-only)")
-end, { desc = "List TODOs in branch" })

@@ -10,6 +10,7 @@ export FZF_DEFAULT_COMMAND='fd --follow --hidden --strip-cwd-prefix --exclude .g
 
 export PATH="$PATH:\
 $HOME/.bun/bin:\
+$HOME/.cache/.bun/bin:$PATH
 $HOME/.cargo/bin:\
 $HOME/.local/bin:\
 $HOME/.npm-global/bin:\

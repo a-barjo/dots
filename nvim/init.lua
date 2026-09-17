@@ -1,3 +1,3 @@
 require("options")
 require("lsp")
-require("commands")
+require("plugin")
