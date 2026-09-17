@@ -1,5 +1,6 @@
+-- adding a comment on line 1
 local util = require("util")
-
+-- adding a comment here on line 3
 vim.api.nvim_create_user_command("Diff", function(cmd)
   local mode = ({
     file_history = { command = "FileHistory %", name = "File history" },
@@ -18,7 +19,6 @@ vim.api.nvim_create_user_command("Diff", function(cmd)
   vim.cmd.tabmove(0)
   vim.cmd.file(mode.name)
 end, { desc = "Diff", nargs = 1 })
-
 vim.api.nvim_create_user_command("Format", function()
   local path = vim.fn.expand("%:p")
   local ft = vim.bo.filetype
@@ -102,11 +102,59 @@ end, { desc = "Search with fzf", nargs = 1 })
 
 vim.api.nvim_create_user_command("Oxlint", function(cmd)
   local path = cmd.args ~= "" and cmd.fargs[1] or "."
+
   vim.fn.setqflist({}, "r", {
     lines = vim.fn.systemlist(("oxlint %s --format unix"):format(path))
   })
+
   vim.cmd.copen()
 end, { desc = "Oxlint", nargs = "?" })
+
+vim.api.nvim_create_user_command("DiffTree", function()
+  local cmd = vim.fn.systemlist("git status -s")
+
+  vim.fn.setqflist({}, "r", {
+    items = vim.tbl_map(function(path)
+      return {
+        filename = path:sub(4),
+        text = path:sub(0, 2),
+        lnum = 1
+      }
+    end, cmd),
+  })
+
+  vim.cmd.copen()
+end, { desc = "Diff tree" })
+
+vim.api.nvim_create_user_command("DiffFile", function()
+  local file = vim.fn.expand("%:p")
+  local old = vim.fn.systemlist({ "git", "show", "HEAD:./" .. vim.fn.expand("%:.") })
+  local new = vim.fn.getline(1, "$")
+  local hunks = vim.diff(table.concat(old, "\n"), table.concat(new, "\n"), { result_type = "indices" })
+
+  vim.fn.setqflist({}, "r", {
+    items = vim.tbl_map(function(hunk)
+      local lnum = math.max(hunk[3], 1)
+      return {
+        filename = file,
+        text = new[lnum],
+        lnum = lnum,
+      }
+    end, hunks),
+  })
+
+  vim.cmd.copen()
+end, { desc = "Diff file" })
+
+vim.api.nvim_create_user_command("DiffSideBySide", function()
+  local old = vim.fn.systemlist({ "git", "show", "HEAD:./" .. vim.fn.expand("%:.") })
+  vim.cmd.vnew()
+  vim.fn.setline(1, old)
+  vim.bo.buftype = "nofile"
+  vim.cmd.diffthis()
+  vim.cmd.wincmd("p")
+  vim.cmd.diffthis()
+end, { desc = "Diff current buffer against HEAD" })
 
 vim.api.nvim_create_user_command("Run", function()
   local tmp_script = vim.fn.tempname()
