@@ -1,24 +1,5 @@
--- adding a comment on line 1
 local util = require("util")
--- adding a comment here on line 3
-vim.api.nvim_create_user_command("Diff", function(cmd)
-  local mode = ({
-    file_history = { command = "FileHistory %", name = "File history" },
-    git_log = { command = "FileHistory .", name = "Git log" },
-    main = { command = "Open origin/main..HEAD", name = "Diff main" },
-    workspace = { command = "Open", name = "Diff workspace" }
-  })[cmd.args]
 
-  local tab_n = util.find_tab(mode.name)
-  if tab_n then
-    vim.cmd.tabnext(tab_n)
-    return
-  end
-
-  vim.cmd(("Diffview%s"):format(mode.command))
-  vim.cmd.tabmove(0)
-  vim.cmd.file(mode.name)
-end, { desc = "Diff", nargs = 1 })
 vim.api.nvim_create_user_command("Format", function()
   local path = vim.fn.expand("%:p")
   local ft = vim.bo.filetype
@@ -110,23 +91,33 @@ vim.api.nvim_create_user_command("Oxlint", function(cmd)
   vim.cmd.copen()
 end, { desc = "Oxlint", nargs = "?" })
 
-vim.api.nvim_create_user_command("DiffTree", function()
-  local cmd = vim.fn.systemlist("git status -s")
+vim.api.nvim_create_user_command("GitStatus", function(cmd)
+  local items
 
-  vim.fn.setqflist({}, "r", {
-    items = vim.tbl_map(function(path)
+  if #cmd.args > 0 then
+    items = vim.tbl_map(function(line)
+      local parts = vim.split(line, "\t")
       return {
-        filename = path:sub(4),
-        text = path:sub(0, 2),
+        filename = parts[#parts],
+        text = parts[1],
+        lnum = 1,
+      }
+    end, vim.fn.systemlist(("git diff --name-status %s...HEAD"):format(cmd.args)))
+  else
+    items = vim.tbl_map(function(line)
+      return {
+        filename = line:sub(4),
+        text = line:sub(0, 2),
         lnum = 1
       }
-    end, cmd),
-  })
+    end, vim.fn.systemlist("git status -s"))
+  end
 
+  vim.fn.setqflist({}, "r", { items = items })
   vim.cmd.copen()
-end, { desc = "Diff tree" })
+end, { desc = "Diff tree", nargs = "?" })
 
-vim.api.nvim_create_user_command("DiffFile", function()
+vim.api.nvim_create_user_command("GitChanges", function()
   local file = vim.fn.expand("%:p")
   local old = vim.fn.systemlist({ "git", "show", "HEAD:./" .. vim.fn.expand("%:.") })
   local new = vim.fn.getline(1, "$")
@@ -146,15 +137,18 @@ vim.api.nvim_create_user_command("DiffFile", function()
   vim.cmd.copen()
 end, { desc = "Diff file" })
 
-vim.api.nvim_create_user_command("DiffSideBySide", function()
-  local old = vim.fn.systemlist({ "git", "show", "HEAD:./" .. vim.fn.expand("%:.") })
+vim.api.nvim_create_user_command("GitDiff", function(cmd)
+  local ref = cmd.args ~= "" and cmd.args or "HEAD"
+  local filetype = vim.bo.filetype
+  local old = vim.fn.systemlist({ "git", "show", ref .. ":./" .. vim.fn.expand("%:.") })
   vim.cmd.vnew()
   vim.fn.setline(1, old)
+  vim.bo.filetype = filetype
   vim.bo.buftype = "nofile"
   vim.cmd.diffthis()
   vim.cmd.wincmd("p")
   vim.cmd.diffthis()
-end, { desc = "Diff current buffer against HEAD" })
+end, { desc = "Diff current buffer against a ref", nargs = "?" })
 
 vim.api.nvim_create_user_command("Run", function()
   local tmp_script = vim.fn.tempname()
