@@ -33,7 +33,7 @@ vim.keymap.set("n", "<leader>%", "<Cmd>let @+=@%<CR>", { desc = "Copy file path 
 vim.keymap.set("n", "<leader><BS>", "<Cmd>tabc<CR>", { desc = "Close tab" })
 vim.keymap.set("n", "<leader><leader>", "<Cmd>Fzf files<CR>", { desc = "Search files" })
 vim.keymap.set("n", "<leader>gdd", "<Cmd>GitStatus<CR>", { desc = "Git status" })
-vim.keymap.set("n", "<leader>gdm", "<Cmd>GitStatus main<CR>", { desc = "Git status main" })
+vim.keymap.set("n", "<leader>gdm", "<Cmd>GitStatus origin/main<CR>", { desc = "Git status main" })
 vim.keymap.set("n", "<leader>gc", "<Cmd>GitChanges<CR>", { desc = "Git changes" })
 vim.keymap.set("n", "<leader>gss", "<Cmd>GitDiff<CR>", { desc = "Git diff" })
 vim.keymap.set("n", "<leader>gsm", "<Cmd>GitDiff main<CR>", { desc = "Git diff main" })
