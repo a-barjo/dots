@@ -1,5 +1,7 @@
 local util = require("util")
 
+local fzf_last_selected
+
 vim.api.nvim_create_user_command("Diff", function(cmd)
   local mode = ({
     file_history = { command = "FileHistory %", name = "File history" },
@@ -55,6 +57,7 @@ end, { desc = "Format" })
 vim.api.nvim_create_user_command("Fzf", function(cmd)
   local mode = ({
     files = {
+      list = vim.fn.systemlist(os.getenv("FZF_DEFAULT_COMMAND")),
       callback = function(selected)
         vim.cmd.edit(vim.fn.fnameescape(selected))
       end
@@ -70,26 +73,37 @@ vim.api.nvim_create_user_command("Fzf", function(cmd)
       callback = function(selected)
         vim.fn.system(("git switch %s"):format(selected))
       end
+    },
+    git = {
+      list = vim.fn.systemlist("git status -s"),
+      callback = function(selected)
+        vim.print(selected)
+      end
     }
   })[cmd.args]
 
   local popup_buf, popup_del = util.popup_backdrop()
   local tmp_selected = vim.fn.tempname()
+  local fzf_command = "fzf > " .. tmp_selected
 
   if mode.list then
     local tmp_list = vim.fn.tempname()
     vim.fn.writefile(mode.list, tmp_list)
-    vim.fn.termopen(("fzf < %s > %s"):format(tmp_list, tmp_selected))
-  else
-    vim.fn.termopen("fzf > " .. tmp_selected)
+    fzf_command = ("fzf < %s > %s"):format(tmp_list, tmp_selected)
   end
 
+  fzf_command = fzf_command
+      :gsub("fzf", ("fzf --bind 'result:%s'")
+        :format(string.rep("up+", vim.fn.index(mode.list, fzf_last_selected)):sub(1, -2)))
+
+  vim.fn.termopen(fzf_command)
   vim.cmd.startinsert()
   vim.api.nvim_create_autocmd("TermClose", {
     buffer = popup_buf,
     callback = function()
       popup_del()
-      local selected = vim.fn.trim(vim.fn.readfile(tmp_selected)[1] or "")
+      local selected = vim.fn.readfile(tmp_selected)[1] or ""
+      fzf_last_selected = selected
       os.remove(tmp_selected)
       if selected ~= "" then
         vim.schedule(function()

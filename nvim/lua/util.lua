@@ -42,4 +42,12 @@ function M.find_tab(name)
   return nil
 end
 
+function M.index_of(list, value)
+  for i, v in ipairs(list) do
+    if v == value then
+      return i
+    end
+  end
+end
+
 return M
