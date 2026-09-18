@@ -77,6 +77,7 @@ vim.api.nvim_create_user_command("Fzf", function(cmd)
     git = {
       list = vim.fn.systemlist("git status -s"),
       callback = function(selected)
+        fzf_last_selected = selected
         vim.print(selected)
       end
     }
@@ -92,9 +93,12 @@ vim.api.nvim_create_user_command("Fzf", function(cmd)
     fzf_command = ("fzf < %s > %s"):format(tmp_list, tmp_selected)
   end
 
-  fzf_command = fzf_command
-      :gsub("fzf", ("fzf --bind 'result:%s'")
-        :format(string.rep("up+", vim.fn.index(mode.list, fzf_last_selected)):sub(1, -2)))
+  if cmd.args == "git" then
+    fzf_command = fzf_command
+        :gsub("fzf", ("fzf --bind 'result:%s'")
+          :format(string.rep("up+", vim.fn.index(mode.list, fzf_last_selected)):sub(1, -2)))
+  end
+
 
   vim.fn.termopen(fzf_command)
   vim.cmd.startinsert()
@@ -103,7 +107,6 @@ vim.api.nvim_create_user_command("Fzf", function(cmd)
     callback = function()
       popup_del()
       local selected = vim.fn.readfile(tmp_selected)[1] or ""
-      fzf_last_selected = selected
       os.remove(tmp_selected)
       if selected ~= "" then
         vim.schedule(function()
