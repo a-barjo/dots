@@ -1,5 +1,24 @@
 local util = require("util")
 
+vim.api.nvim_create_user_command("Diff", function(cmd)
+  local mode = ({
+    file_history = { command = "FileHistory %", name = "File history" },
+    git_log = { command = "FileHistory .", name = "Git log" },
+    main = { command = "Open origin/main..HEAD", name = "Diff main" },
+    workspace = { command = "Open", name = "Diff workspace" }
+  })[cmd.args]
+
+  local tab_n = util.find_tab(mode.name)
+  if tab_n then
+    vim.cmd.tabnext(tab_n)
+    return
+  end
+
+  vim.cmd(("Diffview%s"):format(mode.command))
+  vim.cmd.tabmove(0)
+  vim.cmd.file(mode.name)
+end, { desc = "Diff", nargs = 1 })
+
 vim.api.nvim_create_user_command("Format", function()
   local path = vim.fn.expand("%:p")
   local ft = vim.bo.filetype
