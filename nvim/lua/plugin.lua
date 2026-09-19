@@ -1,7 +1,5 @@
 local util = require("util")
 
-local fzf_last_selected
-
 vim.api.nvim_create_user_command("Diff", function(cmd)
   local mode = ({
     file_history = { command = "FileHistory %", name = "File history" },
@@ -74,20 +72,6 @@ vim.api.nvim_create_user_command("Fzf", function(cmd)
         vim.fn.system(("git switch %s"):format(selected))
       end
     },
-    git = {
-      list = vim.fn.systemlist("git status -s"),
-      callback = function(selected)
-        fzf_last_selected = selected
-        local rel = selected:sub(4)
-        local _, dst = rel:match("^(.*) -> (.*)$")
-        if dst then
-          rel = dst
-        end
-        vim.cmd.only()
-        vim.cmd.edit(vim.fn.fnameescape(rel))
-        vim.cmd.GitDiff()
-      end
-    }
   })[cmd.args]
 
   local popup_buf, popup_del = util.popup_backdrop()
@@ -100,15 +84,9 @@ vim.api.nvim_create_user_command("Fzf", function(cmd)
     fzf_command = ("fzf < %s > %s"):format(tmp_list, tmp_selected)
   end
 
-  if cmd.args == "git" and fzf_last_selected then
-    fzf_command = fzf_command
-        :gsub("fzf", ("fzf --bind 'result:%s'")
-          :format(string.rep("up+", vim.fn.index(mode.list, fzf_last_selected)):sub(1, -2)))
-  end
-
-
   vim.fn.termopen(fzf_command)
   vim.cmd.startinsert()
+
   vim.api.nvim_create_autocmd("TermClose", {
     buffer = popup_buf,
     callback = function()
@@ -133,65 +111,6 @@ vim.api.nvim_create_user_command("Oxlint", function(cmd)
 
   vim.cmd.copen()
 end, { desc = "Oxlint", nargs = "?" })
-
-vim.api.nvim_create_user_command("GitStatus", function(cmd)
-  local items
-
-  if #cmd.args > 0 then
-    items = vim.tbl_map(function(line)
-      local parts = vim.split(line, "\t")
-      return {
-        filename = parts[#parts],
-        text = parts[1],
-        lnum = 1,
-      }
-    end, vim.fn.systemlist(("git diff --name-status %s...HEAD"):format(cmd.args)))
-  else
-    items = vim.tbl_map(function(line)
-      return {
-        filename = line:sub(4),
-        text = line:sub(0, 2),
-        lnum = 1
-      }
-    end, vim.fn.systemlist("git status -s"))
-  end
-
-  vim.fn.setqflist({}, "r", { items = items })
-  vim.cmd.copen()
-end, { desc = "Diff tree", nargs = "?" })
-
-vim.api.nvim_create_user_command("GitChanges", function()
-  local file = vim.fn.expand("%:p")
-  local old = vim.fn.systemlist({ "git", "show", "HEAD:./" .. vim.fn.expand("%:.") })
-  local new = vim.fn.getline(1, "$")
-  local hunks = vim.diff(table.concat(old, "\n"), table.concat(new, "\n"), { result_type = "indices" })
-
-  vim.fn.setqflist({}, "r", {
-    items = vim.tbl_map(function(hunk)
-      local lnum = math.max(hunk[3], 1)
-      return {
-        filename = file,
-        text = new[lnum],
-        lnum = lnum,
-      }
-    end, hunks),
-  })
-
-  vim.cmd.copen()
-end, { desc = "Diff file" })
-
-vim.api.nvim_create_user_command("GitDiff", function(cmd)
-  local ref = cmd.args ~= "" and cmd.args or "HEAD"
-  local filetype = vim.bo.filetype
-  local old = vim.fn.systemlist({ "git", "show", ref .. ":./" .. vim.fn.expand("%:.") })
-  vim.cmd.vnew()
-  vim.fn.setline(1, old)
-  vim.bo.filetype = filetype
-  vim.bo.buftype = "nofile"
-  vim.cmd.diffthis()
-  vim.cmd.wincmd("p")
-  vim.cmd.diffthis()
-end, { desc = "Diff current buffer against a ref", nargs = "?" })
 
 vim.api.nvim_create_user_command("Run", function()
   local tmp_script = vim.fn.tempname()
