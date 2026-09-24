@@ -6,7 +6,7 @@ alias gsr='git switch --detach $(git branch -r | fzf)'
 export EDITOR='nvim'
 export VISUAL='nvim'
 export TMUX_TMPDIR='/tmp'
-export FZF_DEFAULT_COMMAND='fd --follow --hidden --strip-cwd-prefix --exclude .git'
+export FZF_DEFAULT_COMMAND='fd --hidden'
 
 export PATH="$PATH:\
 $HOME/.bun/bin:\
