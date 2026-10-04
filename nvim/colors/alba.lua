@@ -14,12 +14,13 @@ vim.g.AlbaGrey8 = "#cecee5"
 
 vim.g.AlbaCoral = "#ffbbad"
 vim.g.AlbaDusk = "#b3a0e8"
-vim.g.AlbaHaze = "#ffede0"
+vim.g.AlbaHaze = "#ffe1d6"
 vim.g.AlbaLuz = "#ffcc75"
 vim.g.AlbaOrange = "#f29d68"
 vim.g.AlbaPeach = "#ffd4b2"
 vim.g.AlbaPink = "#f29bc5"
-vim.g.AlbaRouge = "#e88a7f"
+vim.g.AlbaRouge = "#e88378"
+vim.g.AlbaWave = "#c1c5f2"
 
 vim.g.AlbaBlack = "#161628"
 vim.g.AlbaEditor = vim.g.AlbaTransparent and "none" or vim.g.AlbaBlack
@@ -121,6 +122,7 @@ vim.g.AlbaStorage = vim.g.AlbaGrey7
 vim.g.AlbaString = vim.g.AlbaPeach
 vim.g.AlbaType = vim.g.AlbaPink
 vim.g.AlbaVariable = vim.g.AlbaHaze
+vim.g.AlbaNamespace = vim.g.AlbaWave
 
 vim.api.nvim_set_hl(0, "@constant", { fg = vim.g.AlbaConstant })
 vim.api.nvim_set_hl(0, "@punctuation", { fg = vim.g.AlbaPunctuation })
@@ -294,8 +296,12 @@ vim.api.nvim_set_hl(0, "fortranUnitName", { fg = vim.g.AlbaVariable })
 
 -- Go
 
+-- vim.api.nvim_set_hl(0, "@lsp.type.namespace.go", { fg = vim.g.AlbaVariable })
+vim.api.nvim_set_hl(0, "@lsp.typemod.variable.readonly.go", { fg = vim.g.AlbaConstant })
 vim.api.nvim_set_hl(0, "goBuiltins", { fg = vim.g.AlbaFunction })
 vim.api.nvim_set_hl(0, "goDeclType", { fg = vim.g.AlbaMisc })
+vim.api.nvim_set_hl(0, "goImportString", { fg = vim.g.AlbaString })
+vim.api.nvim_set_hl(0, "goParen", { fg = vim.g.AlbaPunctuation })
 
 
 -- Groovy
@@ -629,8 +635,6 @@ vim.api.nvim_set_hl(0, "tsxCloseString", { link = "htmlTag" })
 -- TypeScript
 
 vim.api.nvim_set_hl(0, "@constant.builtin.typescript", { fg = vim.g.AlbaConstant })
-vim.api.nvim_set_hl(0, "@lsp.mod.defaultLibrary", { fg = vim.g.AlbaType })
-vim.api.nvim_set_hl(0, "@lsp.typemod.member.defaultLibrary", { fg = vim.g.AlbaFunction })
 vim.api.nvim_set_hl(0, "@type.builtin.typescript", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "typescriptAliasDeclaration", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptArrowFunc", { fg = vim.g.AlbaMisc })
@@ -654,9 +658,9 @@ vim.api.nvim_set_hl(0, "typescriptFuncCallArg", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptFuncName", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptFuncType", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "typescriptFuncTypeArrow", { fg = vim.g.AlbaMisc })
-vim.api.nvim_set_hl(0, "typescriptGlobal", { fg = vim.g.AlbaType })
+vim.api.nvim_set_hl(0, "typescriptGlobal", { fg = vim.g.AlbaNamespace })
 vim.api.nvim_set_hl(0, "typescriptGlobalConsoleDot", { fg = vim.g.AlbaPunctuation })
-vim.api.nvim_set_hl(0, "typescriptGlobalConsoleDot", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "typescriptGlobalMathDot", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptGlobalObjectDot", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptIdentifier", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "typescriptIdentifierName", { fg = vim.g.AlbaProperty })
@@ -683,6 +687,8 @@ vim.api.nvim_set_hl(0, "typescriptTypeBracket", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptTypeBrackets", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "typescriptTypeReference", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "typescriptUnaryOp", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "typescriptVariableDeclaration", { fg = vim.g.AlbaVariable })
+
 
 -- TypeScript regexp
 
@@ -841,8 +847,15 @@ vim.api.nvim_set_hl(0, "zigVarDecl", { fg = vim.g.AlbaKeyword })
 
 -- Semantic LSP
 
+vim.api.nvim_set_hl(0, "@lsp.mod.defaultLibrary", { fg = vim.g.AlbaNamespace })
 vim.api.nvim_set_hl(0, "@lsp.type.member", { fg = vim.g.AlbaFunction })
+vim.api.nvim_set_hl(0, "@lsp.type.namespace", { fg = vim.g.AlbaNamespace })
 vim.api.nvim_set_hl(0, "@lsp.type.property", { fg = vim.g.AlbaProperty })
+vim.api.nvim_set_hl(0, "@lsp.typemod.class", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "@lsp.typemod.function.declaration", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "@lsp.typemod.interface.declaration", { fg = vim.g.AlbaVariable })
+vim.api.nvim_set_hl(0, "@lsp.typemod.member.defaultLibrary", { fg = vim.g.AlbaFunction })
+vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary", { fg = vim.g.AlbaFunction })
+vim.api.nvim_set_hl(0, "@lsp.typemod.property", { fg = vim.g.AlbaProperty })
+vim.api.nvim_set_hl(0, "@lsp.typemod.type.defaultLibrary", { fg = vim.g.AlbaNamespace })
 vim.api.nvim_set_hl(0, "@type.builtin.go", { fg = vim.g.AlbaType })

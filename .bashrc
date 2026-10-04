@@ -6,7 +6,7 @@ alias gsr='git switch --detach $(git branch -r | fzf)'
 export EDITOR='nvim'
 export VISUAL='nvim'
 export TMUX_TMPDIR='/tmp'
-export FZF_DEFAULT_COMMAND='fd --hidden'
+export FZF_DEFAULT_COMMAND='fd --hidden --exclude .git'
 
 export PATH="$PATH:\
 $HOME/.bun/bin:\
@@ -31,12 +31,16 @@ create_sessions() {
 
 gmm() {
 	git fetch
-	git merge origin main --no-edit
-	git push origin HEAD
+	git merge origin main --no-edit &&
+		git push origin HEAD
 }
 
 toggle_swapescape() {
 	gsettings set org.gnome.desktop.input-sources xkb-options "['$(
 		gsettings get org.gnome.desktop.input-sources xkb-options | grep -q 'caps:swapescape' || echo 'caps:swapescape'
 	)']"
+}
+
+reload_trackpad() {
+	sudo modprobe -r i2c_hid_acpi && sudo modprobe i2c_hid_acpi
 }

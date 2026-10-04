@@ -20,6 +20,15 @@ pkglist() {
 		fi
 	}
 
+	if has zypper; then
+		sudo zypper refresh >/dev/null
+		pkgs="$(zypper -q packages --userinstalled | cut -d '|' -f 3 | tail -n +4 | uniq | xargs -n1 | grep -vxFf "$HOME/sys_packages.txt")"
+		if [ -n "$pkgs" ]; then
+			section zypper
+			printf '%s\n' "$pkgs"
+		fi
+	fi
+
 	print brew leaves --installed-on-request
 	print bun pm ls -g
 	print cargo install --list
@@ -27,12 +36,4 @@ pkglist() {
 	print npm list -g --depth=0 --parseable
 	print pip list --user
 	print snap list
-
-	if has zypper; then
-		pkgs="$(zypper -q packages --userinstalled | cut -d '|' -f 3 | tail -n +4 | uniq | xargs -n1 | grep -vxFf "$HOME/sys_packages.txt")"
-		if [ -n "$pkgs" ]; then
-			section zypper
-			printf '%s\n' "$pkgs"
-		fi
-	fi
 }
