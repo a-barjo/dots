@@ -332,6 +332,8 @@ vim.g.alba_hl_patterns = {
   { match = "keyword",             colour = vim.g.AlbaKeyword },
   { match = "label",               colour = vim.g.AlbaProperty },
   { match = "macro",               colour = vim.g.AlbaMisc },
+  { match = "mappingdelimiter",    colour = vim.g.AlbaPunctuation },
+  { match = "mappingkey",          colour = vim.g.AlbaKeyword },
   { match = "member",              colour = vim.g.AlbaProperty },
   { match = "method",              colour = vim.g.AlbaFunction },
   { match = "namespace",           colour = vim.g.AlbaNamespace },
