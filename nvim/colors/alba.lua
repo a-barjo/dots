@@ -2,14 +2,14 @@ vim.cmd.highlight("clear")
 
 vim.g.colors_name = "alba"
 
-vim.g.AlbaGrey1 = "#201d35"
-vim.g.AlbaGrey2 = "#312d4c"
-vim.g.AlbaGrey3 = "#474266"
-vim.g.AlbaGrey4 = "#5e597f"
-vim.g.AlbaGrey5 = "#777299"
-vim.g.AlbaGrey6 = "#938eb2"
-vim.g.AlbaGrey7 = "#b1adcc"
-vim.g.AlbaGrey8 = "#d1cee5"
+vim.g.AlbaGrey1 = "#1f1d35"
+vim.g.AlbaGrey2 = "#2f2d4c"
+vim.g.AlbaGrey3 = "#444266"
+vim.g.AlbaGrey4 = "#5b597f"
+vim.g.AlbaGrey5 = "#757299"
+vim.g.AlbaGrey6 = "#918eb2"
+vim.g.AlbaGrey7 = "#afadcc"
+vim.g.AlbaGrey8 = "#d0cee5"
 
 vim.g.AlbaCoral = "#ffb6a8"
 vim.g.AlbaDusk = "#ad9ae0"
@@ -21,7 +21,7 @@ vim.g.AlbaPink = "#f29bc5"
 vim.g.AlbaRouge = "#ea8e88"
 vim.g.AlbaWave = "#b2b7ea"
 
-vim.g.AlbaBlack = "#181628"
+vim.g.AlbaBlack = "#171628"
 vim.g.AlbaEditor = vim.g.AlbaTransparent and "none" or vim.g.AlbaBlack
 vim.g.AlbaGreen = "#c5d89c"
 vim.g.AlbaBlue = "#a0c7e8"

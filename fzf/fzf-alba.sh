@@ -1,12 +1,12 @@
 export FZF_DEFAULT_OPTS="\
---color=bg+:#201d35 \
+--color=bg+:#1f1d35 \
 --color=fg:#ffddd1,fg+:#ffd4b2 \
 --color=hl:#f29b6d,hl+:#f29b6d \
---color=info:#938eb2 \
+--color=info:#918eb2 \
 --color=prompt:#f29b6d \
 --color=pointer:#ffd4b2 \
 --color=marker:#c5d89c \
 --color=spinner:#ad9ae0 \
---color=header:#938eb2 \
---color=gutter:#181628 \
---color=border:#474266"
+--color=header:#918eb2 \
+--color=gutter:#171628 \
+--color=border:#444266"
