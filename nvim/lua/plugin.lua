@@ -4,7 +4,7 @@ vim.api.nvim_create_user_command("Diff", function(cmd)
   local mode = ({
     file_history = { command = "FileHistory %", name = "File history" },
     git_log = { command = "FileHistory .", name = "Git log" },
-    main = { command = "Open origin/main..HEAD", name = "Diff main" },
+    main = { command = "Open origin/main...HEAD", name = "Diff main" },
     workspace = { command = "Open", name = "Diff workspace" }
   })[cmd.args]
 

@@ -5,11 +5,16 @@ vim.g.netrw_sizestyle = "H"
 vim.g.omni_sql_no_default_maps = 1
 
 vim.opt.clipboard = "unnamedplus"
-vim.opt.colorcolumn = "+0"
+vim.opt.colorcolumn = ""
 vim.opt.completeopt = "fuzzy,menuone,noinsert,popup"
+vim.opt.cursorline = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = { "both" }
 vim.opt.expandtab = true
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99
+vim.opt.foldmethod = "expr"
+vim.opt.foldtext = ""
 vim.opt.grepprg = "rg --vimgrep --smart-case"
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true

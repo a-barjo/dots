@@ -11,6 +11,7 @@ vim.lsp.enable({
   "oxlint",
   "rust_analyzer",
   "tsc",
+  "yamlls",
 })
 
 vim.lsp.config["lua_ls"] = {
