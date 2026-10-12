@@ -133,7 +133,7 @@ vim.api.nvim_set_hl(0, "@character.special", { fg = vim.g.AlbaNamespace })
 vim.api.nvim_set_hl(0, "@comment", { fg = vim.g.AlbaComment, italic = true })
 vim.api.nvim_set_hl(0, "@comment.error", { fg = vim.g.AlbaRouge })
 vim.api.nvim_set_hl(0, "@comment.note", { fg = vim.g.AlbaString })
-vim.api.nvim_set_hl(0, "@comment.todo", { fg = vim.g.AlbaBlack, bg = vim.g.AlbaNamespace, bold = true })
+vim.api.nvim_set_hl(0, "@comment.todo", { fg = vim.g.AlbaGrey8, bold = true, italic = true })
 vim.api.nvim_set_hl(0, "@comment.warning", { fg = vim.g.AlbaLuz })
 vim.api.nvim_set_hl(0, "@constant", { fg = vim.g.AlbaLuz })
 vim.api.nvim_set_hl(0, "@constant.builtin", { fg = vim.g.AlbaNamespace })
@@ -166,7 +166,7 @@ vim.api.nvim_set_hl(0, "@lsp.type.parameter", { fg = vim.g.AlbaVariable })
 vim.api.nvim_set_hl(0, "@lsp.type.property", { fg = vim.g.AlbaProperty })
 vim.api.nvim_set_hl(0, "@lsp.type.regexp", { fg = vim.g.AlbaNamespace })
 vim.api.nvim_set_hl(0, "@lsp.type.string", { fg = vim.g.AlbaString })
-vim.api.nvim_set_hl(0, "@lsp.type.struct", { fg = vim.g.AlbaString })
+vim.api.nvim_set_hl(0, "@lsp.type.struct", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "@lsp.type.type", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "@lsp.type.typeParameter", { fg = vim.g.AlbaProperty })
 vim.api.nvim_set_hl(0, "@lsp.type.variable", { fg = vim.g.AlbaVariable })
@@ -207,7 +207,7 @@ vim.api.nvim_set_hl(0, "@constant.macro", { fg = vim.g.AlbaConstant })
 vim.api.nvim_set_hl(0, "@function.macro", { fg = vim.g.AlbaFunction })
 vim.api.nvim_set_hl(0, "@keyword.conditional", { fg = vim.g.AlbaKeyword })
 vim.api.nvim_set_hl(0, "@keyword.debug", { fg = vim.g.AlbaMisc })
-vim.api.nvim_set_hl(0, "@keyword.directive", { fg = vim.g.AlbaVariable })
+vim.api.nvim_set_hl(0, "@keyword.directive", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "@keyword.exception", { fg = vim.g.AlbaKeyword })
 vim.api.nvim_set_hl(0, "@keyword.import", { fg = vim.g.AlbaProperty })
 vim.api.nvim_set_hl(0, "@keyword.modifier", { fg = vim.g.AlbaMisc })
@@ -217,15 +217,32 @@ vim.api.nvim_set_hl(0, "@type.definition", { fg = vim.g.AlbaType })
 
 -- Additional LSP tree-sitter groups
 
+vim.api.nvim_set_hl(0, "@lsp.mod.attribute", { fg = vim.g.AlbaProperty })
+vim.api.nvim_set_hl(0, "@lsp.mod.constant", { fg = vim.g.AlbaConstant })
 vim.api.nvim_set_hl(0, "@lsp.mod.defaultLibrary", { fg = vim.g.AlbaNamespace })
+vim.api.nvim_set_hl(0, "@lsp.type.attributeBracket", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "@lsp.type.bracket", { fg = vim.g.AlbaPunctuation })
-vim.api.nvim_set_hl(0, "@lsp.type.macro", { fg = vim.g.AlbaConstant })
+vim.api.nvim_set_hl(0, "@lsp.type.builtinAttribute", { fg = vim.g.AlbaNamespace })
+vim.api.nvim_set_hl(0, "@lsp.type.generic", { fg = vim.g.AlbaMisc })
+vim.api.nvim_set_hl(0, "@lsp.type.macro", { fg = vim.g.AlbaMisc })
+vim.api.nvim_set_hl(0, "@lsp.type.struct", { fg = vim.g.AlbaType })
+vim.api.nvim_set_hl(0, "@lsp.typemod.attributeBracket", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "@lsp.typemod.builtinAttribute", { fg = vim.g.AlbaNamespace })
+vim.api.nvim_set_hl(0, "@lsp.typemod.decorator", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "@lsp.typemod.function.defaultLibrary", { fg = vim.g.AlbaNamespace })
+vim.api.nvim_set_hl(0, "@lsp.typemod.generic", { fg = vim.g.AlbaMisc })
+vim.api.nvim_set_hl(0, "@lsp.typemod.generic.attribute", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "@lsp.typemod.method", { fg = vim.g.AlbaFunction })
+vim.api.nvim_set_hl(0, "@lsp.typemod.namespace", { fg = vim.g.AlbaNamespace })
+vim.api.nvim_set_hl(0, "@lsp.typemod.operator", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "@lsp.typemod.property.defaultLibrary", { fg = vim.g.AlbaProperty })
+vim.api.nvim_set_hl(0, "@lsp.typemod.string", { fg = vim.g.AlbaString })
+vim.api.nvim_set_hl(0, "@lsp.typemod.struct", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "@lsp.typemod.type.defaultLibrary", { fg = vim.g.AlbaNamespace })
 vim.api.nvim_set_hl(0, "@lsp.typemod.variable.readonly.go", { fg = vim.g.AlbaConstant })
 vim.api.nvim_set_hl(0, "@variable.member", { fg = vim.g.AlbaProperty })
+vim.api.nvim_set_hl(0, "@lsp.mod.async", { fg = vim.g.AlbaMisc })
+vim.api.nvim_set_hl(0, "@lsp.typemod.function", { fg = vim.g.AlbaFunction })
 
 -- Markdown
 
@@ -236,6 +253,7 @@ vim.api.nvim_set_hl(0, "@markup.link.label", { fg = vim.g.AlbaMisc, bold = true 
 vim.api.nvim_set_hl(0, "@markup.link.url", { fg = vim.g.AlbaNamespace, underline = true })
 vim.api.nvim_set_hl(0, "@markup.list", { fg = vim.g.AlbaPunctuation, bold = true })
 vim.api.nvim_set_hl(0, "@markup.raw.block", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "@markup.raw.block.markdown", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "@markup.strong", { fg = vim.g.AlbaMisc, bold = true })
 
 -- Legacy Vimscript highlight group equivalents
@@ -285,6 +303,7 @@ vim.api.nvim_set_hl(0, "Underlined", { link = "@markup.underline" })
 vim.g.alba_hl_patterns = {
   { match = "access",              colour = vim.g.AlbaStorage },
   { match = "arrow",               colour = vim.g.AlbaMisc },
+  { match = "commentlinedoc",      colour = vim.g.AlbaBlack },
   { match = "assign",              colour = vim.g.AlbaPunctuation },
   { match = "async",               colour = vim.g.AlbaMisc },
   { match = "attribute",           colour = vim.g.AlbaMisc },
@@ -372,10 +391,13 @@ vim.g.alba_hl_patterns = {
   { match = "ternaryop",           colour = vim.g.AlbaPunctuation },
   { match = "title",               colour = vim.g.AlbaVariable },
   { match = "try",                 colour = vim.g.AlbaKeyword },
+  { match = "command",             colour = vim.g.AlbaMisc },
   { match = "tsxtagname",          colour = vim.g.AlbaNamespace },
   { match = "typeannotation",      colour = vim.g.AlbaPunctuation },
   { match = "typearg",             colour = vim.g.AlbaPunctuation },
   { match = "typedef",             colour = vim.g.AlbaKeyword },
+  { match = "opr",                 colour = vim.g.AlbaPunctuation },
+  { match = "snglcase",            colour = vim.g.AlbaPunctuation },
   { match = "typereference",       colour = vim.g.AlbaType },
   { match = "unaryop",             colour = vim.g.AlbaPunctuation },
   { match = "vardef",              colour = vim.g.AlbaKeyword },
@@ -427,6 +449,14 @@ local function alba_apply_patterns()
   vim.api.nvim_set_hl(0, "jsonFold", { fg = vim.g.AlbaPunctuation })
   vim.api.nvim_set_hl(0, "jsonKeywordMatch", { fg = vim.g.AlbaPunctuation })
   vim.api.nvim_set_hl(0, "jsonQuote", { fg = vim.g.AlbaPunctuation })
+  vim.api.nvim_set_hl(0, "rustModPathSep", { fg = vim.g.AlbaPunctuation })
+  vim.api.nvim_set_hl(0, "shCmdSubRegion", { fg = vim.g.AlbaType })
+  vim.api.nvim_set_hl(0, "shCommandSub", { fg = vim.g.AlbaVariable })
+  vim.api.nvim_set_hl(0, "shDeref", { fg = vim.g.AlbaNamespace })
+  vim.api.nvim_set_hl(0, "shDerefSimple", { fg = vim.g.AlbaNamespace })
+  vim.api.nvim_set_hl(0, "shFunctionExpr", { fg = vim.g.AlbaVariable })
+  vim.api.nvim_set_hl(0, "shFunctionExprRegion", { fg = vim.g.AlbaPunctuation })
+  vim.api.nvim_set_hl(0, "shOption", { fg = vim.g.AlbaProperty })
   vim.api.nvim_set_hl(0, "typescriptProperty", { fg = vim.g.AlbaPunctuation })
 end
 
