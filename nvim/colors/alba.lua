@@ -207,7 +207,7 @@ vim.api.nvim_set_hl(0, "@constant.macro", { fg = vim.g.AlbaConstant })
 vim.api.nvim_set_hl(0, "@function.macro", { fg = vim.g.AlbaFunction })
 vim.api.nvim_set_hl(0, "@keyword.conditional", { fg = vim.g.AlbaKeyword })
 vim.api.nvim_set_hl(0, "@keyword.debug", { fg = vim.g.AlbaMisc })
-vim.api.nvim_set_hl(0, "@keyword.directive", { fg = vim.g.AlbaPunctuation })
+vim.api.nvim_set_hl(0, "@keyword.directive", { fg = "none" })
 vim.api.nvim_set_hl(0, "@keyword.exception", { fg = vim.g.AlbaKeyword })
 vim.api.nvim_set_hl(0, "@keyword.import", { fg = vim.g.AlbaProperty })
 vim.api.nvim_set_hl(0, "@keyword.modifier", { fg = vim.g.AlbaMisc })
@@ -312,6 +312,7 @@ vim.g.alba_hl_patterns = {
   { match = "boolean",             colour = vim.g.AlbaConstant },
   { match = "braces",              colour = vim.g.AlbaPunctuation },
   { match = "bracket",             colour = vim.g.AlbaPunctuation },
+  { match = "returnannotation",    colour = vim.g.AlbaPunctuation },
   { match = "brackets",            colour = vim.g.AlbaPunctuation },
   { match = "builtin",             colour = vim.g.AlbaNamespace },
   { match = "cast",                colour = vim.g.AlbaMisc },

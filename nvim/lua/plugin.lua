@@ -66,10 +66,16 @@ vim.api.nvim_create_user_command("Fzf", function(cmd)
         vim.opt.filetype = selected
       end,
     },
-    branch = {
+    git_switch = {
       list = vim.fn.systemlist("git branch"),
       callback = function(selected)
         vim.fn.system(("git switch %s"):format(selected))
+      end
+    },
+    git_switch_remote = {
+      list = vim.fn.systemlist("git branch -r"),
+      callback = function(selected)
+        vim.fn.system(("git switch --detach %s"):format(selected))
       end
     },
   })[cmd.args]
