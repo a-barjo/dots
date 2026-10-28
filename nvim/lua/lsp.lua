@@ -8,6 +8,7 @@ vim.lsp.enable({
   "jdtls",
   "jsonls",
   "lua_ls",
+  "oxfmt",
   "oxlint",
   "rust_analyzer",
   "tsc",
@@ -22,6 +23,13 @@ vim.lsp.config["lua_ls"] = {
       },
     },
   },
+}
+
+vim.lsp.config['tsc'] = {
+  on_attach = function(client)
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentFormattingRangeProvider = false
+  end
 }
 
 vim.lsp.handlers["$/progress"] = function(_, result, ctx)

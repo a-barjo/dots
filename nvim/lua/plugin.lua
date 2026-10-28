@@ -24,16 +24,6 @@ vim.api.nvim_create_user_command("Format", function()
   local ft = vim.bo.filetype
 
   local command = ({
-    typescript = { "oxfmt", "--stdin-filepath", path },
-    javascript = { "oxfmt", "--stdin-filepath", path },
-    typescriptreact = { "oxfmt", "--stdin-filepath", path },
-    javascriptreact = { "oxfmt", "--stdin-filepath", path },
-    css = { "oxfmt", "--stdin-filepath", path },
-    html = { "oxfmt", "--stdin-filepath", path },
-    json = { "oxfmt", "--stdin-filepath", path },
-    markdown = { "oxfmt", "--stdin-filepath", path },
-    scss = { "oxfmt", "--stdin-filepath", path },
-    yaml = { "oxfmt", "--stdin-filepath", path },
     bash = { "shfmt" },
     sh = { "shfmt" },
     xml = { "xmllint", "--format", path },
@@ -53,44 +43,49 @@ vim.api.nvim_create_user_command("Format", function()
 end, { desc = "Format" })
 
 vim.api.nvim_create_user_command("Fzf", function(cmd)
-  local mode = ({
+  local modes = {
     files = {
-      list = vim.fn.systemlist(os.getenv("FZF_DEFAULT_COMMAND")),
+      list = function()
+        return vim.fn.systemlist(os.getenv("FZF_DEFAULT_COMMAND"))
+      end,
       callback = function(selected)
         vim.cmd.edit(vim.fn.fnameescape(selected))
       end
     },
     filetype = {
-      list = vim.fn.getcompletion("", "filetype"),
+      list = function()
+        return vim.fn.getcompletion("", "filetype")
+      end,
       callback = function(selected)
         vim.opt.filetype = selected
       end,
     },
     git_switch = {
-      list = vim.fn.systemlist("git branch"),
+      list = function()
+        return vim.fn.systemlist("git branch")
+      end,
       callback = function(selected)
         vim.fn.system(("git switch %s"):format(selected))
       end
     },
     git_switch_remote = {
-      list = vim.fn.systemlist("git branch -r"),
+      list = function()
+        return vim.fn.systemlist("git branch -r")
+      end,
       callback = function(selected)
         vim.fn.system(("git switch --detach %s"):format(selected))
       end
     },
-  })[cmd.args]
+  }
 
+  local mode                 = modes[cmd.args]
+  local list                 = mode.list()
   local popup_buf, popup_del = util.popup_backdrop()
-  local tmp_selected = vim.fn.tempname()
-  local fzf_command = "fzf > " .. tmp_selected
+  local tmp_selected         = vim.fn.tempname()
+  local tmp_list             = vim.fn.tempname()
 
-  if mode.list then
-    local tmp_list = vim.fn.tempname()
-    vim.fn.writefile(mode.list, tmp_list)
-    fzf_command = ("fzf < %s > %s"):format(tmp_list, tmp_selected)
-  end
-
-  vim.fn.termopen(fzf_command)
+  vim.fn.writefile(list, tmp_list)
+  vim.fn.termopen(("fzf < %s > %s"):format(tmp_list, tmp_selected))
   vim.cmd.startinsert()
 
   vim.api.nvim_create_autocmd("TermClose", {
@@ -107,20 +102,3 @@ vim.api.nvim_create_user_command("Fzf", function(cmd)
     end,
   })
 end, { desc = "Search with fzf", nargs = 1 })
-
-vim.api.nvim_create_user_command("Oxlint", function(cmd)
-  local path = cmd.args ~= "" and cmd.fargs[1] or "."
-
-  vim.fn.setqflist({}, "r", {
-    lines = vim.fn.systemlist(("oxlint %s --format unix"):format(path))
-  })
-
-  vim.cmd.copen()
-end, { desc = "Oxlint", nargs = "?" })
-
-vim.api.nvim_create_user_command("Run", function()
-  local tmp_script = vim.fn.tempname()
-  vim.fn.writefile(vim.fn.getline(1, "$"), tmp_script)
-  vim.cmd("bo new")
-  vim.fn.termopen({ os.getenv("SHELL"), "-i", tmp_script })
-end, { desc = "Run buffer as a shell script" })
