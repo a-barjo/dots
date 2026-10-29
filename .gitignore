@@ -2,6 +2,8 @@
 !.bashrc
 !.gitignore
 !README.md
+!firefox
+!firefox/**
 !fzf
 !fzf/**
 !ghostty
@@ -9,8 +11,6 @@
 !nvim
 !nvim/**
 !pkglist.sh
-!razer/
-!razer/**
 !screen.png
 !tmux
 !tmux/**
