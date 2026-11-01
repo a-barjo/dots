@@ -246,12 +246,14 @@ vim.api.nvim_set_hl(0, "@lsp.typemod.function", { fg = vim.g.AlbaFunction })
 
 -- Markdown
 
+vim.api.nvim_set_hl(0, "@conceal.markdown_inline", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "@keyword.directive.markdown", { fg = vim.g.AlbaMisc, italic = true })
 vim.api.nvim_set_hl(0, "@label.markdown", { fg = vim.g.AlbaType })
 vim.api.nvim_set_hl(0, "@markup.link", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "@markup.link.label", { fg = vim.g.AlbaMisc, bold = true })
 vim.api.nvim_set_hl(0, "@markup.link.url", { fg = vim.g.AlbaNamespace, underline = true })
 vim.api.nvim_set_hl(0, "@markup.list", { fg = vim.g.AlbaPunctuation, bold = true })
+vim.api.nvim_set_hl(0, "@markup.raw", { fg = vim.g.AlbaConstant })
 vim.api.nvim_set_hl(0, "@markup.raw.block", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "@markup.raw.block.markdown", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "@markup.strong", { fg = vim.g.AlbaMisc, bold = true })
