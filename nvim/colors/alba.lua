@@ -12,14 +12,14 @@ vim.g.AlbaGrey7 = "#a5a3cc"
 vim.g.AlbaGrey8 = "#c5c3e5"
 
 vim.g.AlbaCoral = "#ffb6a8"
-vim.g.AlbaDusk = "#ad9ae0"
+vim.g.AlbaDusk = "#927dc6"
 vim.g.AlbaHaze = "#ffddd1"
 vim.g.AlbaLuz = "#ffd284"
 vim.g.AlbaOrange = "#f29b6d"
 vim.g.AlbaPeach = "#ffd4b2"
 vim.g.AlbaPink = "#f29bc5"
 vim.g.AlbaRouge = "#ea8e88"
-vim.g.AlbaWave = "#b2b7ea"
+vim.g.AlbaWave = "#b6bdea"
 
 vim.g.AlbaBlack = "#151428"
 vim.g.AlbaEditor = vim.g.AlbaTransparent and "none" or vim.g.AlbaBlack
@@ -112,10 +112,10 @@ vim.api.nvim_set_hl(0, "qfLineNr", { fg = vim.g.AlbaGrey5 })
 
 vim.g.AlbaComment = vim.g.AlbaGrey6
 vim.g.AlbaConstant = vim.g.AlbaLuz
-vim.g.AlbaFunction = vim.g.AlbaRouge
+vim.g.AlbaFunction = vim.g.AlbaWave
 vim.g.AlbaKeyword = vim.g.AlbaOrange
 vim.g.AlbaMisc = vim.g.AlbaDusk
-vim.g.AlbaNamespace = vim.g.AlbaWave
+vim.g.AlbaNamespace = vim.g.AlbaRouge
 vim.g.AlbaProperty = vim.g.AlbaCoral
 vim.g.AlbaPunctuation = vim.g.AlbaGrey6
 vim.g.AlbaStorage = vim.g.AlbaWave
@@ -137,7 +137,7 @@ vim.api.nvim_set_hl(0, "@comment.todo", { fg = vim.g.AlbaGrey8, bold = true, ita
 vim.api.nvim_set_hl(0, "@comment.warning", { fg = vim.g.AlbaLuz })
 vim.api.nvim_set_hl(0, "@constant", { fg = vim.g.AlbaLuz })
 vim.api.nvim_set_hl(0, "@constant.builtin", { fg = vim.g.AlbaNamespace })
-vim.api.nvim_set_hl(0, "@constructor", { fg = vim.g.AlbaNamespace })
+vim.api.nvim_set_hl(0, "@constructor", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "@diff.delta", { fg = vim.g.AlbaPeach })
 vim.api.nvim_set_hl(0, "@diff.minus", { fg = vim.g.AlbaRouge })
 vim.api.nvim_set_hl(0, "@diff.plus", { fg = vim.g.AlbaGreen })
@@ -256,6 +256,7 @@ vim.api.nvim_set_hl(0, "@markup.list", { fg = vim.g.AlbaPunctuation, bold = true
 vim.api.nvim_set_hl(0, "@markup.raw", { fg = vim.g.AlbaConstant })
 vim.api.nvim_set_hl(0, "@markup.raw.block", { fg = vim.g.AlbaPunctuation })
 vim.api.nvim_set_hl(0, "@markup.raw.block.markdown", { fg = vim.g.AlbaMisc })
+vim.api.nvim_set_hl(0, "@markup.raw.markdown_inline", { fg = vim.g.AlbaMisc })
 vim.api.nvim_set_hl(0, "@markup.strong", { fg = vim.g.AlbaMisc, bold = true })
 
 -- Legacy Vimscript highlight group equivalents
@@ -303,7 +304,7 @@ vim.api.nvim_set_hl(0, "Underlined", { link = "@markup.underline" })
 -- Pattern matching highlight-groups
 
 vim.g.alba_hl_patterns = {
-  { match = "access",              colour = vim.g.AlbaStorage },
+  { match = "access",              colour = vim.g.AlbaMisc },
   { match = "arrow",               colour = vim.g.AlbaMisc },
   { match = "assign",              colour = vim.g.AlbaPunctuation },
   { match = "async",               colour = vim.g.AlbaMisc },
@@ -336,6 +337,7 @@ vim.g.alba_hl_patterns = {
   { match = "equal",               colour = vim.g.AlbaPunctuation },
   { match = "escape",              colour = vim.g.AlbaMisc },
   { match = "execution",           colour = vim.g.AlbaKeyword },
+  { match = "flag",                colour = vim.g.AlbaProperty },
   { match = "funcdef",             colour = vim.g.AlbaKeyword },
   { match = "function",            colour = vim.g.AlbaFunction },
   { match = "functype",            colour = vim.g.AlbaVariable },
@@ -358,6 +360,7 @@ vim.g.alba_hl_patterns = {
   { match = "mappingkey",          colour = vim.g.AlbaKeyword },
   { match = "member",              colour = vim.g.AlbaProperty },
   { match = "method",              colour = vim.g.AlbaFunction },
+  { match = "modifier",            colour = vim.g.AlbaMisc },
   { match = "namespace",           colour = vim.g.AlbaNamespace },
   { match = "noise",               colour = vim.g.AlbaPunctuation },
   { match = "number",              colour = vim.g.AlbaConstant },
