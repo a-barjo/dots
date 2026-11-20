@@ -8,9 +8,9 @@ export FZF_DEFAULT_COMMAND='fd --hidden --exclude .git'
 eval "$(fzf --bash)"
 eval "$(starship init bash)"
 
-source "$HOME/path.sh"
 source "$HOME/.config/fzf/fzf-alba.sh"
 source "$HOME/.config/pkglist.sh"
+source "$HOME/.pathrc"
 
 create_sessions() {
 	sh "$HOME/.config/tmux/create_sessions.sh"
